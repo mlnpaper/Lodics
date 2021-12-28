@@ -1,3 +1,5 @@
+import { AppLayout } from '../components';
+
 export default function Home() {
-  return <div>LoDICS</div>;
+  return <AppLayout>LoDICS</AppLayout>;
 }
