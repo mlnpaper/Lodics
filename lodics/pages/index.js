@@ -1,3 +1,9 @@
+import AppLayout from '../components/AppLayout'
+
 export default function Home() {
-  return <div>LoDICS</div>;
+  return (
+    <AppLayout>
+      <div>LoDICS</div>
+    </AppLayout>
+  )
 }
