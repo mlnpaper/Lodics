@@ -3,3 +3,8 @@ export { default as Header } from './Header';
 export { default as Footer } from './Footer';
 export { default as Card } from './Card';
 export { default as SubMenu } from './SubMenu';
+export { default as CeoGreeting } from './Company/CeoGreeting';
+export { default as Certification } from './Company/Certification';
+export { default as History } from './Company/History';
+export { default as Location } from './Company/Location';
+export { default as PageTitle } from './PageTitle';
