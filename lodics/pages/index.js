@@ -1,6 +1,5 @@
-import { AppLayout, Footer, Header } from '../components';
+import { AppLayout, Card } from '../components';
 import styled from 'styled-components';
-import Card from '../components/Card';
 import { palette } from '../styles/color';
 
 const Container = styled.div`
