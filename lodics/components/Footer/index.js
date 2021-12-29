@@ -38,7 +38,6 @@ export default function Footer() {
           <span>COPYRIGHT © 2018 LoDiCS. CO., LTD. ALL RIGHTS RESERVED.</span>
         </li>
       </ul>
-      <div></div>
     </Container>
   );
 }
