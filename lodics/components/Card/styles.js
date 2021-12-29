@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { palette } from '../../styles/color';
+import { IoEarthSharp } from 'react-icons/io5';
+import { FaSatellite, FaHandsHelping } from 'react-icons/fa';
 
+export const BusinessIcon = styled(IoEarthSharp)``;
+export const PSIcon = styled(FaSatellite)``;
+export const RecruitmentIcon = styled(FaHandsHelping)``;
 export const Container = styled.div`
   padding: 5rem;
   cursor: pointer;
@@ -32,15 +37,11 @@ export const Container = styled.div`
   }
 
   i {
-    width: 50px;
-    height: 50px;
-    background: center / contain no-repeat
-      ${props =>
-        props.$type === 'business'
-          ? `url('img/business_icon.png')`
-          : props.$type === 'productsServices'
-          ? `url('img/ps_icon.png')`
-          : `url('img/recruitment_icon.png')`};
+    svg {
+      width: 50px;
+      height: 50px;
+      color: ${palette.themeWhite};
+    }
   }
 
   span {
@@ -61,10 +62,8 @@ export const Container = styled.div`
     font-size: 1.4rem;
     background: transparent;
     border: 1px solid ${palette.themeWhite};
-    padding: 1rem;
-    width: auto;
+    padding: 0.5rem 8rem;
     margin-top: 3rem;
-    width: 15rem;
     cursor: pointer;
     transition: all 0.4s;
   }
