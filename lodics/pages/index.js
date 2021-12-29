@@ -42,7 +42,7 @@ const TextContainer = styled.div`
 export default function Home() {
   return (
     <Container>
-      <AppLayout>
+      <AppLayout theme='white'>
         <TextContainer>
           <span>Leaders of GEOINT</span>
           <span>로딕스는 특수분야의 사업수행 경험을 바탕으로</span>

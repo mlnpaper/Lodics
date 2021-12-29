@@ -47,7 +47,7 @@ export const InnerContainer = styled.div`
         span {
           font-size: 1.7rem;
           font-weight: 600;
-          color: ${palette.themeWhite};
+          color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
           transition: color 0.3s;
 
           &:hover {

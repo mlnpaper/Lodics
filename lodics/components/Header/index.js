@@ -2,13 +2,13 @@ import React from 'react';
 import { Container, InnerContainer } from './styles';
 import Link from 'next/link';
 
-export default function Header() {
+export default function Header({ theme }) {
   return (
     <Container>
-      <InnerContainer>
+      <InnerContainer $theme={theme}>
         <Link href='/'>
           <a>
-            <img src='img/logo_w.png' alt='로딕스 로고' />
+            <img src={theme === 'white' ? 'img/logo_w.png' : 'img/logo_b.png'} alt='로딕스 로고' />
           </a>
         </Link>
         <nav>
