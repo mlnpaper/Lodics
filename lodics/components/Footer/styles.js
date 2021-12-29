@@ -4,7 +4,7 @@ import { palette } from '../../styles/color';
 export const Container = styled.div`
   width: 100vw;
   font-family: 'Nanum Gothic';
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
   color: ${palette.themeGray};
 
