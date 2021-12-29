@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { palette } from '../../styles/color';
 
 export const Container = styled.div`
   margin: 3rem 0 5rem;
@@ -7,6 +8,7 @@ export const Container = styled.div`
     font-size: 4rem;
     font-weight: 600;
     margin: 0;
+    color: ${palette.themeBlack};
 
     &:after {
       display: block;
