@@ -10,3 +10,4 @@ export { default as Location } from './Company/Location';
 export { default as PageTitle } from './PageTitle';
 export { default as Years } from './Company/History/Years';
 export { default as HistoryList } from './Company/History/HistoryList';
+export { default as PageSemiTitle } from './PageSemiTitle';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageTitle, Years, HistoryList } from '../..';
+import { PageTitle, HistoryList, PageSemiTitle } from '../..';
 import {
   historyList2007,
   historyList2008,
@@ -17,15 +17,16 @@ import {
   historyList2020,
   historyList2021,
 } from '../../../data/history';
+import { palette } from '../../../styles/color';
 
 export default function History() {
   return (
     <React.Fragment>
       <PageTitle title='연혁' />
-      <Years year='2020' />
+      <PageSemiTitle title="2020's" color={palette.themePrimary} />
       <HistoryList historyList={historyList2021} />
       <HistoryList historyList={historyList2020} />
-      <Years year='2010' />
+      <PageSemiTitle title="2010's" color={palette.themePrimary} />
       <HistoryList historyList={historyList2019} />
       <HistoryList historyList={historyList2018} />
       <HistoryList historyList={historyList2017} />
@@ -36,7 +37,7 @@ export default function History() {
       <HistoryList historyList={historyList2012} />
       <HistoryList historyList={historyList2011} />
       <HistoryList historyList={historyList2010} />
-      <Years year='2000' />
+      <PageSemiTitle title="2000's" color={palette.themePrimary} />
       <HistoryList historyList={historyList2009} />
       <HistoryList historyList={historyList2008} />
       <HistoryList historyList={historyList2007} />
