@@ -95,7 +95,7 @@ body {
   margin: 0 auto;
   height: 100vh;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.1rem;
@@ -142,8 +142,4 @@ input {
   vertical-align: top;
   appearance: none;
   border-radius: 0;
-}
-
-* {
-  box-sizing: border-box;
 }
