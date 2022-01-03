@@ -35,8 +35,14 @@ export const GeointProcessContainer = styled(InnerContainer)`
 
 export const ImgContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
-  border: 1px solid ${palette.themeDashedBorder};
+  padding: 0 5rem;
+
+  img {
+    border: 1px solid ${palette.themeDashedBorder};
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+  }
 `;
 
 export const EGovernmentImgContainer = styled.div`
@@ -97,6 +103,7 @@ export const ImgCardContainer = styled.div`
   flex-flow: row wrap;
   margin-top: 2rem;
   position: relative;
+  padding: 0 5rem;
 
   &:after {
     content: '';

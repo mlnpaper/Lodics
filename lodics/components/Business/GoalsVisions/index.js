@@ -62,7 +62,9 @@ export default function GoalsVisions() {
         <GeointProcessContainer>
           <PageSemiTitle title='GEOINT 프로세스' />
           <ThirdTitle>GEOINT 자료처리 과정</ThirdTitle>
-          <img src='/' alt='GEOINT 자료처리 과정' />
+          <ImgContainer>
+            <img src='/' alt='GEOINT 자료처리 과정' />
+          </ImgContainer>
         </GeointProcessContainer>
       </Container>
       <Container>
