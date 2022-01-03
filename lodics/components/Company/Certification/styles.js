@@ -5,7 +5,7 @@ import { palette } from '../../../styles/color';
 export const Container = styled.div`
   display: flex;
   flex-flow: row wrap;
-  border-bottom: 1px dashed rgba(170, 170, 170, 0.5);
+  border-bottom: 1px dashed ${palette.themeDashedBorder};
   padding-bottom: 3rem;
   margin-bottom: 10rem;
 
@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 // Card.js
 export const CardContainer = styled.div`
-  border: 1px solid rgba(170, 170, 170, 0.5);
+  border: 1px solid ${palette.themeDashedBorder};
   display: flex;
   flex-flow: column;
   width: calc(100% / 4 - 2.5rem + 0.625rem);
@@ -36,7 +36,7 @@ export const CardContainer = styled.div`
     font-size: 1.4rem;
     font-family: 'Nanum Gothic';
     background: ${palette.themeWhite};
-    border-top: 1px dashed rgba(170, 170, 170, 0.5);
+    border-top: 1px dashed ${palette.themeDashedBorder};
     word-break: kepp-all;
     white-space: pre-line;
   }

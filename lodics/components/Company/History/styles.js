@@ -3,7 +3,7 @@ import { palette } from '../../../styles/color';
 
 // HistoryList.js
 export const HistoryListContainer = styled.div`
-  border-top: 1px dashed rgba(183, 183, 183, 0.3);
+  border-top: 1px dashed ${palette.themeDashedBorder};
   display: flex;
   flex-flow: row nowrap;
   padding: 2rem 0;
