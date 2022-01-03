@@ -100,6 +100,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.1rem;
+  color: #333333;
 }
 /* HTML5 display-role reset for older browsers */
 article,

@@ -6,7 +6,6 @@ export const Container = styled.div`
   padding-bottom: 10rem;
 
   p {
-    color: ${palette.themeBlack};
     font-size: 1.6rem;
     margin: 0;
   }

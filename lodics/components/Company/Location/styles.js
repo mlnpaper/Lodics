@@ -24,12 +24,10 @@ export const TextContainer = styled.div`
   line-height: 2.5rem;
 
   span {
-    color: ${palette.themeBlack};
     font-size: 1.6rem;
   }
 
   em {
-    color: ${palette.themeBlack};
     font-size: 1.6rem;
     font-weight: 600;
   }
@@ -57,7 +55,6 @@ export const SubwayTextContainer = styled.div`
     margin-right: 5rem;
 
     span {
-      color: ${palette.themeBlack};
       font-size: 1.6rem;
       margin-right: 0.5rem;
       display: flex;
@@ -110,7 +107,6 @@ export const BusTextContainer = styled.div`
     margin-right: 5rem;
 
     span {
-      color: ${palette.themeBlack};
       font-size: 1.6rem;
       line-height: 3rem;
       display: flex;

@@ -12,7 +12,6 @@ export const HistoryListContainer = styled.div`
 export const HistoryListYearContainer = styled.div`
   font-size: 3rem;
   font-weight: 600;
-  color: ${palette.themeBlack};
   padding: 2rem 2rem 2rem 8rem;
 `;
 
@@ -35,7 +34,6 @@ export const ContentContainer = styled.div`
 
   p {
     font-size: 1.7rem;
-    color: ${palette.themeBlack};
     margin: 0;
     padding: 0.5rem 1rem 1rem;
   }

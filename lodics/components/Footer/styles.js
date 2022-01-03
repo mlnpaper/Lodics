@@ -21,6 +21,8 @@ export const Container = styled.div`
 
     span {
       font-size: 1.2rem;
+      color: ${palette.themeWhite};
+      opacity: 0.7;
     }
 
     &:nth-child(-n + 2) {

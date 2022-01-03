@@ -28,6 +28,7 @@ const TextContainer = styled.div`
     font-weight: 600;
     margin-bottom: 4rem;
     text-align: center;
+    color: ${palette.themeWhite};
   }
 
   span + span {

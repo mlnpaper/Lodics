@@ -38,6 +38,7 @@ export const MenuInnerContainer = styled.div`
     cursor: pointer;
     border-right: 1px solid ${palette.themeWhite};
     border-left: 1px solid ${palette.themeWhite};
+    color: ${palette.themeWhite};
 
     svg {
       width: 100%;
@@ -67,6 +68,7 @@ export const MenuInnerContainer = styled.div`
       font-size: 1.4rem;
       font-family: 'Nanum Gothic';
       padding: 0.8rem 2rem 0;
+      color: ${palette.themeWhite};
     }
 
     .ant-select-arrow {
