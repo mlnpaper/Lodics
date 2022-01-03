@@ -15,19 +15,23 @@ export const Container = styled.div`
     display: flex;
     flex-flow: row;
 
+    li {
+      margin-right: 1rem;
+    }
+
     span {
       font-size: 1.2rem;
     }
 
-    &:first-child {
+    &:nth-child(-n + 2) {
       li {
         &:nth-child(-n + 2) {
           &:after {
-            position: relative;
-            top: 0.2rem;
-            display: block;
             content: '';
-            margin: 0 0.7rem;
+            position: relative;
+            top: 0.5rem;
+            display: block;
+            margin-left: 1rem;
             width: 1px;
             height: 9px;
             background-color: ${palette.themeGray};
@@ -39,6 +43,7 @@ export const Container = styled.div`
   }
 
   a {
+    color: ${palette.themeGray};
     &:hover {
       color: ${palette.themeHover};
     }
