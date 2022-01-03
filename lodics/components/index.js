@@ -8,6 +8,6 @@ export { default as Certification } from './Company/Certification';
 export { default as History } from './Company/History';
 export { default as Location } from './Company/Location';
 export { default as PageTitle } from './PageTitle';
-export { default as Years } from './Company/History/Years';
 export { default as HistoryList } from './Company/History/HistoryList';
 export { default as PageSemiTitle } from './PageSemiTitle';
+export { default as CertificationCard } from './Company/Certification/Card';

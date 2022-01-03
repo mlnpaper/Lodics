@@ -20,16 +20,20 @@ const subSelectList = [
 ];
 
 export default function company() {
-  const { subSelectedComponent } = useContext(GlobalStateContext);
+  const { subSelectedComponent, setSubSelectedComponent } = useContext(GlobalStateContext);
   const [selectedComponent, setSelectedComponent] = useState(<CeoGreeting />);
 
   useEffect(() => {
-    console.log(subSelectedComponent);
     if (subSelectedComponent === 'ceoGreeting') setSelectedComponent(<CeoGreeting />);
     if (subSelectedComponent === 'history') setSelectedComponent(<History />);
     if (subSelectedComponent === 'certification') setSelectedComponent(<Certification />);
     if (subSelectedComponent === 'location') setSelectedComponent(<Location />);
   }, [subSelectedComponent]);
+
+  // 페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
+  useEffect(() => {
+    return setSubSelectedComponent('ceoGreeting');
+  }, []);
 
   return (
     <AppLayout theme='black'>

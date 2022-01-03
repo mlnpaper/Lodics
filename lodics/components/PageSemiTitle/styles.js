@@ -4,10 +4,11 @@ import { palette } from '../../styles/color';
 export const Container = styled.div`
   color: ${props => props.$color};
   margin-top: 5rem;
+  padding-top: 1rem;
 
   span {
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: ${props => props.$fontWeight};
     position: relative;
 
     &:after {
@@ -17,7 +18,7 @@ export const Container = styled.div`
       height: 8px;
       background-color: ${palette.themePrimary};
       position: absolute;
-      top: -0.7rem;
+      top: -1.7rem;
     }
 
     &:before {
@@ -27,7 +28,7 @@ export const Container = styled.div`
       height: 8px;
       background-color: ${palette.themeGray};
       position: absolute;
-      top: -0.7rem;
+      top: -1.7rem;
     }
   }
 `;
