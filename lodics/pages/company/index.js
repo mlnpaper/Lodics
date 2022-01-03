@@ -11,7 +11,7 @@ export const PageContainer = styled.section`
 
 export default function company() {
   return (
-    <AppLayout>
+    <AppLayout theme="black">
       <PageContainer>company</PageContainer>
     </AppLayout>
   )

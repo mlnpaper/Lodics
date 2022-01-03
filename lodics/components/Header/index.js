@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { WapContent, Content, WrapNav, Ul, Li } from './styles'
 
-export default function Header({}) {
+export default function Header({ theme }) {
   return (
     <>
       <WapContent>
@@ -10,12 +10,12 @@ export default function Header({}) {
           <Link href={'/'}>
             <a>
               <img
-                src="img/LoDiCS logo_W.png"
+                src={theme === 'white' ? 'img/logo_w.png' : 'img/logo_b.png'}
                 style={{ width: '200px', height: '39px', cursor: 'pointer' }}
               />
             </a>
           </Link>
-          <WrapNav>
+          <WrapNav $theme={theme}>
             <nav>
               <ul>
                 <Link href={'/company'}>

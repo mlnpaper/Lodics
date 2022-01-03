@@ -3,7 +3,7 @@ import { palette } from '../../styles/color'
 
 export const WapContent = styled.div`
   width: 100%;
-  background-color: none;
+  background: transparent;
   border-bottom: 1px solid ${palette.themeGray};
   padding: 15px 0px 15px 0px;
 `
@@ -54,11 +54,8 @@ export const WrapNav = styled.div`
         div {
           font-size: 1.1rem;
           font-weight: 600;
-          color : white;
-          /* color: ${props =>
-            props.$theme === 'white'
-              ? palette.themeWhite
-              : palette.themeBlack}; */
+          color: ${props =>
+            props.$theme === 'white' ? palette.themeWhite : palette.themeBlack};
           transition: color 0.3s;
 
           &:hover {
