@@ -7,18 +7,14 @@ import { FaHandsHelping } from 'react-icons/fa'
 export default function Home() {
   return (
     <>
-      <AppLayout>
-        <Container>
+      <Container>
+        <AppLayout theme="white">
           <Div>
-            <MainText
-              style={{ color: 'white', fontSize: 32, fontWeight: '700' }}
-            >
-              Leaders of GEOINT
-            </MainText>
+            <MainText>Leaders of GEOINT</MainText>
+            <SubText>로딕스는 특수분야의 사업수행 경험을 바탕으로</SubText>
             <SubText>
-              {
-                '로딕스는 특수분야의 사업수행 경험을 바탕으로\n 센서기반 공간정보 응용 솔루션 개발, GIS 솔루션 시장, GIS DB 구축 사업을 추진합니다.'
-              }
+              센서기반 공간정보 응용 솔루션 개발, GIS 솔루션 시장, GIS DB 구축
+              사업을 추진합니다.
             </SubText>
           </Div>
           <WrapBox>
@@ -81,32 +77,28 @@ export default function Home() {
               </BoxButton>
             </Box>
           </WrapBox>
-        </Container>
-      </AppLayout>
+        </AppLayout>
+      </Container>
     </>
   )
 }
 
 const Container = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  /* zindex: 0; */
-  top: 90px;
-  left: 0;
-  width: 100%;
-  min-height: 80vh;
+  height: 100vh;
+  background: center / cover no-repeat url('img/basic_bg.jpg');
+  overflow: hidden;
 `
 const Div = styled.div`
-  position: absolute;
+  width: 1200px;
+  margin: 0 auto;
   text-align: center;
 `
 
 const MainText = styled.div`
-  margin: 150px 0px 20px 0px;
   color: white;
   font-size: 32px;
   font-weight: 700;
+  margin-bottom: 50px;
 `
 
 const SubText = styled.div`
@@ -117,22 +109,18 @@ const SubText = styled.div`
 `
 
 const WrapBox = styled.div`
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #333;
-  background-color: rgba(0, 0, 0, 0.5);
   width: 1200px;
   height: 300px;
-  top: 410px;
+  margin: 0 auto;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.5);
 `
 
 const Box = styled.div`
   flex: 1;
-  height: 100%;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
@@ -171,8 +159,11 @@ const Button = styled.button`
   background-color: rgba(0, 0, 0, 0.1);
   color: white;
   font-size: 14px;
-  /* padding: 10px 10px 10px 10px; */
   margin: 20px 0px 0px 0px;
   border: 1px solid white;
   cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `

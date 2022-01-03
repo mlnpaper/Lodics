@@ -1,6 +1,18 @@
 import React from 'react'
 import { AppLayout } from '../../components'
+import styled from 'styled-components'
+import { palette } from '../../styles/color'
+
+export const PageContainer = styled.section`
+  width: 1200px;
+  margin: 8rem auto;
+  color: ${palette.themeBlack};
+`
 
 export default function company() {
-  return <AppLayout>company</AppLayout>
+  return (
+    <AppLayout>
+      <PageContainer>company</PageContainer>
+    </AppLayout>
+  )
 }

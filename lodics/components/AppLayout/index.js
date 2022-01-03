@@ -1,12 +1,14 @@
 import React from 'react'
-import { Header } from '..'
-import { Div, Body } from './styles'
+import { Header, Footer } from '..'
+import { Div } from './styles'
 
-const AppLayout = ({ children }) => {
+const AppLayout = ({ children, theme }) => {
+  console.log(theme)
   return (
-    <Div>
-      <Header />
-      <Body>{children}</Body>
+    <Div $theme={theme}>
+      <Header theme={theme} />
+      {children}
+      <Footer />
     </Div>
   )
 }
