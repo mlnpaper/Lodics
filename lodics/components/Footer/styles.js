@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { palette } from '../../styles/color'
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   font-family: 'Nanum Gothic';
   background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
