@@ -1,11 +1,14 @@
 import React from 'react'
-import { AppLayout } from '../../components'
+import { AppLayout, SubMenu, Recruitment } from '../../components'
 import { PageContainer } from '../company'
 
 export default function recruitment() {
   return (
     <AppLayout theme="black">
-      <PageContainer>recruitment</PageContainer>
+      <SubMenu title="Recruit" />
+      <PageContainer>
+        <Recruitment />
+      </PageContainer>
     </AppLayout>
   )
 }
