@@ -218,7 +218,7 @@ export const ImgCardInnerContainer = styled.div`
   }
 
   span {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     text-align: center;
     padding: 0.5rem 0;
   }

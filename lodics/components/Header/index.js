@@ -51,7 +51,15 @@ export default function Header({ theme }) {
         </Link>
         <nav>
           {showToggleNav ? (
-            <MenuIcon onClick={onClick} $theme={theme} />
+            <React.Fragment>
+              <MenuIcon onClick={onClick} $theme={theme} />
+              <ToggleNavContainer $openToggleNav={openToggleNav}>
+                {createNavElement('/company', '회사소개')}
+                {createNavElement('/business', '비즈니스')}
+                {createNavElement('/productsServices', '제품 & 서비스')}
+                {createNavElement('/recruitment', '채용정보')}
+              </ToggleNavContainer>
+            </React.Fragment>
           ) : (
             <ul>
               {createNavElement('/company', '회사소개', 'Company')}
@@ -59,14 +67,6 @@ export default function Header({ theme }) {
               {createNavElement('/productsServices', '제품 & 서비스', 'Products & Services')}
               {createNavElement('/recruitment', '채용정보', 'Recruitment')}
             </ul>
-          )}
-          {openToggleNav && (
-            <ToggleNavContainer>
-              {createNavElement('/company', '회사소개')}
-              {createNavElement('/business', '비즈니스')}
-              {createNavElement('/productsServices', '제품 & 서비스')}
-              {createNavElement('/recruitment', '채용정보')}
-            </ToggleNavContainer>
           )}
         </nav>
       </InnerContainer>

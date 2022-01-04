@@ -98,11 +98,15 @@ body {
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
-  /* overflow-y: auto; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.1rem;
   color: #333333;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 /* HTML5 display-role reset for older browsers */
 article,
