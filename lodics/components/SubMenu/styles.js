@@ -15,10 +15,8 @@ export const Container = styled.div`
 `
 
 export const SubContainer = styled.div`
-  display: flex;
   background-color: ${palette.themePrimary};
   height: 50px;
-  /* padding: 0px 0px 0px 150px; */
 
   .ant-btn {
     height: 50px;

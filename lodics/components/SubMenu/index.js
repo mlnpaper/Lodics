@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Container, SubContainer } from './styles'
 import { Select, Button } from 'antd'
 import 'antd/dist/antd.css' // or 'antd/dist/antd.less'
 import { HomeOutlined } from '@ant-design/icons'
-import Link from 'next/link'
+import Router from 'next/router'
 
 const { Option } = Select
 
@@ -15,6 +15,10 @@ const mainSelect = [
 ]
 
 export default function SubMenu({ title }) {
+  const onClickGoHome = useCallback(() => {
+    Router.push('/')
+  })
+
   const creteSelect = (defaultValue, selectList) => {
     return (
       <Select defaultValue={defaultValue}>
@@ -33,11 +37,13 @@ export default function SubMenu({ title }) {
         <h1>{title}</h1>
       </Container>
       <SubContainer>
-        <Link href="/">
-          <a>
-            <Button type="primary" icon={<HomeOutlined />} size={'large'} />
-          </a>
-        </Link>
+        <Button
+          onClick={onClickGoHome}
+          type="primary"
+          icon={<HomeOutlined />}
+          size={'large'}
+        />
+
         {creteSelect(title, mainSelect)}
       </SubContainer>
     </>
