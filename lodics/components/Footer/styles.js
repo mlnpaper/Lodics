@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { palette } from '../../styles/color';
 
-export const Container = styled.div`
+export const Container = styled.footer`
   /* -------------------------------------------------------------------------- */
   /*                               모바일  & default                             */
   /* -------------------------------------------------------------------------- */

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { palette } from '../../styles/color';
 import { MdMenu } from 'react-icons/md';
 
-export const Container = styled.div`
+export const Container = styled.header`
   width: 100%;
   background: transparent;
   border-bottom: 1px solid ${palette.themeGray};
@@ -132,7 +132,7 @@ export const ToggleNavContainer = styled.ul`
   flex-flow: column nowrap;
   align-items: center;
   z-index: 5;
-  border: 1px solid #4c5a72;
+  border: 1px solid ${palette.themeDarkSelector};
   transition: all 0.3s;
 
   li {
@@ -140,7 +140,7 @@ export const ToggleNavContainer = styled.ul`
     text-align: center;
     padding: 1.43rem;
     background: ${palette.themeSelector};
-    border-bottom: 1px solid #4c5a72;
+    border-bottom: 1px solid ${palette.themeDarkSelector};
 
     &:last-child {
       border-bottom: none;
