@@ -1,5 +1,14 @@
 import React from 'react'
-import { AppLayout, SubMenu, EGovernment } from '../../components'
+import {
+  AppLayout,
+  SubMenu,
+  EGovernment,
+  KeyTechnology01,
+  KeyTechnology02,
+  KeyTechnology03,
+  KeyTechnology04,
+  KeyTechnology05,
+} from '../../components'
 import { PageContainer } from '../company'
 
 export default function productsServices() {
@@ -7,7 +16,8 @@ export default function productsServices() {
     <AppLayout theme="black">
       <SubMenu title={'Products & Services'} />
       <PageContainer>
-        <EGovernment />
+        {/* <EGovernment /> */}
+        <KeyTechnology01 />
       </PageContainer>
     </AppLayout>
   )
