@@ -12,7 +12,7 @@ export const Container = styled.div`
   color: ${palette.themeGray};
 
   ul {
-    width: calc(100vw - 2rem);
+    width: calc(100% - 2rem);
     margin: 0 auto;
     display: flex;
     flex-flow: column;

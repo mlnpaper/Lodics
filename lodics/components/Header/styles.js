@@ -13,7 +13,7 @@ export const InnerContainer = styled.div`
   /* -------------------------------------------------------------------------- */
   /*                               모바일  & default                             */
   /* -------------------------------------------------------------------------- */
-  width: calc(100vw - 2rem);
+  width: calc(100% - 2rem);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
