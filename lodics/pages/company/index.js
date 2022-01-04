@@ -5,7 +5,7 @@ import { palette } from '../../styles/color'
 
 export const PageContainer = styled.section`
   width: 1200px;
-  margin: 8rem auto;
+  margin: 5rem auto;
   color: ${palette.themeBlack};
 `
 
