@@ -18,7 +18,7 @@ export default function Header({ theme }) {
   const [openToggleNav, setOpenToggleNav] = useState(false);
 
   const onResize = () => {
-    if (window.screen.width < 768) {
+    if (window.innerWidth < 768) {
       setShowToggleNav(true);
     } else {
       setShowToggleNav(false);
@@ -31,7 +31,7 @@ export default function Header({ theme }) {
   };
 
   useEffect(() => {
-    if (window.screen.width < 768) {
+    if (window.innerWidth < 768) {
       setShowToggleNav(true);
       setOpenToggleNav(false);
     } else {
@@ -51,7 +51,7 @@ export default function Header({ theme }) {
         </Link>
         <nav>
           {showToggleNav ? (
-            <MenuIcon onClick={onClick} />
+            <MenuIcon onClick={onClick} $theme={theme} />
           ) : (
             <ul>
               {createNavElement('/company', '회사소개', 'Company')}

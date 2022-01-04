@@ -4,8 +4,12 @@ import { MdHome } from 'react-icons/md';
 
 export const HomeIcon = styled(MdHome)``;
 export const Container = styled.div`
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
   height: 30rem;
   background: center / cover no-repeat url('img/basic_bg.jpg');
+  width: 100%;
 
   h2 {
     color: ${palette.themeWhite};
@@ -18,12 +22,20 @@ export const Container = styled.div`
 `;
 
 export const MenuContainer = styled.div`
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
   height: 5rem;
+  width: 100%;
   background: ${palette.themePrimary};
 `;
 
 export const MenuInnerContainer = styled.div`
-  width: 1200px;
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
+
+  width: calc(100% - 5rem);
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -75,5 +87,17 @@ export const MenuInnerContainer = styled.div`
       color: ${palette.themeWhite};
       padding-right: 2rem;
     }
+  }
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+  }
+
+  @media all and (min-width: 1200px) {
+    /* -------------------------------------------------------------------------- */
+    /*                              데스크탑 일반                                  */
+    /* -------------------------------------------------------------------------- */
+    width: 1200px;
   }
 `;

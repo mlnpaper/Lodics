@@ -118,7 +118,8 @@ export const InnerContainer = styled.div`
 export const MenuIcon = styled(MdMenu)`
   width: 2rem;
   height: 2rem;
-  color: ${palette.themeWhite};
+  color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
+  cursor: pointer;
 `;
 
 export const ToggleNavContainer = styled.ul`

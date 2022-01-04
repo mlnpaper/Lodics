@@ -87,6 +87,7 @@ li {
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 10px;
   letter-spacing: -0.8px;
+  word-break: keep-all;
 }
 
 body {
@@ -97,6 +98,7 @@ body {
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
+  /* overflow-y: auto; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.1rem;

@@ -1,14 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppLayout, CeoGreeting, Certification, History, Location, SubMenu } from '../../components';
-import styled from 'styled-components';
 import GlobalStateContext from '../../context/globalStateContext';
-import { palette } from '../../styles/color';
-
-export const PageContainer = styled.section`
-  width: 1200px;
-  margin: 8rem auto;
-  color: ${palette.themeBlack};
-`;
+import { PageContainer } from './styles';
 
 const subSelectList = [
   [

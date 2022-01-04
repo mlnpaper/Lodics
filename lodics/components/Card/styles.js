@@ -20,6 +20,7 @@ export const Container = styled.div`
   background: rgba(0, 0, 0, 0.6);
   opacity: 0.9;
   transition: background 0.4s;
+  cursor: pointer;
 
   &:hover {
     background: ${props =>
@@ -64,6 +65,7 @@ export const Container = styled.div`
     padding: 0.5rem 6rem;
     margin-top: 2rem;
     transition: all 0.4s;
+    cursor: pointer;
   }
 
   @media all and (min-width: 768px) {
@@ -72,7 +74,6 @@ export const Container = styled.div`
     /* -------------------------------------------------------------------------- */
     border: none;
     padding: 4rem;
-    cursor: pointer;
     width: calc(100% / 3);
 
     &:nth-child(-n + 2) {
@@ -98,7 +99,6 @@ export const Container = styled.div`
       border: 1px solid ${palette.themeWhite};
       padding: 0.5rem 6rem;
       margin-top: 3rem;
-      cursor: pointer;
     }
   }
 

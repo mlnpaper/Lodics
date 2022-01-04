@@ -9,7 +9,6 @@ export const Container = styled.div`
   font-family: 'Nanum Gothic';
   background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
-  color: ${palette.themeGray};
 
   ul {
     width: calc(100% - 2rem);
@@ -26,12 +25,11 @@ export const Container = styled.div`
       color: ${palette.themeWhite};
       opacity: 0.7;
     }
-  }
 
-  a {
-    color: ${palette.themeGray};
-    &:hover {
-      color: ${palette.themeHover};
+    a {
+      &:hover span {
+        color: ${palette.themeHover};
+      }
     }
   }
 

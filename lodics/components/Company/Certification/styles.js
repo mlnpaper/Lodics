@@ -3,6 +3,9 @@ import { palette } from '../../../styles/color';
 
 // index.js
 export const Container = styled.div`
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
   display: flex;
   flex-flow: row wrap;
   border-bottom: 1px dashed ${palette.themeDashedBorder};
@@ -18,14 +21,17 @@ export const Container = styled.div`
 
 // Card.js
 export const CardContainer = styled.div`
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
   border: 1px solid ${palette.themeDashedBorder};
   display: flex;
   flex-flow: column;
-  width: calc(100% / 4 - 2.5rem + 0.625rem);
+  width: calc(100% / 2 - 2.5rem + 0.625rem);
   margin: 2.5rem 2.5rem 0 0;
   background: #f4f8ff;
 
-  &:nth-child(4n) {
+  &:nth-child(2n) {
     margin-right: 0;
   }
 
@@ -33,17 +39,38 @@ export const CardContainer = styled.div`
     text-align: center;
     margin: 0;
     padding: 0.8rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-family: 'Nanum Gothic';
     background: ${palette.themeWhite};
     border-top: 1px dashed ${palette.themeDashedBorder};
-    word-break: kepp-all;
-    white-space: pre-line;
+  }
+
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    width: calc(100% / 4 - 2.5rem + 0.625rem);
+
+    &:nth-child(2n) {
+      margin-right: 2.5rem;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    p {
+      font-size: 1.4rem;
+      white-space: pre-line;
+    }
   }
 `;
 
 export const ImgContainer = styled.div`
-  height: 40rem;
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
+  height: 20rem;
   padding: 1rem;
 
   img {
@@ -51,5 +78,12 @@ export const ImgContainer = styled.div`
     height: 100%;
     width: 100%;
     background: ${palette.themeWhite};
+  }
+
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    height: 40rem;
   }
 `;
