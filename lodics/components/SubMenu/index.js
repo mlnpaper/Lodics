@@ -74,6 +74,14 @@ export default function SubMenu({ title, subSelectList = [] }) {
     }
   }, [currentSelect]);
 
+  // option이 열려 있을 때 다른 페이지로 이동 시 닫기
+  useEffect(() => {
+    return () => {
+      setSelectedSubMenu('');
+      setIsOpen(false);
+    };
+  }, []);
+
   return (
     <Container>
       <h2>{title}</h2>
@@ -97,6 +105,7 @@ export default function SubMenu({ title, subSelectList = [] }) {
                 onClickSelect={onClickSelect}
                 selectNumber={i + 1}
                 onClickOption={onClickOption}
+                key={i}
               />
             ))}
         </MenuInnerContainer>
