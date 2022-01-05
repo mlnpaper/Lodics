@@ -75,7 +75,7 @@ export default function Location() {
       <PageTitle title='회사위치' />
       <MapContainer>
         {/* [카카오맵 - 지도퍼가기] 1. 지도 노드  */}
-        <div id='daumRoughmapContainer1641175660053' class='root_daum_roughmap root_daum_roughmap_landing'></div>
+        <div id='daumRoughmapContainer1641175660053' className='root_daum_roughmap root_daum_roughmap_landing'></div>
       </MapContainer>
       <PageSemiTitle title='요약' />
       <TextContainer>
