@@ -10,3 +10,4 @@ export { default as KeyTechnology02 } from './ProductsServices/KeyTechnology/Key
 export { default as KeyTechnology03 } from './ProductsServices/KeyTechnology/KeyTechnology03'
 export { default as KeyTechnology04 } from './ProductsServices/KeyTechnology/KeyTechnology04'
 export { default as KeyTechnology05 } from './ProductsServices/KeyTechnology/KeyTechnology05'
+export { default as KeyTechnology06 } from './ProductsServices/KeyTechnology/KeyTechnology06'
