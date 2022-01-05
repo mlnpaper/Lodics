@@ -7,10 +7,11 @@ export const WrapContents = styled.div`
   justify-content: space-between;
 `
 
-export const Div = styled.div`
+export const SingleContents = styled.div`
   border: 1px solid #dddddd;
   border-radius: 10px;
   text-align: center;
+  padding: 10px 5px 0px 5px;
   span {
     font-size: 20px;
     font-weight: 500;
@@ -25,21 +26,21 @@ export const Div = styled.div`
       border: 1px solid #dddddd;
       border-radius: 2px;
       padding: 40px 0px;
-      width: 200px;
+      width: 250px;
       margin: 10px 10px 10px 10px;
       color: #464646;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 500;
       white-space: pre-wrap;
     }
   }
 `
 
-export const Div_ = styled.div`
+export const MultipleContents = styled.div`
   border: 1px solid #dddddd;
   border-radius: 10px;
   text-align: center;
-  padding: 0px 5px 0px 5px;
+  padding: 10px 5px 0px 5px;
   margin: 0px 10px;
   span {
     font-size: 20px;
@@ -50,17 +51,20 @@ export const Div_ = styled.div`
   div {
     display: flex;
     flex-direction: row;
+    font-size: 16px;
     ul {
       list-style: none;
       padding: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       li {
         background-color: #f6f6f6;
         border: 1px solid #dddddd;
         border-radius: 2px;
-        padding: 10px 0px 10px 0px;
+        padding: 10px 0px;
         margin: 10px 5px 10px 5px;
         color: #464646;
-        font-size: 18px;
         font-weight: 500;
         white-space: pre-wrap;
         table {
@@ -72,7 +76,8 @@ export const Div_ = styled.div`
           background-color: ${palette.themeWhite};
           border: 1px solid #dddddd;
           padding: 5px 0px;
-          width: 300px;
+          width: 120px;
+          /* width: 400px; */
         }
       }
     }

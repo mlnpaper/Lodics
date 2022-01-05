@@ -1,11 +1,11 @@
 import React from 'react'
-import { WrapContents, Contents, Contents_, Div, Div_ } from './styles'
+import { WrapContents, SingleContents, MultipleContents } from './styles'
 
 export default function KeyTechnology01() {
   return (
     <>
       <WrapContents>
-        <Div>
+        <SingleContents>
           <span>{'GEOINT\n자료 통합처리 기술'}</span>
           <ul>
             <li>{'다중센서\n융합처리'}</li>
@@ -13,9 +13,9 @@ export default function KeyTechnology01() {
             <li>{'분산형\nGEOINT DB\n통합처리'}</li>
             <li>{'정보융합\n분산 정보처리'}</li>
           </ul>
-        </Div>
-        <Div_>
-          <span>{'GEOINT\n자료 통합처리 기술'}</span>
+        </SingleContents>
+        <MultipleContents>
+          <span>{'다중영상기반 정밀 위치결정자료 제작 기술'}</span>
           <div>
             <ul>
               <li>
@@ -73,7 +73,7 @@ export default function KeyTechnology01() {
                 기하/방사 보정
                 <table>
                   <tr>
-                    <td>단영상 모델링</td>
+                    <td style={{ width: 250 }}>단영상 모델링</td>
                   </tr>
                   <tr>
                     <td>Block Modeling</td>
@@ -103,8 +103,8 @@ export default function KeyTechnology01() {
               <li>특징점 추출 및 매칭</li>
             </ul>
           </div>
-        </Div_>
-        <Div>
+        </MultipleContents>
+        <SingleContents>
           <span>{'위치기반\n통합 모니터링 기술'}</span>
           <ul>
             <li>가시영역 처리</li>
@@ -113,7 +113,7 @@ export default function KeyTechnology01() {
             <li>3D 지형처리</li>
             <li>PostgreSQL/PostGIS</li>
           </ul>
-        </Div>
+        </SingleContents>
       </WrapContents>
       {/* <WrapContents>
         <Contents>
