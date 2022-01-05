@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Container, InnerContainer, MenuIcon, ToggleNavContainer } from './styles';
+import { CloseMenuIcon, Container, InnerContainer, MenuIcon, ToggleNavContainer } from './styles';
 import Link from 'next/link';
 
-const createNavElement = (url, ko, en = '', notResponsive = true) => (
+const createNavElement = (url, en, ko = '') => (
   <li>
     <Link href={url}>
       <a>
-        {notResponsive && <span>{en}</span>}
+        <span>{en}</span>
         <span>{ko}</span>
       </a>
     </Link>
@@ -29,6 +29,10 @@ export default function Header({ theme }) {
   const onClick = useCallback(() => {
     setOpenToggleNav(!openToggleNav);
   }, [openToggleNav]);
+
+  const onClose = useCallback(() => {
+    setOpenToggleNav(false);
+  }, []);
 
   useEffect(() => {
     if (window.innerWidth < 768) {
@@ -54,18 +58,20 @@ export default function Header({ theme }) {
             <React.Fragment>
               <MenuIcon onClick={onClick} $theme={theme} />
               <ToggleNavContainer $openToggleNav={openToggleNav}>
-                {createNavElement('/company', '회사소개')}
-                {createNavElement('/business', '비즈니스')}
-                {createNavElement('/productsServices', '제품 & 서비스')}
-                {createNavElement('/recruitment', '채용정보')}
+                {createNavElement('/', 'Home')}
+                {createNavElement('/company', 'Company')}
+                {createNavElement('/business', 'Business')}
+                {createNavElement('/productsServices', 'Products & Services')}
+                {createNavElement('/recruitment', 'Recruitment')}
               </ToggleNavContainer>
+              <CloseMenuIcon onClick={onClose} $openToggleNav={openToggleNav} />
             </React.Fragment>
           ) : (
             <ul>
-              {createNavElement('/company', '회사소개', 'Company')}
-              {createNavElement('/business', '비즈니스', 'Business')}
-              {createNavElement('/productsServices', '제품 & 서비스', 'Products & Services')}
-              {createNavElement('/recruitment', '채용정보', 'Recruitment')}
+              {createNavElement('/company', 'Company', '회사소개')}
+              {createNavElement('/business', 'Business', '비즈니스')}
+              {createNavElement('/productsServices', 'Products & Services', '제품 & 서비스')}
+              {createNavElement('/recruitment', 'Recruitment', '채용정보')}
             </ul>
           )}
         </nav>

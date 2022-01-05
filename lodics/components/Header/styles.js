@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { palette } from '../../styles/color';
 import { MdMenu } from 'react-icons/md';
+import { IoIosArrowForward } from 'react-icons/io';
 
 export const Container = styled.header`
   width: 100%;
@@ -122,18 +123,35 @@ export const MenuIcon = styled(MdMenu)`
   cursor: pointer;
 `;
 
+export const CloseMenuIcon = styled(IoIosArrowForward)`
+  width: 2rem;
+  height: 2rem;
+  z-index: 10;
+  position: fixed;
+  top: 1.5rem;
+  right: ${props => (props.$openToggleNav ? '1rem' : '-100%')};
+  color: ${palette.themeWhite};
+  cursor: pointer;
+  transition: all 0.3s;
+`;
+
 export const ToggleNavContainer = styled.ul`
-  position: absolute;
-  right: 0;
-  top: 100%;
-  width: 100%;
+  position: fixed;
+  right: ${props => (props.$openToggleNav ? '0' : '-100%')};
+  top: 0;
+  width: 50%;
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   z-index: 5;
-  border: 1px solid ${palette.themeDarkSelector};
-  display: ${props => (props.$openToggleNav ? 'block' : 'none')};
+  transition: all 0.3s;
+  background: ${palette.themeSelector};
+  height: 100vh;
+  border-radius: 2rem 0 0 2rem;
+  overflow: hidden;
+  box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.3);
+  padding: 5.37rem 0;
 
   li {
     width: 100%;
@@ -142,13 +160,13 @@ export const ToggleNavContainer = styled.ul`
     background: ${palette.themeSelector};
     border-bottom: 1px solid ${palette.themeDarkSelector};
 
-    &:last-child {
-      border-bottom: none;
+    &:first-child {
+      border-top: 1px solid ${palette.themeDarkSelector};
     }
 
     a {
       span {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         color: ${palette.themeWhite};
         transition: color 0.3s;
 

@@ -140,7 +140,7 @@ export const SelectContainer = styled.div`
       li {
         border-bottom: 1px solid ${palette.themeDarkSelector};
         padding: 1.5rem 2rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         transition: 0.2s;
         cursor: ${props => (props.$open ? 'pointer' : 'initial')};
 
@@ -164,7 +164,12 @@ export const SelectContainer = styled.div`
     button {
       span {
         font-size: 1.4rem;
+      }
+    }
 
+    ul {
+      li {
+        font-size: 1.4rem;
       }
     }
   }
