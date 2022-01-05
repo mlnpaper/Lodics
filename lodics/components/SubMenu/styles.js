@@ -160,6 +160,13 @@ export const SelectContainer = styled.div`
     /*                                   테블릿                                    */
     /* -------------------------------------------------------------------------- */
     width: ${props => props.$width}px;
+
+    button {
+      span {
+        font-size: 1.4rem;
+
+      }
+    }
   }
 `;
 
