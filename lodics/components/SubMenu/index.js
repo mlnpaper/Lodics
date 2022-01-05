@@ -1,10 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { Container, MenuContainer, MenuInnerContainer, HomeIcon } from './styles';
 import Router from 'next/router';
-import { Select } from 'antd';
 import GlobalStateContext from '../../context/globalStateContext';
-
-const { Option } = Select;
+import Select from './Select';
 
 const mainSelect = [
   { value: 'company', text: 'Company' },
@@ -16,32 +14,55 @@ const mainSelect = [
 export default function SubMenu({ title, subSelectList = [] }) {
   const [newSubSelectList, setNewSubSelectList] = useState(subSelectList);
   const [currentSelect, setCurrentSelect] = useState('');
-
-  const { setSubSelectedComponent } = useContext(GlobalStateContext);
+  const { setSubSelectedComponent, selectedSubMenu, setSelectedSubMenu } = useContext(GlobalStateContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onClicktoGoHome = useCallback(() => {
     Router.push('/');
   }, []);
 
-  const onChangeSelect = useCallback(value => {
-    setCurrentSelect(value);
-    if (value === 'company' || value === 'business' || value === 'productsServices' || value === 'recruitment') {
-      Router.push(`/${value}`);
-    } else {
-      setSubSelectedComponent(value);
-    }
-  }, []);
+  const onClickSelect = useCallback(
+    e => {
+      let targetId;
+      if (e.target.localName === 'button') {
+        targetId = Number(e.target.id);
+      } else if (e.target.localName === 'span' || e.target.localName === 'i') {
+        targetId = Number(e.target.parentElement.id);
+      } else if (e.target.localName === 'svg') {
+        targetId = Number(e.target.parentElement.parentElement.id);
+      } else if (e.target.localName === 'path') {
+        targetId = Number(e.target.parentElement.parentElement.parentElement.id);
+      }
 
-  const createSelect = (defaultValue, selectList, width = 250) => {
-    return (
-      <Select defaultValue={defaultValue} style={{ width: width }} onChange={onChangeSelect}>
-        {selectList.map(({ value, text }) => (
-          <Option key={value} value={value}>
-            {text}
-          </Option>
-        ))}
-      </Select>
-    );
+      if (selectedSubMenu === targetId) {
+        setIsOpen(false);
+        setSelectedSubMenu('');
+      } else {
+        setIsOpen(true);
+        setSelectedSubMenu(targetId);
+      }
+    },
+    [selectedSubMenu]
+  );
+
+  const onClickOption = (e, setSelectedOption) => {
+    if (!isOpen || +e.target.parentElement.previousSibling.id !== selectedSubMenu) return null;
+    else {
+      const value = e.target.id;
+      const text = e.target.innerText;
+
+      setCurrentSelect(value);
+      if (value === 'company' || value === 'business' || value === 'productsServices' || value === 'recruitment') {
+        Router.push(`/${value}`);
+        setSelectedSubMenu('');
+        setIsOpen(false);
+      } else {
+        setSubSelectedComponent(value);
+        setSelectedOption(text);
+        setSelectedSubMenu('');
+        setIsOpen(false);
+      }
+    }
   };
 
   useEffect(() => {
@@ -61,11 +82,23 @@ export default function SubMenu({ title, subSelectList = [] }) {
           <i onClick={onClicktoGoHome}>
             <HomeIcon />
           </i>
-          {createSelect(title, mainSelect)}
+          <Select
+            defaultValue={title}
+            selectList={mainSelect}
+            onClickSelect={onClickSelect}
+            selectNumber={0}
+            onClickOption={onClickOption}
+          />
           {!!newSubSelectList.length &&
-            newSubSelectList.map(subSelect =>
-              createSelect(subSelect[0]['text'], subSelect, subSelect[0]['value'] === 'keyTechnology01' ? 400 : 200)
-            )}
+            newSubSelectList.map((subSelect, i) => (
+              <Select
+                defaultValue={subSelect[0]['text']}
+                selectList={subSelect}
+                onClickSelect={onClickSelect}
+                selectNumber={i + 1}
+                onClickOption={onClickOption}
+              />
+            ))}
         </MenuInnerContainer>
       </MenuContainer>
     </Container>

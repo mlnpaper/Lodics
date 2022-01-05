@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Container, InnerContainer, MenuIcon, ToggleNavContainer } from './styles';
 import Link from 'next/link';
 
@@ -26,9 +26,9 @@ export default function Header({ theme }) {
     }
   };
 
-  const onClick = () => {
+  const onClick = useCallback(() => {
     setOpenToggleNav(!openToggleNav);
-  };
+  }, [openToggleNav]);
 
   useEffect(() => {
     if (window.innerWidth < 768) {

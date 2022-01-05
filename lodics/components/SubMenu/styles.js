@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { palette } from '../../styles/color';
 import { MdHome } from 'react-icons/md';
+import { IoIosArrowDown } from 'react-icons/io';
 
+// index.js
 export const HomeIcon = styled(MdHome)``;
 export const Container = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -52,7 +54,6 @@ export const MenuInnerContainer = styled.div`
   flex-flow: row nowrap;
   align-items: center;
   color: ${palette.themeWhite};
-  overflow: hidden;
 
   i {
     width: 50px;
@@ -70,41 +71,6 @@ export const MenuInnerContainer = styled.div`
     }
   }
 
-  .ant-select {
-    height: 100%;
-
-    &:last-child .ant-select-selector {
-      border-right: none;
-    }
-
-    .ant-select-selector {
-      height: 100%;
-      background: transparent;
-      color: ${palette.themeWhite};
-      border-top: none;
-      border-bottom: none;
-      border-left: none;
-      border-radius: 0;
-    }
-
-    .ant-select-selection-search {
-      height: 100%;
-    }
-
-    .ant-select-selection-item {
-      height: 100%;
-      font-size: 1.2rem;
-      font-family: 'Nanum Gothic';
-      padding: 0.8rem 3rem 0 1rem;
-      color: ${palette.themeWhite};
-    }
-
-    .ant-select-arrow {
-      color: ${palette.themeWhite};
-      padding-right: 1.5rem;
-    }
-  }
-
   @media all and (min-width: 768px) {
     /* -------------------------------------------------------------------------- */
     /*                                   테블릿                                    */
@@ -114,16 +80,6 @@ export const MenuInnerContainer = styled.div`
     i {
       border-left: 1px solid ${palette.themeWhite};
     }
-
-    .ant-select {
-      &:last-child .ant-select-selector {
-        border-right: 1px solid ${palette.themeWhite};
-      }
-
-      .ant-select-selection-item {
-        font-size: 1.4rem;
-      }
-    }
   }
 
   @media all and (min-width: 1200px) {
@@ -131,5 +87,91 @@ export const MenuInnerContainer = styled.div`
     /*                              데스크탑 일반                                  */
     /* -------------------------------------------------------------------------- */
     width: 1200px;
+  }
+`;
+
+// Select.js
+export const SelectContainer = styled.div`
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
+  position: relative;
+    height: 100%;
+    border-right: 1px solid ${palette.themeWhite};
+    background: transparent;
+    cursor: pointer;
+    width: ${props => props.$width}px;
+    width: 110px;
+
+    button {
+      display: flex;
+      align-items: center;
+      width: inherit;
+      border: none;
+      outline: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: 0 2rem;
+
+      span {
+        display: inline-block;
+        font-size: 1.2rem;
+        width: inherit;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    ul {
+      position: absolute;
+      top: ${props => (props.$open ? '105%' : '90%')};
+      opacity: ${props => (props.$open ? 1 : 0)};
+      left: 0;
+      width: 100%;
+      background: ${palette.themeSelector};
+      transition: 0.2s;
+      z-index: 5;
+
+      li {
+        border-bottom: 1px solid ${palette.themeDarkSelector};
+        padding: 1.5rem 2rem;
+        font-size: 1.4rem;
+        transition: 0.2s;
+        cursor: ${props => (props.$open ? 'pointer' : 'initial')};
+
+        &:hover {
+          background: ${palette.themeDarkSelector};
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    width: ${props => props.$width}px;
+  }
+`;
+
+export const ArrowIcon = styled(IoIosArrowDown)``;
+export const IconContainer = styled.i`
+  border: none !important;
+  width: auto !important;
+  margin-left: 2rem;
+
+  svg {
+    width: 1.5rem !important;
+    transform: ${props => props.$open && 'rotate(180deg)'};
+    transition: 0.2s;
   }
 `;
