@@ -16,7 +16,7 @@ export default function HistoryList({ historyList }) {
         {historyList.map((history, i) => {
           if (i > 0) {
             return (
-              <ContentContainer>
+              <ContentContainer key={i}>
                 <span>{history.month}</span>
                 <p>{history.content}</p>
               </ContentContainer>

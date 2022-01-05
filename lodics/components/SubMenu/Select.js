@@ -41,7 +41,7 @@ export default function Select({ defaultValue, selectList, onClickSelect, select
       </button>
       <ul>
         {selectList.map(({ value, text }) => (
-          <li id={value} onClick={e => onClickOption(e, setSelectedOption)}>
+          <li id={value} onClick={e => onClickOption(e, setSelectedOption)} key={value}>
             {text}
           </li>
         ))}

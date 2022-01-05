@@ -1,9 +1,9 @@
 import React from 'react';
 import { CardContainer, ImgContainer } from './styles';
 
-export default function Card({ key, img, title }) {
+export default function Card({ img, title }) {
   return (
-    <CardContainer key={key}>
+    <CardContainer>
       <ImgContainer>
         <img src={img} alt={title} />
       </ImgContainer>
