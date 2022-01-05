@@ -1,25 +1,12 @@
 import styled from 'styled-components'
 import { palette } from '../../styles/color'
 
-export const Title = styled.div`
-  div {
-    font-size: 40px;
-    font-weight: 600;
-  }
-  hr {
-    width: 6em;
-    float: left;
-    border: 1px solid ${palette.themePrimary};
-  }
-
-  div + hr + div {
-    font-size: 30px;
-    font-weight: 400;
-    white-space: pre-wrap;
-    padding: 50px 0px 0px 0px;
-    b {
-      color: ${palette.themePrimary};
-    }
+export const Div = styled.div`
+  font-size: 30px;
+  font-weight: 400;
+  white-space: pre-wrap;
+  b {
+    color: ${palette.themePrimary};
   }
 `
 

@@ -1,9 +1,11 @@
 import React from 'react'
+import { PageTitle } from '../../..'
 import { WrapContents, SingleContents, MultipleContents } from './styles'
 
 export default function KeyTechnology01() {
   return (
     <>
+      <PageTitle title={'핵심기술'} />
       <WrapContents>
         <SingleContents>
           <span>{'GEOINT\n자료 통합처리 기술'}</span>
