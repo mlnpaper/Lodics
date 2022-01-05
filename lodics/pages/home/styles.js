@@ -26,7 +26,7 @@ export const TextContainer = styled.div`
   display: flex;
   flex-flow: column;
   backdrop-filter: grayscale(50%);
-  margin: 5rem auto 0;
+  margin: 10rem auto;
 
   span {
     font-size: 3rem;
@@ -47,7 +47,6 @@ export const TextContainer = styled.div`
     /*                                   테블릿                                    */
     /* -------------------------------------------------------------------------- */
     width: calc(100% - 2rem);
-    margin: 0 auto;
 
     span {
       font-size: 3.2rem;
@@ -74,14 +73,14 @@ export const CardContainer = styled.div`
   display: flex;
   flex-flow: column;
   width: 100%;
-  margin: 5rem 0;
+  margin: 0 0 10rem;
 
   @media all and (min-width: 768px) {
     /* -------------------------------------------------------------------------- */
     /*                                   테블릿                                    */
     /* -------------------------------------------------------------------------- */
     flex-flow: row nowrap;
-    margin: 0 auto;
+    margin: 0 auto 10rem;
   }
 
   @media all and (min-width: 1200px) {

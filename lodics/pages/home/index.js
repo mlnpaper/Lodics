@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppLayout, Card } from '../../components';
 import { CardContainer, Container, TextContainer } from './styles';
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container>
       <AppLayout theme='white'>

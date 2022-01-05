@@ -19,8 +19,10 @@ export default function business() {
     if (subSelectedComponent === 'keyBusiness') setSelectedComponent(<KeyBusiness />);
   }, [subSelectedComponent]);
 
-  // 페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
   useEffect(() => {
+    window.scrollTo(0, 0);
+
+    // 페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
     return setSubSelectedComponent('goalsVisions');
   }, []);
 

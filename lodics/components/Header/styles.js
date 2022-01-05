@@ -124,7 +124,7 @@ export const MenuIcon = styled(MdMenu)`
 
 export const ToggleNavContainer = styled.ul`
   position: absolute;
-  right: ${props => (props.$openToggleNav ? '0' : '-100%')};
+  right: 0;
   top: 100%;
   width: 100%;
   margin: 0;
@@ -133,7 +133,7 @@ export const ToggleNavContainer = styled.ul`
   align-items: center;
   z-index: 5;
   border: 1px solid ${palette.themeDarkSelector};
-  transition: all 0.3s;
+  display: ${props => (props.$openToggleNav ? 'block' : 'none')};
 
   li {
     width: 100%;

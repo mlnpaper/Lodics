@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppLayout, SubMenu } from '../../components';
 import { PageContainer } from '../company/styles';
 
 export default function recruitment() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <AppLayout theme='black'>
       <SubMenu title='Recruitment' />

@@ -129,7 +129,7 @@ export const SelectContainer = styled.div`
 
     ul {
       position: absolute;
-      top: ${props => (props.$open ? '105%' : '90%')};
+      top: ${props => (props.$open ? '100%' : '90%')};
       opacity: ${props => (props.$open ? 1 : 0)};
       left: 0;
       width: 100%;
