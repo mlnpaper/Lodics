@@ -11,7 +11,6 @@ export default function EGovernment() {
           전자정부 개발에 대한 국제적 자문
           <ul>
             <li>{'정부 차원의 정책 & 전략 수립에 대한 자문'}</li>
-            <li>{'정부 차원의 정책 & 전략 수립에 대한 자문'}</li>
           </ul>
         </li>
       </Contents>

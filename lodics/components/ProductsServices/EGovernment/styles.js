@@ -6,11 +6,11 @@ export const Contents = styled.ul`
   li {
     font-size: 20px;
     font-weight: 600;
-    list-style: square;
+    list-style-image: url('img/smallHead-icon.png');
     ul {
       margin-top: 15px;
-      list-style: square;
       li {
+        list-style: square;
         font-size: 16px;
         font-weight: 700;
         padding-left: 0px;
