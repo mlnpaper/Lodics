@@ -23,7 +23,7 @@ export default function SubMenu({ title, subSelectList = [] }) {
 
   const onClickGoHome = useCallback(() => {
     Router.push('/')
-  })
+  }, [])
 
   const onChangeSelect = useCallback(value => {
     console.log(value)
