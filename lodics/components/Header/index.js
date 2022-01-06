@@ -1,69 +1,94 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
+import {
+  CloseMenuIcon,
+  Container,
+  InnerContainer,
+  MenuIcon,
+  ToggleNavContainer,
+} from './styles'
 import Link from 'next/link'
-import { WapContent, Content, WrapNav, Ul, Li } from './styles'
+
+const createNavElement = (url, en, ko = '') => (
+  <li>
+    <Link href={url}>
+      <a>
+        <span>{en}</span>
+        <span>{ko}</span>
+      </a>
+    </Link>
+  </li>
+)
 
 export default function Header({ theme }) {
+  const [showToggleNav, setShowToggleNav] = useState(false)
+  const [openToggleNav, setOpenToggleNav] = useState(false)
+
+  const onResize = () => {
+    if (window.innerWidth < 768) {
+      setShowToggleNav(true)
+    } else {
+      setShowToggleNav(false)
+      setOpenToggleNav(false)
+    }
+  }
+
+  const onClick = useCallback(() => {
+    setOpenToggleNav(!openToggleNav)
+  }, [openToggleNav])
+
+  const onClose = useCallback(() => {
+    setOpenToggleNav(false)
+  }, [])
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setShowToggleNav(true)
+      setOpenToggleNav(false)
+    } else {
+      setShowToggleNav(false)
+    }
+
+    window.addEventListener('resize', onResize)
+  }, [])
+
   return (
-    <>
-      <WapContent>
-        <Content>
-          <Link href={'/'}>
-            <a>
-              <img
-                src={theme === 'white' ? 'img/logo_w.png' : 'img/logo_b.png'}
-                style={{ width: '200px', height: '39px', cursor: 'pointer' }}
-              />
-            </a>
-          </Link>
-          <WrapNav $theme={theme}>
-            <nav>
-              <ul>
-                <Link href={'/company'}>
-                  <a>
-                    <li>
-                      <div>Company</div>
-                      <div>회사소개</div>
-                    </li>
-                  </a>
-                </Link>
-                <Link href={'/business'}>
-                  <a>
-                    <li>
-                      <div>Business</div>
-                      <div>비즈니스</div>
-                    </li>
-                  </a>
-                </Link>
-                <Link href={'/productsServices'}>
-                  <a>
-                    <li>
-                      <div>{'Products & Service'}</div>
-                      <div>{'제품 & 서비스'}</div>
-                    </li>
-                  </a>
-                </Link>
-                <Link href={'/recruitment'}>
-                  <a>
-                    <li>
-                      <div>Recruitment</div>
-                      <div>채용정보</div>
-                    </li>
-                  </a>
-                </Link>
-              </ul>
-            </nav>
-          </WrapNav>
-          <select
-            style={{ backgroundColor: 'black', color: 'white', padding: 5 }}
-          >
-            <option value={''} disabled selected hidden>
-              Language
-            </option>
-            <option>Korea / 한국</option>
-            <option>Global / English</option>
-          </select>
-        </Content>
-      </WapContent>
-    </>
+    <Container>
+      <InnerContainer $theme={theme}>
+        <Link href="/">
+          <a>
+            <img
+              src={theme === 'white' ? 'img/logo_w.png' : 'img/logo_b.png'}
+              alt="로딕스 로고"
+            />
+          </a>
+        </Link>
+        <nav>
+          {showToggleNav ? (
+            <React.Fragment>
+              <MenuIcon onClick={onClick} $theme={theme} />
+              <ToggleNavContainer $openToggleNav={openToggleNav}>
+                {createNavElement('/', 'Home')}
+                {createNavElement('/company', 'Company')}
+                {createNavElement('/business', 'Business')}
+                {createNavElement('/productsServices', 'Products & Services')}
+                {createNavElement('/recruitment', 'Recruitment')}
+              </ToggleNavContainer>
+              <CloseMenuIcon onClick={onClose} $openToggleNav={openToggleNav} />
+            </React.Fragment>
+          ) : (
+            <ul>
+              {createNavElement('/company', 'Company', '회사소개')}
+              {createNavElement('/business', 'Business', '비즈니스')}
+              {createNavElement(
+                '/productsServices',
+                'Products & Services',
+                '제품 & 서비스'
+              )}
+              {createNavElement('/recruitment', 'Recruitment', '채용정보')}
+            </ul>
+          )}
+        </nav>
+      </InnerContainer>
+    </Container>
   )
 }

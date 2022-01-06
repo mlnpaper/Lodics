@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import GlobalStateContext from '../../context/globalStateContext'
+import GlobalStateContext from '@context/globalStateContext'
 import {
   AppLayout,
   SubMenu,
@@ -10,8 +10,8 @@ import {
   KeyTechnology04,
   KeyTechnology05,
   KeyTechnology06,
-} from '../../components'
-import { PageContainer } from '../company'
+} from 'components'
+import { PageContainer } from '@pages/company/styles'
 
 const subSelectList = [
   [
@@ -68,8 +68,8 @@ export default function productsServices() {
   useEffect(() => {
     window.scrollTo(0, 0)
 
-    // 페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
-    // return setSubSelectedComponent('keyTechnology01')
+    //페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
+    return setSubSelectedComponent('keyTechnology01')
   }, [])
 
   return (

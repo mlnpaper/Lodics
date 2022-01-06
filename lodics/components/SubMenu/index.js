@@ -1,15 +1,16 @@
-import React, { useContext, useCallback, useEffect, useState } from 'react'
-import { Container, SubContainer } from './styles'
-import { Select, Button } from 'antd'
-import 'antd/dist/antd.css' // or 'antd/dist/antd.less'
-import { HomeOutlined } from '@ant-design/icons'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
+import {
+  Container,
+  MenuContainer,
+  MenuInnerContainer,
+  HomeIcon,
+} from './styles'
 import Router from 'next/router'
-import GlobalStateContext from '../../context/globalStateContext'
-
-const { Option } = Select
+import { GlobalStateContext } from 'context'
+import { Select } from 'components'
 
 const mainSelect = [
-  { value: 'company', text: 'Comapany' },
+  { value: 'company', text: 'Company' },
   { value: 'business', text: 'Business' },
   { value: 'productsServices', text: 'Products & Services' },
   { value: 'recruitment', text: 'Recruitment' },
@@ -18,76 +19,112 @@ const mainSelect = [
 export default function SubMenu({ title, subSelectList = [] }) {
   const [newSubSelectList, setNewSubSelectList] = useState(subSelectList)
   const [currentSelect, setCurrentSelect] = useState('')
+  const { setSubSelectedComponent, selectedSubMenu, setSelectedSubMenu } =
+    useContext(GlobalStateContext)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const { setSubSelectedComponent } = useContext(GlobalStateContext)
-
-  const onClickGoHome = useCallback(() => {
+  const onClicktoGoHome = useCallback(() => {
     Router.push('/')
   }, [])
 
-  const onChangeSelect = useCallback(value => {
-    console.log(value)
-    console.log(setSubSelectedComponent)
-    setCurrentSelect(value)
-    if (
-      value === 'company' ||
-      value === 'business' ||
-      value === 'productsServices' ||
-      value === 'recruitment'
-    ) {
-      Router.push(`/${value}`)
-    } else {
-      setSubSelectedComponent(value)
-    }
-  }, [])
+  const onClickSelect = useCallback(
+    e => {
+      let targetId
+      if (e.target.localName === 'button') {
+        targetId = Number(e.target.id)
+      } else if (e.target.localName === 'span' || e.target.localName === 'i') {
+        targetId = Number(e.target.parentElement.id)
+      } else if (e.target.localName === 'svg') {
+        targetId = Number(e.target.parentElement.parentElement.id)
+      } else if (e.target.localName === 'path') {
+        targetId = Number(e.target.parentElement.parentElement.parentElement.id)
+      }
 
-  const createSelect = (defaultValue, selectList, width = 250) => {
-    return (
-      <Select
-        defaultValue={defaultValue}
-        style={{ width: width }}
-        onChange={onChangeSelect}
-      >
-        {selectList.map(({ value, text }) => (
-          <Option key={value} value={value}>
-            {text}
-          </Option>
-        ))}
-      </Select>
+      if (selectedSubMenu === targetId) {
+        setIsOpen(false)
+        setSelectedSubMenu('')
+      } else {
+        setIsOpen(true)
+        setSelectedSubMenu(targetId)
+      }
+    },
+    [selectedSubMenu]
+  )
+
+  const onClickOption = (e, setSelectedOption) => {
+    if (
+      !isOpen ||
+      +e.target.parentElement.previousSibling.id !== selectedSubMenu
     )
+      return null
+    else {
+      const value = e.target.id
+      const text = e.target.innerText
+
+      setCurrentSelect(value)
+      if (
+        value === 'company' ||
+        value === 'business' ||
+        value === 'productsServices' ||
+        value === 'recruitment'
+      ) {
+        Router.push(`/${value}`)
+        setSelectedSubMenu('')
+        setIsOpen(false)
+      } else {
+        setSubSelectedComponent(value)
+        setSelectedOption(text)
+        setSelectedSubMenu('')
+        setIsOpen(false)
+      }
+    }
   }
 
   useEffect(() => {
     if (currentSelect === 'keyTechnology') {
       setNewSubSelectList(subSelectList)
-    } else if (currentSelect === 'eGoverment') {
+    }
+    if (currentSelect === 'eGovernment') {
       setNewSubSelectList([subSelectList[0]])
     }
   }, [currentSelect])
 
-  return (
-    <>
-      <Container>
-        <h1>{title}</h1>
-      </Container>
-      <SubContainer>
-        <Button
-          onClick={onClickGoHome}
-          type="primary"
-          icon={<HomeOutlined />}
-          size={'large'}
-        />
+  // option이 열려 있을 때 다른 페이지로 이동 시 닫기
+  useEffect(() => {
+    return () => {
+      setSelectedSubMenu('')
+      setIsOpen(false)
+    }
+  }, [])
 
-        {createSelect(title, mainSelect)}
-        {!!newSubSelectList.length &&
-          newSubSelectList.map(subSelect =>
-            createSelect(
-              subSelect[0]['text'],
-              subSelect,
-              subSelect[0]['value'] === 'keyTechnology01' ? 400 : 200
-            )
-          )}
-      </SubContainer>
-    </>
+  return (
+    <Container>
+      <h2>{title}</h2>
+      <MenuContainer>
+        <MenuInnerContainer>
+          <i onClick={onClicktoGoHome}>
+            <HomeIcon />
+          </i>
+          <Select
+            defaultValue={title}
+            selectList={mainSelect}
+            onClickSelect={onClickSelect}
+            selectNumber={0}
+            onClickOption={onClickOption}
+          />
+          {!!newSubSelectList.length &&
+            newSubSelectList.map((subSelect, i) => (
+              <Select
+                defaultValue={subSelect[0]['text']}
+                selectList={subSelect}
+                onClickSelect={onClickSelect}
+                selectNumber={i + 1}
+                onClickOption={onClickOption}
+                key={i}
+              />
+            ))}
+        </MenuInnerContainer>
+      </MenuContainer>
+    </Container>
   )
 }

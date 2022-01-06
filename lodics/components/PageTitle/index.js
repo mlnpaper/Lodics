@@ -1,11 +1,10 @@
 import React from 'react'
-import { Title } from './styles'
+import { Container } from './styles'
 
 export default function PageTitle({ title }) {
   return (
-    <Title>
-      <div>{title}</div>
-      <hr />
-    </Title>
+    <Container>
+      <h3>{title}</h3>
+    </Container>
   )
 }

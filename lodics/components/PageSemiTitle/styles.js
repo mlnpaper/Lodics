@@ -5,21 +5,33 @@ export const Container = styled.div`
   /* -------------------------------------------------------------------------- */
   /*                               모바일  & default                             */
   /* -------------------------------------------------------------------------- */
-  margin: 3rem 0 5rem;
+  color: ${props => props.$color};
+  margin-top: 5rem;
+  padding-top: 1rem;
 
-  h3 {
-    font-size: 3.5rem;
-    font-weight: 600;
-    margin: 0;
-    color: ${palette.themeBlack};
+  span {
+    font-size: 2.5rem;
+    font-weight: ${props => props.$fontWeight};
+    position: relative;
 
     &:after {
       display: block;
       content: '';
-      width: 70px;
-      height: 2px;
-      margin: 5px;
-      background-color: #0d47a1;
+      width: 13px;
+      height: 6px;
+      background-color: ${palette.themePrimary};
+      position: absolute;
+      top: -1.5rem;
+    }
+
+    &:before {
+      display: block;
+      content: '';
+      width: 20px;
+      height: 6px;
+      background-color: ${palette.themeGray};
+      position: absolute;
+      top: -1.5rem;
     }
   }
 
@@ -27,11 +39,20 @@ export const Container = styled.div`
     /* -------------------------------------------------------------------------- */
     /*                                   테블릿                                    */
     /* -------------------------------------------------------------------------- */
-    h3 {
-    font-size: 4rem;
+    span {
+      font-size: 3rem;
 
-    &:after {
-      width: 80px;
+      &:after {
+        width: 15px;
+        height: 8px;
+        top: -1.7rem;
+      }
+
+      &:before {
+        width: 23px;
+        height: 8px;
+        top: -1.7rem;
+      }
     }
   }
 `

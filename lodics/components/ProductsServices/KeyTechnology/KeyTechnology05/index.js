@@ -1,6 +1,6 @@
 import React from 'react'
-import { PageTitle } from '../../..'
-import KeyTechnologyComponent from '../KeyTechnologyComponent'
+import { PageTitle } from 'components'
+import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent'
 
 export const keyTechnologyList = [
   {

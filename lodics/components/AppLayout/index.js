@@ -1,16 +1,13 @@
 import React from 'react'
-import { Header, Footer } from '..'
-import { Div } from './styles'
+import { Footer, Header } from 'components'
+import { Container } from './styles'
 
-const AppLayout = ({ children, theme }) => {
-  console.log(theme)
+export default function AppLayout({ children, theme }) {
   return (
-    <Div $theme={theme}>
+    <Container $theme={theme}>
       <Header theme={theme} />
       {children}
       <Footer />
-    </Div>
+    </Container>
   )
 }
-
-export default AppLayout

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import { palette } from '../../styles/color'
 
-export const Div = styled.div`
+export const Container = styled.div`
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-flow: column;
+
   justify-content: ${props =>
     props.$theme === 'black' ? 'none' : 'space-between'};
 `

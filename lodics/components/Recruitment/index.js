@@ -1,10 +1,10 @@
 import React from 'react'
-import { Div, Line } from './styles'
+import { Div } from './styles'
 import { PageTitle } from '..'
-import RecruitField from './Content/RecruitField'
-import Process from './Content/Process'
-import Policy from './Content/Policy'
-import Benefit from './Content/Benefit'
+import RecruitField from '@components/Recruitment/Content/RecruitField'
+import Process from '@components/Recruitment/Content/Process'
+import Policy from '@components/Recruitment/Content/Policy'
+import Benefit from '@components/Recruitment/Content/Benefit'
 
 export default function Recruitment() {
   return (

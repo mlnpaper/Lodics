@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageTitle } from '../../..'
+import { PageTitle } from 'components'
 import { WrapContents, SingleContents, MultipleContents } from './styles'
 
 export default function KeyTechnology01() {
