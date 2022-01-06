@@ -1,5 +1,5 @@
 import React from 'react'
-import { SubTitle, Circle, WrapCirCle } from '../styles'
+import { Line, SubTitle, Circle, WrapCirCle } from '../styles'
 
 const benefitList = [
   {
@@ -39,6 +39,7 @@ export default function Benefit() {
 
   return (
     <>
+      <Line />
       <SubTitle>
         <div>
           <div />

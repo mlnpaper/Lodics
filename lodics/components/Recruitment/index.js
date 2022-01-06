@@ -14,13 +14,9 @@ export default function Recruitment() {
         "새로운 내일을 향해 <b>지치지 않는 열정</b>과 <b>도전정신</b>
         {'으로\n로딕스와 함께 성장 할 인재를 기다립니다."'}
       </Div>
-      <Line />
       <RecruitField />
-      <Line />
       <Process />
-      <Line />
       <Policy />
-      <Line />
       <Benefit />
     </>
   )

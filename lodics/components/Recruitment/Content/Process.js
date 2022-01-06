@@ -1,5 +1,5 @@
 import React from 'react'
-import { SubTitle, ProcessTable, Circle, WrapCirCle } from '../styles'
+import { Line, SubTitle, ProcessTable, Circle, WrapCirCle } from '../styles'
 import { BsPencilFill, BsPeopleFill, BsArrowRight } from 'react-icons/bs'
 import { AiOutlineFileSearch } from 'react-icons/ai'
 import { FaHandsHelping } from 'react-icons/fa'
@@ -97,6 +97,7 @@ export default function Process() {
 
   return (
     <>
+      <Line />
       <SubTitle>
         <div>
           <div />

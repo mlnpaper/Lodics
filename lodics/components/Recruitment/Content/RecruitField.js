@@ -1,5 +1,5 @@
 import React from 'react'
-import { SubTitle, RecruitFieldTable } from '../styles'
+import { Line, SubTitle, RecruitFieldTable } from '../styles'
 
 const fieldHeaderList = ['모집분야', '담당업무', '자격요건', '모집인원']
 
@@ -119,6 +119,7 @@ export default function RecruitField() {
 
   return (
     <>
+      <Line />
       <SubTitle>
         <div>
           <div />
