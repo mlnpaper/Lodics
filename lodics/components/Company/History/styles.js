@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { palette } from '../../../styles/color';
+import { palette } from '@styles/color';
 
 // HistoryList.js
 export const HistoryListContainer = styled.div`

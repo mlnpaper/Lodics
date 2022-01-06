@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import 'antd/dist/antd.css';
-import GlobalState from '../context/globalState';
+import GlobalState from 'context';
 
 function MyApp({ Component, pageProps }) {
   return (

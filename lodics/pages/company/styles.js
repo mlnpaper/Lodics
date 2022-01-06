@@ -1,4 +1,4 @@
-import { palette } from '../../styles/color';
+import { palette } from '@styles/color';
 import styled from 'styled-components';
 
 export const PageContainer = styled.section`

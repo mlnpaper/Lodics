@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from './styles';
-import { CertificationCard, PageSemiTitle, PageTitle } from '../..';
-import { palette } from '../../../styles/color';
-import { certificationDetails, certificationPatent, programRegistration } from '../../../data/certification';
+import { CertificationCard, PageSemiTitle, PageTitle } from 'components';
+import { palette } from '@styles/color';
+import { certificationDetails, certificationPatent, programRegistration } from '@data/certification';
 
 export default function Certification() {
   return (

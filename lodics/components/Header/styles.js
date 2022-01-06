@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { palette } from '../../styles/color';
+import { palette } from '@styles/color';
 import { MdMenu } from 'react-icons/md';
 import { IoIosArrowForward } from 'react-icons/io';
 

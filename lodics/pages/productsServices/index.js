@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { AppLayout, SubMenu } from '../../components';
-import { PageContainer } from '../company/styles';
+import { AppLayout, SubMenu } from 'components';
+import { PageContainer } from '@pages/company/styles';
 
 const subSelectList = [
   [

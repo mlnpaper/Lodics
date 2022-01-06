@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppLayout, CeoGreeting, Certification, History, Location, SubMenu } from '../../components';
-import GlobalStateContext from '../../context/globalStateContext';
+import { AppLayout, CeoGreeting, Certification, History, Location, SubMenu } from 'components';
+import { GlobalStateContext } from 'context';
 import { PageContainer } from './styles';
 
 const subSelectList = [

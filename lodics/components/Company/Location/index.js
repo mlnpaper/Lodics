@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BusTextContainer, MapContainer, SubwayTextContainer, TextContainer, SubwayIcon, BusIcon } from './styles';
-import { PageSemiTitle, PageTitle } from '../..';
+import { PageSemiTitle, PageTitle } from 'components';
 
 const createSubwayTextElement = (subwayName, subwayNumber, subwayColor, exit, distance) => (
   <div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PageTitle } from '../..';
+import { PageTitle } from 'components';
 import { HeadLineContainer, ContentContainer, SignContainer } from './styles';
 
 export default function CeoGreeting() {

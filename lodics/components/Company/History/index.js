@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageTitle, HistoryList, PageSemiTitle } from '../..';
+import { PageTitle, HistoryList, PageSemiTitle } from 'components';
 import {
   historyList2007,
   historyList2008,
@@ -16,8 +16,8 @@ import {
   historyList2019,
   historyList2020,
   historyList2021,
-} from '../../../data/history';
-import { palette } from '../../../styles/color';
+} from '@data/history';
+import { palette } from '@styles/color';
 
 export default function History() {
   return (

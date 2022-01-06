@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { AppLayout, Card } from '../../components';
-import IntroText from './IntroText';
+import { AppLayout, Card } from 'components';
+import IntroText from '@pages/home/IntroText';
 import { CardContainer, Container, Background } from './styles';
 
 export default function Home() {

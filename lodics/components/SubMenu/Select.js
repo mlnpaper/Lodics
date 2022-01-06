@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import GlobalStateContext from '../../context/globalStateContext';
+import { GlobalStateContext } from 'context';
 import { ArrowIcon, IconContainer, SelectContainer } from './styles';
 
 export default function Select({ defaultValue, selectList, onClickSelect, selectNumber, onClickOption }) {

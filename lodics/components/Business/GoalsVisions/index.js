@@ -1,6 +1,6 @@
 import React from 'react';
-import { CertificationCard, PageSemiTitle, PageTitle } from '../..';
-import { eGovernmentModelDevelopment } from '../../../data/eGovernmentModelDevelopment';
+import { CertificationCard, PageSemiTitle, PageTitle } from 'components';
+import { eGovernmentModelDevelopment } from '@data/eGovernmentModelDevelopment';
 import {
   Container,
   InnerContainer,

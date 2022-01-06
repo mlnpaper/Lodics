@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { Container, MenuContainer, MenuInnerContainer, HomeIcon } from './styles';
 import Router from 'next/router';
-import GlobalStateContext from '../../context/globalStateContext';
-import Select from './Select';
+import { GlobalStateContext } from 'context';
+import { Select } from 'components';
 
 const mainSelect = [
   { value: 'company', text: 'Company' },

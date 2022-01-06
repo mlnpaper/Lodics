@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageTitle } from '../..';
+import { PageTitle } from 'components';
 import { ImgContainer } from './styles';
 
 export default function KeyBusiness() {

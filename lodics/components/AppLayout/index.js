@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Header } from '..';
+import { Footer, Header } from 'components';
 import { Container } from './styles';
 
 export default function AppLayout({ children, theme }) {
