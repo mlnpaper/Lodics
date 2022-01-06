@@ -110,54 +110,13 @@ export default function KeyTechnology01() {
           <span>{'위치기반\n통합 모니터링 기술'}</span>
           <ul>
             <li>가시영역 처리</li>
-            <li>이동제 위치추적</li>
+            <li>이동체 위치추적</li>
             <li>GIS 자료 중첩도시</li>
             <li>3D 지형처리</li>
             <li>PostgreSQL/PostGIS</li>
           </ul>
         </SingleContents>
       </WrapContents>
-      {/* <WrapContents>
-        <Contents>
-          <span>{'GEOINT\n자료 통합처리 기술'}</span>
-          <div>{'다중센서\n융합처리'}</div>
-          <div>{'GEOINT\n정보추출'}</div>
-          <div>{'분산형\nGEOINT DB\n통합처리'}</div>
-          <div>{'정보융합\n분산 정보처리'}</div>
-        </Contents>
-        <Contents_>
-          <span>{'다중영상기반 정밀 위치결정자료 제작 기술'}</span>
-          <div>
-            <div>
-              <div>
-                입체시 Viewer
-                <div>
-                  <div>여색입체</div>
-                  <div>여색입체</div>
-                </div>
-              </div>
-              <div>Stereo 영상 생성</div>
-              <div>군사 규격 자료</div>
-              <div>NITF</div>
-              <div>센서 모델링</div>
-            </div>
-            <div>
-              <div>RPC/RSM Generator</div>
-              <div>기하/방사 보정</div>
-              <div>CSM</div>
-              <div>특징점 추출 및 매칭</div>
-            </div>
-          </div>
-        </Contents_>
-        <Contents>
-          <span>{'위치기반\n통합 모니터링 기술'}</span>
-          <div>가시영역 처리</div>
-          <div>이동제 위치추적</div>
-          <div>GIS 자료 중첩도시</div>
-          <div>3D 지형처리</div>
-          <div>PostgreSQL/PostGIS</div>
-        </Contents>
-      </WrapContents> */}
     </>
   )
 }
