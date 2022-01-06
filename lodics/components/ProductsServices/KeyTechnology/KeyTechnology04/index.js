@@ -31,7 +31,7 @@ export default function KeyTechnology04() {
         title={'국가해양영토 광역 감시망 구축 기반연구 통합분석 시스템'}
       />
       <KeyTechnologyComponent
-        imageUrl={'img/basic_bg.jpg'}
+        imageUrl={'img/wiss.png'}
         list={keyTechnologyList}
       />
     </>

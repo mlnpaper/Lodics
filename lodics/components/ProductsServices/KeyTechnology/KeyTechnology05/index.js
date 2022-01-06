@@ -34,7 +34,7 @@ export default function KeyTechnology05() {
     <>
       <PageTitle title={'긴급차량 동적 가이던스 시스템 연구'} />
       <KeyTechnologyComponent
-        imageUrl={'img/basic_bg.jpg'}
+        imageUrl={'img/pev.png'}
         list={keyTechnologyList}
       />
     </>

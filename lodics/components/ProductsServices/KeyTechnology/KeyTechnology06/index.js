@@ -34,7 +34,7 @@ export default function KeyTechnology06() {
     <>
       <PageTitle title={'다중센서 분산처리 및 GEOINT 자료 통합처리 시스템'} />
       <KeyTechnologyComponent
-        imageUrl={'img/basic_bg.jpg'}
+        imageUrl={'img/geoint.png'}
         list={keyTechnologyList}
       />
     </>
