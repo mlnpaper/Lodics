@@ -8,6 +8,7 @@ export const Contents = styled.div`
 
   img {
     width: 540px;
+    border: 1px solid #dfdfdf;
   }
 `
 export const Table = styled.table`
@@ -21,11 +22,7 @@ export const Table = styled.table`
     color: #333;
     border-bottom: 1px solid #dfdfdf;
   }
-
-  ul {
-    margin-bottom: 0px;
-    list-style: square;
-    padding: 30px 50px;
+  td {
     border-bottom: 1px solid #dfdfdf;
   }
   li::marker {
@@ -36,5 +33,9 @@ export const Table = styled.table`
     font-family: 'Malgun Gothic';
     font-size: 15px;
     line-height: 35px;
+    margin-bottom: 0px;
+    list-style: square;
+    padding: 0px 20px 0px 50px;
+    /* border-bottom: 1px solid #dfdfdf; */
   }
 `

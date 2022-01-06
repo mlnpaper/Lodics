@@ -5,11 +5,9 @@ export const KeyTechnologyTable = list => {
     <tr>
       <th>{title}</th>
       <td>
-        <ul>
-          {contents.map(contents => (
-            <li>{contents}</li>
-          ))}
-        </ul>
+        {contents.map(contents => (
+          <li>{contents}</li>
+        ))}
       </td>
     </tr>
   ))
