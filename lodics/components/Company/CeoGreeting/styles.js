@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { palette } from '@styles/color';
+import styled from 'styled-components'
+import { palette } from '@styles/color'
 
 export const HeadLineContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -27,7 +27,7 @@ export const HeadLineContainer = styled.div`
       font-size: 3rem;
     }
   }
-`;
+`
 
 export const ContentContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -56,7 +56,7 @@ export const ContentContainer = styled.div`
     /*                              데스크탑 일반                                  */
     /* -------------------------------------------------------------------------- */
   }
-`;
+`
 
 export const SignContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -86,4 +86,4 @@ export const SignContainer = styled.div`
       font-size: 2.5rem;
     }
   }
-`;
+`

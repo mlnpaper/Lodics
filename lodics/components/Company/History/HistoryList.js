@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 import {
   HistoryListContentContainer,
   HistoryListYearContainer,
   HistoryListContainer,
   ContentContainer,
-} from './styles';
+} from './styles'
 
 export default function HistoryList({ historyList }) {
-  const year = historyList[0]['years'];
+  const year = historyList[0]['years']
 
   return (
     <HistoryListContainer>
@@ -20,10 +20,10 @@ export default function HistoryList({ historyList }) {
                 <span>{history.month}</span>
                 <p>{history.content}</p>
               </ContentContainer>
-            );
+            )
           }
         })}
       </HistoryListContentContainer>
     </HistoryListContainer>
-  );
+  )
 }

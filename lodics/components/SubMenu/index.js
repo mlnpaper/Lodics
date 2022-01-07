@@ -1,86 +1,101 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { Container, MenuContainer, MenuInnerContainer, HomeIcon } from './styles';
-import Router from 'next/router';
-import { GlobalStateContext } from 'context';
-import { Select } from 'components';
+import React, { useCallback, useContext, useEffect, useState } from 'react'
+import {
+  Container,
+  MenuContainer,
+  MenuInnerContainer,
+  HomeIcon,
+} from './styles'
+import Router from 'next/router'
+import { GlobalStateContext } from 'context'
+import { Select } from 'components'
 
 const mainSelect = [
   { value: 'company', text: 'Company' },
   { value: 'business', text: 'Business' },
   { value: 'productsServices', text: 'Products & Services' },
   { value: 'recruitment', text: 'Recruitment' },
-];
+]
 
 export default function SubMenu({ title, subSelectList = [] }) {
-  const [newSubSelectList, setNewSubSelectList] = useState(subSelectList);
-  const [currentSelect, setCurrentSelect] = useState('');
-  const { setSubSelectedComponent, selectedSubMenu, setSelectedSubMenu } = useContext(GlobalStateContext);
-  const [isOpen, setIsOpen] = useState(false);
+  const [newSubSelectList, setNewSubSelectList] = useState(subSelectList)
+  const [currentSelect, setCurrentSelect] = useState('')
+  const { setSubSelectedComponent, selectedSubMenu, setSelectedSubMenu } =
+    useContext(GlobalStateContext)
+  const [isOpen, setIsOpen] = useState(false)
 
   const onClicktoGoHome = useCallback(() => {
-    Router.push('/');
-  }, []);
+    Router.push('/')
+  }, [])
 
   const onClickSelect = useCallback(
     e => {
-      let targetId;
+      let targetId
       if (e.target.localName === 'button') {
-        targetId = Number(e.target.id);
+        targetId = Number(e.target.id)
       } else if (e.target.localName === 'span' || e.target.localName === 'i') {
-        targetId = Number(e.target.parentElement.id);
+        targetId = Number(e.target.parentElement.id)
       } else if (e.target.localName === 'svg') {
-        targetId = Number(e.target.parentElement.parentElement.id);
+        targetId = Number(e.target.parentElement.parentElement.id)
       } else if (e.target.localName === 'path') {
-        targetId = Number(e.target.parentElement.parentElement.parentElement.id);
+        targetId = Number(e.target.parentElement.parentElement.parentElement.id)
       }
 
       if (selectedSubMenu === targetId) {
-        setIsOpen(false);
-        setSelectedSubMenu('');
+        setIsOpen(false)
+        setSelectedSubMenu('')
       } else {
-        setIsOpen(true);
-        setSelectedSubMenu(targetId);
+        setIsOpen(true)
+        setSelectedSubMenu(targetId)
       }
     },
     [selectedSubMenu]
-  );
+  )
 
   const onClickOption = (e, setSelectedOption) => {
-    if (!isOpen || +e.target.parentElement.previousSibling.id !== selectedSubMenu) return null;
+    if (
+      !isOpen ||
+      +e.target.parentElement.previousSibling.id !== selectedSubMenu
+    )
+      return null
     else {
-      const value = e.target.id;
-      const text = e.target.innerText;
+      const value = e.target.id
+      const text = e.target.innerText
 
-      setCurrentSelect(value);
-      if (value === 'company' || value === 'business' || value === 'productsServices' || value === 'recruitment') {
-        Router.push(`/${value}`);
-        setSelectedSubMenu('');
-        setIsOpen(false);
+      setCurrentSelect(value)
+      if (
+        value === 'company' ||
+        value === 'business' ||
+        value === 'productsServices' ||
+        value === 'recruitment'
+      ) {
+        Router.push(`/${value}`)
+        setSelectedSubMenu('')
+        setIsOpen(false)
       } else {
-        setSubSelectedComponent(value);
-        setSelectedOption(text);
-        setSelectedSubMenu('');
-        setIsOpen(false);
+        setSubSelectedComponent(value)
+        setSelectedOption(text)
+        setSelectedSubMenu('')
+        setIsOpen(false)
       }
     }
-  };
+  }
 
   useEffect(() => {
     if (currentSelect === 'keyTechnology') {
-      setNewSubSelectList(subSelectList);
+      setNewSubSelectList(subSelectList)
     }
     if (currentSelect === 'eGovernment') {
-      setNewSubSelectList([subSelectList[0]]);
+      setNewSubSelectList([subSelectList[0]])
     }
-  }, [currentSelect]);
+  }, [currentSelect])
 
   // option이 열려 있을 때 다른 페이지로 이동 시 닫기
   useEffect(() => {
     return () => {
-      setSelectedSubMenu('');
-      setIsOpen(false);
-    };
-  }, []);
+      setSelectedSubMenu('')
+      setIsOpen(false)
+    }
+  }, [])
 
   return (
     <Container>
@@ -111,5 +126,5 @@ export default function SubMenu({ title, subSelectList = [] }) {
         </MenuInnerContainer>
       </MenuContainer>
     </Container>
-  );
+  )
 }

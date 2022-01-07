@@ -1,14 +1,14 @@
-import styled from 'styled-components';
-import { palette } from '@styles/color';
-import { MdMenu } from 'react-icons/md';
-import { IoIosArrowForward } from 'react-icons/io';
+import styled from 'styled-components'
+import { palette } from '@styles/color'
+import { MdMenu } from 'react-icons/md'
+import { IoIosArrowForward } from 'react-icons/io'
 
 export const Container = styled.header`
   width: 100%;
   background: transparent;
   border-bottom: 1px solid ${palette.themeGray};
   position: relative;
-`;
+`
 
 export const InnerContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -68,7 +68,10 @@ export const InnerContainer = styled.div`
             font-size: 1.5rem;
             font-weight: 600;
             transition: color 0.3s;
-            color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
+            color: ${props =>
+              props.$theme === 'white'
+                ? palette.themeWhite
+                : palette.themeBlack};
 
             &:hover {
               color: ${palette.themeHover};
@@ -114,14 +117,15 @@ export const InnerContainer = styled.div`
       }
     }
   }
-`;
+`
 
 export const MenuIcon = styled(MdMenu)`
   width: 2rem;
   height: 2rem;
-  color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
+  color: ${props =>
+    props.$theme === 'white' ? palette.themeWhite : palette.themeBlack};
   cursor: pointer;
-`;
+`
 
 export const CloseMenuIcon = styled(IoIosArrowForward)`
   width: 2rem;
@@ -133,7 +137,7 @@ export const CloseMenuIcon = styled(IoIosArrowForward)`
   color: ${palette.themeWhite};
   cursor: pointer;
   transition: all 0.3s;
-`;
+`
 
 export const ToggleNavContainer = styled.ul`
   position: fixed;
@@ -176,4 +180,4 @@ export const ToggleNavContainer = styled.ul`
       }
     }
   }
-`;
+`

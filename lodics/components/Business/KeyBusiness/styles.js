@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { palette } from '@styles/color';
+import styled from 'styled-components'
+import { palette } from '@styles/color'
 
 export const ImgContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -18,4 +18,4 @@ export const ImgContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     padding: 0 5rem;
   }
-`;
+`

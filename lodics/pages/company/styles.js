@@ -1,5 +1,5 @@
-import { palette } from '@styles/color';
-import styled from 'styled-components';
+import { palette } from '@styles/color'
+import styled from 'styled-components'
 
 export const PageContainer = styled.section`
   /* -------------------------------------------------------------------------- */
@@ -15,4 +15,4 @@ export const PageContainer = styled.section`
     /* -------------------------------------------------------------------------- */
     width: 1200px;
   }
-`;
+`

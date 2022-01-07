@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { palette } from '@styles/color';
+import styled from 'styled-components'
+import { palette } from '@styles/color'
 
 export const Container = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -28,7 +28,7 @@ export const Container = styled.div`
       font-size: 1.6rem;
     }
   }
-`;
+`
 
 export const ImgContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -47,7 +47,7 @@ export const ImgContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     padding: 0 5rem;
   }
-`;
+`
 
 export const InnerContainer = styled.div`
   border-top: 1px dashed ${palette.themeDashedBorder};
@@ -55,19 +55,19 @@ export const InnerContainer = styled.div`
   margin-top: 10rem;
   display: flex;
   flex-flow: column;
-`;
+`
 
 export const GeointProcessContainer = styled(InnerContainer)`
   img {
     display: block;
     width: 100%;
   }
-`;
+`
 
 export const EGovernmentImgContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
-`;
+`
 
 export const ThirdTitle = styled.span`
   /* -------------------------------------------------------------------------- */
@@ -104,7 +104,7 @@ export const ThirdTitle = styled.span`
       border: 5px solid ${palette.themePrimary};
     }
   }
-`;
+`
 
 export const ContentContainer = styled.div`
   p {
@@ -131,7 +131,7 @@ export const ContentContainer = styled.div`
       }
     }
   }
-`;
+`
 
 export const ImgCardContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -171,7 +171,7 @@ export const ImgCardContainer = styled.div`
       border-left: 50px solid transparent;
     }
   }
-`;
+`
 
 export const ImgCardInnerContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -215,4 +215,4 @@ export const ImgCardInnerContainer = styled.div`
       font-size: 2.5rem;
     }
   }
-`;
+`

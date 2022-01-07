@@ -83,8 +83,9 @@ li {
   list-style: none;
   letter-spacing: inherit;
   user-select: none;
-  font-family: 'Noto Sans KR', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   font-size: 10px;
   letter-spacing: -0.8px;
   word-break: keep-all;

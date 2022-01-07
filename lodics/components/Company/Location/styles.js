@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { palette } from '@styles/color';
+import styled from 'styled-components'
+import { palette } from '@styles/color'
 
 export const MapContainer = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ export const MapContainer = styled.div`
       height: 100%;
     }
   }
-`;
+`
 
 export const TextContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -63,7 +63,7 @@ export const TextContainer = styled.div`
       }
     }
   }
-`;
+`
 
 export const SubwayTextContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -107,7 +107,7 @@ export const SubwayTextContainer = styled.div`
       }
     }
   }
-`;
+`
 
 export const SubwayIcon = styled.i`
   /* -------------------------------------------------------------------------- */
@@ -143,7 +143,7 @@ export const SubwayIcon = styled.i`
     /* -------------------------------------------------------------------------- */
     padding: 0.2rem 0.75rem;
   }
-`;
+`
 
 export const BusTextContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -183,7 +183,7 @@ export const BusTextContainer = styled.div`
       }
     }
   }
-`;
+`
 
 export const BusIcon = styled.i`
   /* -------------------------------------------------------------------------- */
@@ -204,4 +204,4 @@ export const BusIcon = styled.i`
     padding: 0.2rem 0.5rem;
     height: 2rem;
   }
-`;
+`

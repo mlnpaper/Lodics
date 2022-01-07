@@ -1,6 +1,6 @@
-import React from 'react';
-import { Footer, Header } from 'components';
-import { Container } from './styles';
+import React from 'react'
+import { Footer, Header } from 'components'
+import { Container } from './styles'
 
 export default function AppLayout({ children, theme }) {
   return (
@@ -9,5 +9,5 @@ export default function AppLayout({ children, theme }) {
       {children}
       <Footer />
     </Container>
-  );
+  )
 }

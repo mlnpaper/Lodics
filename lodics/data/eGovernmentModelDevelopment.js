@@ -11,4 +11,4 @@ export const eGovernmentModelDevelopment = [
     title: `전자정부 개발과 정보산업 육성 전략
     (영어 본)`,
   },
-];
+]
