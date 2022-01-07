@@ -1,6 +1,6 @@
-import React from 'react'
-import { PageTitle } from 'components'
-import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent'
+import React from 'react';
+import { PageTitle } from 'components';
+import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent';
 
 export const keyTechnologyList = [
   {
@@ -31,16 +31,13 @@ export const keyTechnologyList = [
       '디지털맵 상황도 표출 시스템',
     ],
   },
-]
+];
 
 export default function KeyTechnology02() {
   return (
     <>
       <PageTitle title={'스마트 방사능방재 지휘통제 시스템 구축'} />
-      <KeyTechnologyComponent
-        imageUrl={'img/productsServices/srp.png'}
-        list={keyTechnologyList}
-      />
+      <KeyTechnologyComponent imageUrl={'img/productsServices/srp.png'} list={keyTechnologyList} />
     </>
-  )
+  );
 }

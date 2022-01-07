@@ -1,10 +1,10 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
-import { MdHome } from 'react-icons/md'
-import { IoIosArrowDown } from 'react-icons/io'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
+import { MdHome } from 'react-icons/md';
+import { IoIosArrowDown } from 'react-icons/io';
 
 // index.js
-export const HomeIcon = styled(MdHome)``
+export const HomeIcon = styled(MdHome)``;
 export const Container = styled.div`
   /* -------------------------------------------------------------------------- */
   /*                               모바일  & default                             */
@@ -35,13 +35,13 @@ export const Container = styled.div`
       line-height: 30rem;
     }
   }
-`
+`;
 
 export const MenuContainer = styled.div`
   height: 5rem;
   width: 100%;
   background: ${palette.themePrimary};
-`
+`;
 
 export const MenuInnerContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -88,7 +88,7 @@ export const MenuInnerContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     width: 1200px;
   }
-`
+`;
 
 // Select.js
 export const SelectContainer = styled.div`
@@ -173,9 +173,9 @@ export const SelectContainer = styled.div`
       }
     }
   }
-`
+`;
 
-export const ArrowIcon = styled(IoIosArrowDown)``
+export const ArrowIcon = styled(IoIosArrowDown)``;
 export const IconContainer = styled.i`
   border: none !important;
   width: auto !important;
@@ -186,4 +186,4 @@ export const IconContainer = styled.i`
     transform: ${props => props.$open && 'rotate(180deg)'};
     transition: 0.2s;
   }
-`
+`;

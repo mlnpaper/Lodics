@@ -1,5 +1,5 @@
-import React from 'react'
-import { CardContainer, ImgContainer } from './styles'
+import React from 'react';
+import { CardContainer, ImgContainer } from './styles';
 
 export default function Card({ img, title }) {
   return (
@@ -9,5 +9,5 @@ export default function Card({ img, title }) {
       </ImgContainer>
       <p>{title}</p>
     </CardContainer>
-  )
+  );
 }

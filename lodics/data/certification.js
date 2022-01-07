@@ -13,7 +13,7 @@ export const certificationDetails = [
   { key: 2, img: 'img/certification/YG.jpg', title: '연구개발서비스업 신고증' },
   { key: 1, img: 'img/certification/JSO.jpg', title: '중소기업 확인서' },
   { key: 0, img: 'img/certification/BenC.jpg', title: '벤처기업확인서' },
-]
+];
 
 export const certificationPatent = [
   {
@@ -34,7 +34,7 @@ export const certificationPatent = [
     title: `렌더링 시스템에서 영상 데이터를 
   변환하기 위한 장치 및 그 방법`,
   },
-]
+];
 
 export const programRegistration = [
   {
@@ -103,4 +103,4 @@ export const programRegistration = [
     title: `LLR 
   (Lodics Lidar Reporter)`,
   },
-]
+];

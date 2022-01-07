@@ -1,11 +1,11 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
-import { IoEarthSharp } from 'react-icons/io5'
-import { FaSatellite, FaHandsHelping } from 'react-icons/fa'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
+import { IoEarthSharp } from 'react-icons/io5';
+import { FaSatellite, FaHandsHelping } from 'react-icons/fa';
 
-export const BusinessIcon = styled(IoEarthSharp)``
-export const PSIcon = styled(FaSatellite)``
-export const RecruitmentIcon = styled(FaHandsHelping)``
+export const BusinessIcon = styled(IoEarthSharp)``;
+export const PSIcon = styled(FaSatellite)``;
+export const RecruitmentIcon = styled(FaHandsHelping)``;
 export const Container = styled.div`
   /* -------------------------------------------------------------------------- */
   /*                               모바일  & default                             */
@@ -128,4 +128,4 @@ export const Container = styled.div`
       padding: 0.5rem 8rem;
     }
   }
-`
+`;

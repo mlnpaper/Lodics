@@ -1,5 +1,5 @@
-import React from 'react'
-import { Line, SubTitle, Circle, WrapCirCle } from '../styles'
+import React from 'react';
+import { Line, SubTitle, Circle, WrapCirCle } from '../styles';
 
 const benefitList = [
   {
@@ -17,7 +17,7 @@ const benefitList = [
     content: '주 40시간제 실시\n상시 휴가제 운영\n사원들의 여가활동 보장',
     url: 'img/recruitment/benefit03.png',
   },
-]
+];
 
 export default function Benefit() {
   const benefitContent = benefitList => {
@@ -34,8 +34,8 @@ export default function Benefit() {
           </>
         ))}
       </>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -48,5 +48,5 @@ export default function Benefit() {
       </SubTitle>
       <WrapCirCle>{benefitContent(benefitList)}</WrapCirCle>
     </>
-  )
+  );
 }

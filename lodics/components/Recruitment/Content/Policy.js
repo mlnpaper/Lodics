@@ -1,11 +1,10 @@
-import React from 'react'
-import { Line, SubTitle, Circle, WrapCirCle } from '../styles'
+import React from 'react';
+import { Line, SubTitle, Circle, WrapCirCle } from '../styles';
 
 const policyList = [
   {
     title: '성과평가',
-    content:
-      '공정하고 객관적인 성과 평가를 통해\n 성과에 따른 공정한 보상을 제공합니다',
+    content: '공정하고 객관적인 성과 평가를 통해\n 성과에 따른 공정한 보상을 제공합니다',
   },
   {
     title: '보상제도',
@@ -13,10 +12,9 @@ const policyList = [
   },
   {
     title: '교육제도',
-    content:
-      '직급/직무별 체계적인\n교육훈련 기회를 제공하여\n자기계발과 성장을 통해\n핵심 인재로 육성합니다',
+    content: '직급/직무별 체계적인\n교육훈련 기회를 제공하여\n자기계발과 성장을 통해\n핵심 인재로 육성합니다',
   },
-]
+];
 
 export default function Policy() {
   const policyContent = policyList => {
@@ -33,8 +31,8 @@ export default function Policy() {
           </>
         ))}
       </>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -47,5 +45,5 @@ export default function Policy() {
       </SubTitle>
       <WrapCirCle>{policyContent(policyList)}</WrapCirCle>
     </>
-  )
+  );
 }

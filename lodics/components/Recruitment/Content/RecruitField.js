@@ -1,9 +1,9 @@
-import React from 'react'
-import { PageSemiTitle } from 'components'
-import { Line, RecruitFieldTable } from '../styles'
-import { palette } from '@styles/color'
+import React from 'react';
+import { PageSemiTitle } from 'components';
+import { Line, RecruitFieldTable } from '../styles';
+import { palette } from '@styles/color';
 
-const fieldHeaderList = ['모집분야', '담당업무', '자격요건', '모집인원']
+const fieldHeaderList = ['모집분야', '담당업무', '자격요건', '모집인원'];
 
 const fieldBodyList = [
   {
@@ -61,72 +61,66 @@ const fieldBodyList = [
     ],
     person: 'O',
   },
-]
+];
 
 export default function RecruitField() {
   //모집분야 table header
   const fieldTitleContent = fieldHeaderList => {
-    return fieldHeaderList.map(title => <th>{title}</th>)
-  }
+    return fieldHeaderList.map(title => <th>{title}</th>);
+  };
 
   //모집분야 table body
   const fieldContent = fieldBodyList => {
-    return fieldBodyList.map(
-      ({ title, task, content, preferential, person }) => (
-        <tr>
-          <td>{title}</td>
-          {task === undefined ? (
-            <>
-              <td colSpan={3} style={{ textAlign: 'left', paddingLeft: 20 }}>
-                <ul>
-                  {content.map(content => (
-                    <li>{content}</li>
-                  ))}
-                </ul>
-                <div>[우대사항]</div>
-                <ul>
-                  {preferential.map(preferential => (
-                    <li>{preferential}</li>
-                  ))}
-                </ul>
-              </td>
-            </>
-          ) : (
-            <>
-              <td>{task}</td>
-              <td style={{ textAlign: 'left', paddingLeft: 20 }}>
-                <ul>
-                  {content.map(content => (
-                    <li>{content}</li>
-                  ))}
-                </ul>
-                {preferential !== undefined ? (
-                  <>
-                    <div>[우대사항]</div>
-                    <ul>
-                      {preferential.map(preferential => (
-                        <li>{preferential}</li>
-                      ))}
-                    </ul>{' '}
-                  </>
-                ) : null}
-              </td>
-              <td>{person + '명'}</td>
-            </>
-          )}
-        </tr>
-      )
-    )
-  }
+    return fieldBodyList.map(({ title, task, content, preferential, person }) => (
+      <tr>
+        <td>{title}</td>
+        {task === undefined ? (
+          <>
+            <td colSpan={3} style={{ textAlign: 'left', paddingLeft: 20 }}>
+              <ul>
+                {content.map(content => (
+                  <li>{content}</li>
+                ))}
+              </ul>
+              <div>[우대사항]</div>
+              <ul>
+                {preferential.map(preferential => (
+                  <li>{preferential}</li>
+                ))}
+              </ul>
+            </td>
+          </>
+        ) : (
+          <>
+            <td>{task}</td>
+            <td style={{ textAlign: 'left', paddingLeft: 20 }}>
+              <ul>
+                {content.map(content => (
+                  <li>{content}</li>
+                ))}
+              </ul>
+              {preferential !== undefined ? (
+                <>
+                  <div>[우대사항]</div>
+                  <ul>
+                    {preferential.map(preferential => (
+                      <li>{preferential}</li>
+                    ))}
+                  </ul>{' '}
+                </>
+              ) : null}
+            </td>
+            <td>{person + '명'}</td>
+          </>
+        )}
+      </tr>
+    ));
+  };
 
   return (
     <>
       <Line />
-      <PageSemiTitle
-        title="모집분야 및 자격요건"
-        color={palette.themeBlack}
-        fontWeight={400}
-      />
+      <PageSemiTitle title='모집분야 및 자격요건' color={palette.themeBlack} fontWeight={400} />
       <RecruitFieldTable>
         <thead>
           <tr>{fieldTitleContent(fieldHeaderList)}</tr>
@@ -134,5 +128,5 @@ export default function RecruitField() {
         <tbody>{fieldContent(fieldBodyList)}</tbody>
       </RecruitFieldTable>
     </>
-  )
+  );
 }

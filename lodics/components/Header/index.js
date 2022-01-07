@@ -1,12 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import {
-  CloseMenuIcon,
-  Container,
-  InnerContainer,
-  MenuIcon,
-  ToggleNavContainer,
-} from './styles'
-import Link from 'next/link'
+import React, { useCallback, useEffect, useState } from 'react';
+import { CloseMenuIcon, Container, InnerContainer, MenuIcon, ToggleNavContainer } from './styles';
+import Link from 'next/link';
 
 const createNavElement = (url, en, ko = '') => (
   <li>
@@ -17,49 +11,46 @@ const createNavElement = (url, en, ko = '') => (
       </a>
     </Link>
   </li>
-)
+);
 
 export default function Header({ theme }) {
-  const [showToggleNav, setShowToggleNav] = useState(false)
-  const [openToggleNav, setOpenToggleNav] = useState(false)
+  const [showToggleNav, setShowToggleNav] = useState(false);
+  const [openToggleNav, setOpenToggleNav] = useState(false);
 
   const onResize = () => {
     if (window.innerWidth < 768) {
-      setShowToggleNav(true)
+      setShowToggleNav(true);
     } else {
-      setShowToggleNav(false)
-      setOpenToggleNav(false)
+      setShowToggleNav(false);
+      setOpenToggleNav(false);
     }
-  }
+  };
 
   const onClick = useCallback(() => {
-    setOpenToggleNav(!openToggleNav)
-  }, [openToggleNav])
+    setOpenToggleNav(!openToggleNav);
+  }, [openToggleNav]);
 
   const onClose = useCallback(() => {
-    setOpenToggleNav(false)
-  }, [])
+    setOpenToggleNav(false);
+  }, []);
 
   useEffect(() => {
     if (window.innerWidth < 768) {
-      setShowToggleNav(true)
-      setOpenToggleNav(false)
+      setShowToggleNav(true);
+      setOpenToggleNav(false);
     } else {
-      setShowToggleNav(false)
+      setShowToggleNav(false);
     }
 
-    window.addEventListener('resize', onResize)
-  }, [])
+    window.addEventListener('resize', onResize);
+  }, []);
 
   return (
     <Container>
       <InnerContainer $theme={theme}>
-        <Link href="/">
+        <Link href='/'>
           <a>
-            <img
-              src={theme === 'white' ? 'img/logo_w.png' : 'img/logo_b.png'}
-              alt="로딕스 로고"
-            />
+            <img src={theme === 'white' ? 'img/logo_w.png' : 'img/logo_b.png'} alt='로딕스 로고' />
           </a>
         </Link>
         <nav>
@@ -79,16 +70,12 @@ export default function Header({ theme }) {
             <ul>
               {createNavElement('/company', 'Company', '회사소개')}
               {createNavElement('/business', 'Business', '비즈니스')}
-              {createNavElement(
-                '/productsServices',
-                'Products & Services',
-                '제품 & 서비스'
-              )}
+              {createNavElement('/productsServices', 'Products & Services', '제품 & 서비스')}
               {createNavElement('/recruitment', 'Recruitment', '채용정보')}
             </ul>
           )}
         </nav>
       </InnerContainer>
     </Container>
-  )
+  );
 }

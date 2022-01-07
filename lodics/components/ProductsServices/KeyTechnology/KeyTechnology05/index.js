@@ -1,6 +1,6 @@
-import React from 'react'
-import { PageTitle } from 'components'
-import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent'
+import React from 'react';
+import { PageTitle } from 'components';
+import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent';
 
 export const keyTechnologyList = [
   {
@@ -27,16 +27,13 @@ export const keyTechnologyList = [
       '시뮬레이터용 빅데이터 구축',
     ],
   },
-]
+];
 
 export default function KeyTechnology05() {
   return (
     <>
       <PageTitle title={'긴급차량 동적 가이던스 시스템 연구'} />
-      <KeyTechnologyComponent
-        imageUrl={'img/productsServices/pev.png'}
-        list={keyTechnologyList}
-      />
+      <KeyTechnologyComponent imageUrl={'img/productsServices/pev.png'} list={keyTechnologyList} />
     </>
-  )
+  );
 }

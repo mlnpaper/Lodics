@@ -1,11 +1,11 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
 
 export const WrapContents = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`
+`;
 
 export const SingleContents = styled.div`
   border: 1px solid #dddddd;
@@ -34,7 +34,7 @@ export const SingleContents = styled.div`
       white-space: pre-wrap;
     }
   }
-`
+`;
 
 export const MultipleContents = styled.div`
   border: 1px solid #dddddd;
@@ -85,7 +85,7 @@ export const MultipleContents = styled.div`
       }
     }
   }
-`
+`;
 
 export const Contents = styled.div`
   border: 1px solid #dddddd;
@@ -111,7 +111,7 @@ export const Contents = styled.div`
     font-weight: 500;
     white-space: pre-wrap;
   }
-`
+`;
 
 export const Contents_ = styled.div`
   border: 1px solid #dddddd;
@@ -168,4 +168,4 @@ export const Contents_ = styled.div`
     font-weight: 500;
     white-space: pre-wrap;
   } */
-`
+`;

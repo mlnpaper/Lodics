@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -6,6 +6,5 @@ export const Container = styled.div`
   display: flex;
   flex-flow: column;
 
-  justify-content: ${props =>
-    props.$theme === 'black' ? 'none' : 'space-between'};
-`
+  justify-content: ${props => (props.$theme === 'black' ? 'none' : 'space-between')};
+`;

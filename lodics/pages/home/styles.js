@@ -1,11 +1,11 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
 
 export const Container = styled.div`
   min-height: 100vh;
   overflow: hidden;
   position: relative;
-`
+`;
 
 export const Background = styled.div`
   position: absolute;
@@ -13,8 +13,7 @@ export const Background = styled.div`
   height: 100%;
   z-index: -5;
   background: center / cover no-repeat url('img/basic_bg.jpg');
-  animation: scaleAnimation 10s cubic-bezier(0.4, 0.4, 0.4, 1) 0s infinite
-    normal forwards;
+  animation: scaleAnimation 10s cubic-bezier(0.4, 0.4, 0.4, 1) 0s infinite normal forwards;
 
   @keyframes scaleAnimation {
     0% {
@@ -32,7 +31,7 @@ export const Background = styled.div`
       filter: brightness(1.1);
     }
   }
-`
+`;
 
 export const TextContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -126,7 +125,7 @@ export const TextContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     width: 1200px;
   }
-`
+`;
 
 export const CardContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -151,4 +150,4 @@ export const CardContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     width: 1200px;
   }
-`
+`;

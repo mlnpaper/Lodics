@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
 
 // HistoryList.js
 export const HistoryListContainer = styled.div`
@@ -17,7 +17,7 @@ export const HistoryListContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     padding: 2rem 0;
   }
-`
+`;
 
 export const HistoryListYearContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -34,7 +34,7 @@ export const HistoryListYearContainer = styled.div`
     font-size: 3rem;
     padding: 2rem 2rem 2rem 8rem;
   }
-`
+`;
 
 export const HistoryListContentContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -48,7 +48,7 @@ export const HistoryListContentContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     padding: 2rem 1rem;
   }
-`
+`;
 
 export const ContentContainer = styled.div`
   /* -------------------------------------------------------------------------- */
@@ -86,4 +86,4 @@ export const ContentContainer = styled.div`
       font-size: 1.7rem;
     }
   }
-`
+`;

@@ -1,10 +1,10 @@
-import React from 'react'
-import { Div } from './styles'
-import { PageTitle } from '..'
-import RecruitField from '@components/Recruitment/Content/RecruitField'
-import Process from '@components/Recruitment/Content/Process'
-import Policy from '@components/Recruitment/Content/Policy'
-import Benefit from '@components/Recruitment/Content/Benefit'
+import React from 'react';
+import { Div } from './styles';
+import { PageTitle } from '..';
+import RecruitField from '@components/Recruitment/Content/RecruitField';
+import Process from '@components/Recruitment/Content/Process';
+import Policy from '@components/Recruitment/Content/Policy';
+import Benefit from '@components/Recruitment/Content/Benefit';
 
 export default function Recruitment() {
   return (
@@ -19,5 +19,5 @@ export default function Recruitment() {
       <Policy />
       <Benefit />
     </>
-  )
+  );
 }

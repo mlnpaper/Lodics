@@ -1,6 +1,6 @@
-import React from 'react'
-import { PageTitle } from 'components'
-import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent'
+import React from 'react';
+import { PageTitle } from 'components';
+import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent';
 
 export const keyTechnologyList = [
   {
@@ -9,31 +9,19 @@ export const keyTechnologyList = [
   },
   {
     title: '운용 개념',
-    contents: [
-      '해양운용 수집수단 획득 자료 도시',
-      '선박/적조 통합분석 시스템 구축을 통한 분석 자료 표출',
-    ],
+    contents: ['해양운용 수집수단 획득 자료 도시', '선박/적조 통합분석 시스템 구축을 통한 분석 자료 표출'],
   },
   {
     title: '체계 구성',
-    contents: [
-      '선박탐지통합분석',
-      '적조탐지통합분석',
-      '해양운용 수집수단 연계 시뮬레이터',
-    ],
+    contents: ['선박탐지통합분석', '적조탐지통합분석', '해양운용 수집수단 연계 시뮬레이터'],
   },
-]
+];
 
 export default function KeyTechnology04() {
   return (
     <>
-      <PageTitle
-        title={'국가해양영토 광역 감시망 구축 기반연구 통합분석 시스템'}
-      />
-      <KeyTechnologyComponent
-        imageUrl={'img/productsServices/wiss.png'}
-        list={keyTechnologyList}
-      />
+      <PageTitle title={'국가해양영토 광역 감시망 구축 기반연구 통합분석 시스템'} />
+      <KeyTechnologyComponent imageUrl={'img/productsServices/wiss.png'} list={keyTechnologyList} />
     </>
-  )
+  );
 }

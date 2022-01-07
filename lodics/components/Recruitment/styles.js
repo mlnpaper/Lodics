@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
 
 export const Div = styled.div`
   font-size: 30px;
@@ -9,7 +9,7 @@ export const Div = styled.div`
     font-size: 30px;
     color: ${palette.themePrimary};
   }
-`
+`;
 
 export const SubTitle = styled.div`
   margin-bottom: 30px;
@@ -28,12 +28,12 @@ export const SubTitle = styled.div`
     font-size: 30px;
     font-weight: 500;
   }
-`
+`;
 
 export const Line = styled.hr`
   border: 1px dashed #e8e8e8;
   margin: 50px 0px 50px 0px;
-`
+`;
 
 export const RecruitFieldTable = styled.table`
   width: 100%;
@@ -88,7 +88,7 @@ export const RecruitFieldTable = styled.table`
       }
     }
   }
-`
+`;
 export const ProcessTable = styled.table`
   width: 100%;
   border: 1px solid #ddd;
@@ -133,7 +133,7 @@ export const ProcessTable = styled.table`
       }
     }
   }
-`
+`;
 
 export const WrapCirCle = styled.div`
   margin-top: 50px;
@@ -161,16 +161,14 @@ export const WrapCirCle = styled.div`
     height: 75px;
     color: #a4a4a4;
   }
-`
+`;
 
 export const Circle = styled.div`
-  background: center / cover
-    url(${props => (props.$theme === 'image' ? props.$image : null)});
+  background: center / cover url(${props => (props.$theme === 'image' ? props.$image : null)});
   width: ${props => props.$size};
   height: ${props => props.$size};
   border: 3px solid ${palette.themePrimary};
-  border-color: ${props =>
-    props.$theme === 'image' ? 'transparent' : palette.themePrimary};
+  border-color: ${props => (props.$theme === 'image' ? 'transparent' : palette.themePrimary)};
   border-radius: 150px;
   display: flex;
   flex-direction: column;
@@ -179,8 +177,7 @@ export const Circle = styled.div`
 
   div {
     font-size: 30px;
-    color: ${props =>
-      props.$theme === 'image' ? palette.themeWhite : palette.themePrimary};
+    color: ${props => (props.$theme === 'image' ? palette.themeWhite : palette.themePrimary)};
     font-weight: 700;
   }
 
@@ -192,8 +189,7 @@ export const Circle = styled.div`
 
   div + hr + div {
     font-size: 14px;
-    color: ${props =>
-      props.$theme === 'image' ? palette.themeWhite : palette.themePrimary};
+    color: ${props => (props.$theme === 'image' ? palette.themeWhite : palette.themePrimary)};
 
     white-space: pre-wrap;
     text-align: center;
@@ -204,4 +200,4 @@ export const Circle = styled.div`
     height: 75px;
     color: ${palette.themeWhite};
   }
-`
+`;

@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
 
 export const Contents = styled.div`
   max-width: 1200px;
@@ -10,7 +10,7 @@ export const Contents = styled.div`
     width: 540px;
     border: 1px solid #dfdfdf;
   }
-`
+`;
 export const Table = styled.table`
   width: 640px;
   border-top: 3px solid ${palette.themePrimary};
@@ -40,4 +40,4 @@ export const Table = styled.table`
     padding: 0px 20px 0px 50px;
     /* border-bottom: 1px solid #dfdfdf; */
   }
-`
+`;

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { GlobalStateContext } from 'context'
+import React, { useState } from 'react';
+import { GlobalStateContext } from 'context';
 
 export default function GlobalState({ children }) {
-  const [subSelectedComponent, setSubSelectedComponent] = useState('')
-  const [selectedSubMenu, setSelectedSubMenu] = useState('')
+  const [subSelectedComponent, setSubSelectedComponent] = useState('');
+  const [selectedSubMenu, setSelectedSubMenu] = useState('');
 
   return (
     <GlobalStateContext.Provider
@@ -16,5 +16,5 @@ export default function GlobalState({ children }) {
     >
       {children}
     </GlobalStateContext.Provider>
-  )
+  );
 }

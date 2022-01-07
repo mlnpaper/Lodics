@@ -1,6 +1,6 @@
-import React from 'react'
-import { PageTitle } from 'components'
-import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent'
+import React from 'react';
+import { PageTitle } from 'components';
+import KeyTechnologyComponent from '@components/ProductsServices/KeyTechnology/KeyTechnologyComponent';
 
 export const keyTechnologyList = [
   {
@@ -13,30 +13,19 @@ export const keyTechnologyList = [
   },
   {
     title: '운용 개념',
-    contents: [
-      '영상(Imagery)/영상정보(IMINT)/지형공간정보 정보융합',
-      '분산플랫폼 & 분산DB 기반 분산처리',
-    ],
+    contents: ['영상(Imagery)/영상정보(IMINT)/지형공간정보 정보융합', '분산플랫폼 & 분산DB 기반 분산처리'],
   },
   {
     title: '체계 구성',
-    contents: [
-      '다중센서 융합처리',
-      'GEOINT 정보추출',
-      '분산형 GEOINT DB 통합처리',
-      '정보융합 분산 정보처리 시스템',
-    ],
+    contents: ['다중센서 융합처리', 'GEOINT 정보추출', '분산형 GEOINT DB 통합처리', '정보융합 분산 정보처리 시스템'],
   },
-]
+];
 
 export default function KeyTechnology06() {
   return (
     <>
       <PageTitle title={'다중센서 분산처리 및 GEOINT 자료 통합처리 시스템'} />
-      <KeyTechnologyComponent
-        imageUrl={'img/productsServices/geoint.png'}
-        list={keyTechnologyList}
-      />
+      <KeyTechnologyComponent imageUrl={'img/productsServices/geoint.png'} list={keyTechnologyList} />
     </>
-  )
+  );
 }

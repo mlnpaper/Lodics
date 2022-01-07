@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { palette } from '@styles/color'
+import styled from 'styled-components';
+import { palette } from '@styles/color';
 
 // index.js
 export const Container = styled.div`
@@ -17,7 +17,7 @@ export const Container = styled.div`
     padding-bottom: 0;
     border-bottom: none;
   }
-`
+`;
 
 // Card.js
 export const CardContainer = styled.div`
@@ -68,7 +68,7 @@ export const CardContainer = styled.div`
       white-space: pre-line;
     }
   }
-`
+`;
 
 export const ImgContainer = styled.div`
   padding: 1rem;
@@ -77,4 +77,4 @@ export const ImgContainer = styled.div`
     display: inline-block;
     width: 100%;
   }
-`
+`;

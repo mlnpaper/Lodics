@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import GlobalStateContext from '@context/globalStateContext'
+import React, { useContext, useEffect, useState } from 'react';
+import GlobalStateContext from '@context/globalStateContext';
 import {
   AppLayout,
   SubMenu,
@@ -10,8 +10,8 @@ import {
   KeyTechnology04,
   KeyTechnology05,
   KeyTechnology06,
-} from 'components'
-import { PageContainer } from '@pages/company/styles'
+} from 'components';
+import { PageContainer } from '@pages/company/styles';
 
 const subSelectList = [
   [
@@ -38,43 +38,33 @@ const subSelectList = [
       text: '다중센서 분산처리 및 GCOINT자료 통합처리 시스템',
     },
   ],
-]
+];
 
 export default function productsServices() {
-  const { subSelectedComponent, setSubSelectedComponent } =
-    useContext(GlobalStateContext)
-  const [selectedComponent, setSelectedComponent] = useState(
-    <KeyTechnology01 />
-  )
+  const { subSelectedComponent, setSubSelectedComponent } = useContext(GlobalStateContext);
+  const [selectedComponent, setSelectedComponent] = useState(<KeyTechnology01 />);
 
   useEffect(() => {
-    if (subSelectedComponent === 'eGovernment')
-      setSelectedComponent(<EGovernment />)
-    else if (subSelectedComponent === 'keyTechnology01')
-      setSelectedComponent(<KeyTechnology01 />)
-    else if (subSelectedComponent === 'keyTechnology02')
-      setSelectedComponent(<KeyTechnology02 />)
-    else if (subSelectedComponent === 'keyTechnology03')
-      setSelectedComponent(<KeyTechnology03 />)
-    else if (subSelectedComponent === 'keyTechnology04')
-      setSelectedComponent(<KeyTechnology04 />)
-    else if (subSelectedComponent === 'keyTechnology05')
-      setSelectedComponent(<KeyTechnology05 />)
-    else if (subSelectedComponent === 'keyTechnology06')
-      setSelectedComponent(<KeyTechnology06 />)
-  }, [subSelectedComponent])
+    if (subSelectedComponent === 'eGovernment') setSelectedComponent(<EGovernment />);
+    else if (subSelectedComponent === 'keyTechnology01') setSelectedComponent(<KeyTechnology01 />);
+    else if (subSelectedComponent === 'keyTechnology02') setSelectedComponent(<KeyTechnology02 />);
+    else if (subSelectedComponent === 'keyTechnology03') setSelectedComponent(<KeyTechnology03 />);
+    else if (subSelectedComponent === 'keyTechnology04') setSelectedComponent(<KeyTechnology04 />);
+    else if (subSelectedComponent === 'keyTechnology05') setSelectedComponent(<KeyTechnology05 />);
+    else if (subSelectedComponent === 'keyTechnology06') setSelectedComponent(<KeyTechnology06 />);
+  }, [subSelectedComponent]);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
 
     //페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
-    return setSubSelectedComponent('keyTechnology01')
-  }, [])
+    return setSubSelectedComponent('keyTechnology01');
+  }, []);
 
   return (
-    <AppLayout theme="black">
+    <AppLayout theme='black'>
       <SubMenu title={'Products & Services'} subSelectList={subSelectList} />
       <PageContainer> {selectedComponent} </PageContainer>
     </AppLayout>
-  )
+  );
 }

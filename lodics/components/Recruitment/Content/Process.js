@@ -1,10 +1,10 @@
-import React from 'react'
-import { PageSemiTitle } from 'components'
-import { palette } from '@styles/color'
-import { Line, ProcessTable, Circle, WrapCirCle } from '../styles'
-import { BsPencilFill, BsPeopleFill, BsArrowRight } from 'react-icons/bs'
-import { AiOutlineFileSearch } from 'react-icons/ai'
-import { FaHandsHelping } from 'react-icons/fa'
+import React from 'react';
+import { PageSemiTitle } from 'components';
+import { palette } from '@styles/color';
+import { Line, ProcessTable, Circle, WrapCirCle } from '../styles';
+import { BsPencilFill, BsPeopleFill, BsArrowRight } from 'react-icons/bs';
+import { AiOutlineFileSearch } from 'react-icons/ai';
+import { FaHandsHelping } from 'react-icons/fa';
 
 const processList = [
   {
@@ -27,7 +27,7 @@ const processList = [
     icon: <FaHandsHelping />,
     url: 'img/recruitment/process04.png',
   },
-]
+];
 
 const processDetailList = [
   {
@@ -59,7 +59,7 @@ const processDetailList = [
     title: '최종합격통보',
     content: ['최종합격 통보 후 채용일정에 따라 입사를 진행합니다.'],
   },
-]
+];
 
 export default function Process() {
   const processContent = processList => {
@@ -74,8 +74,8 @@ export default function Process() {
 
         {title !== '최종합격 통보' ? <BsArrowRight /> : null}
       </>
-    ))
-  }
+    ));
+  };
 
   const processDetailContent = processDetailList => {
     return processDetailList.map(({ index, title, content }) => (
@@ -94,22 +94,18 @@ export default function Process() {
           </td>
         </tr>
       </>
-    ))
-  }
+    ));
+  };
 
   return (
     <>
       <Line />
-      <PageSemiTitle
-        title="모집분야 및 자격요건"
-        color={palette.themeBlack}
-        fontWeight={400}
-      />
+      <PageSemiTitle title='모집분야 및 자격요건' color={palette.themeBlack} fontWeight={400} />
       <WrapCirCle>{processContent(processList)}</WrapCirCle>
 
       <ProcessTable>
         <tbody>{processDetailContent(processDetailList)}</tbody>
       </ProcessTable>
     </>
-  )
+  );
 }

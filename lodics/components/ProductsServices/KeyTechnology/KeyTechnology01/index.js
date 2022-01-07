@@ -1,6 +1,6 @@
-import React from 'react'
-import { PageTitle } from 'components'
-import { WrapContents, SingleContents, MultipleContents } from './styles'
+import React from 'react';
+import { PageTitle } from 'components';
+import { WrapContents, SingleContents, MultipleContents } from './styles';
 
 export default function KeyTechnology01() {
   return (
@@ -118,5 +118,5 @@ export default function KeyTechnology01() {
         </SingleContents>
       </WrapContents>
     </>
-  )
+  );
 }

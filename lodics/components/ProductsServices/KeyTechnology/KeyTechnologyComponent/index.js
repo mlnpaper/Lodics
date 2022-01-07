@@ -1,5 +1,5 @@
-import React from 'react'
-import { Contents, Table } from './styles'
+import React from 'react';
+import { Contents, Table } from './styles';
 export const KeyTechnologyTable = list => {
   return list.map(({ title, contents }) => (
     <tr>
@@ -10,8 +10,8 @@ export const KeyTechnologyTable = list => {
         ))}
       </td>
     </tr>
-  ))
-}
+  ));
+};
 
 export default function KeyTechnologyComponent({ imageUrl, list }) {
   return (
@@ -21,5 +21,5 @@ export default function KeyTechnologyComponent({ imageUrl, list }) {
         <Table>{KeyTechnologyTable(list)}</Table>
       </Contents>
     </>
-  )
+  );
 }
