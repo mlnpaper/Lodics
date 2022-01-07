@@ -36,6 +36,10 @@ export const CardContainer = styled.div`
   }
 
   p {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     margin: 0;
     padding: 0.8rem;
@@ -67,23 +71,10 @@ export const CardContainer = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-  /* -------------------------------------------------------------------------- */
-  /*                               모바일  & default                             */
-  /* -------------------------------------------------------------------------- */
-  height: 20rem;
   padding: 1rem;
 
   img {
     display: inline-block;
-    height: 100%;
     width: 100%;
-    background: ${palette.themeWhite};
-  }
-
-  @media all and (min-width: 768px) {
-    /* -------------------------------------------------------------------------- */
-    /*                                   테블릿                                    */
-    /* -------------------------------------------------------------------------- */
-    height: 40rem;
   }
 `;

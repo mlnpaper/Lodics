@@ -37,10 +37,8 @@ export const ImgContainer = styled.div`
   width: 100%;
 
   img {
-    border: 1px solid ${palette.themeDashedBorder};
     display: block;
     width: 100%;
-    min-height: 50vh;
   }
 
   @media all and (min-width: 768px) {
@@ -48,10 +46,6 @@ export const ImgContainer = styled.div`
     /*                                   테블릿                                    */
     /* -------------------------------------------------------------------------- */
     padding: 0 5rem;
-
-    img {
-      min-height: 100vh;
-    }
   }
 `;
 
@@ -64,23 +58,9 @@ export const InnerContainer = styled.div`
 `;
 
 export const GeointProcessContainer = styled(InnerContainer)`
-  /* -------------------------------------------------------------------------- */
-  /*                               모바일  & default                             */
-  /* -------------------------------------------------------------------------- */
   img {
     display: block;
-    border: 1px solid ${palette.themeDashedBorder};
     width: 100%;
-    min-height: 50vh;
-  }
-
-  @media all and (min-width: 768px) {
-    /* -------------------------------------------------------------------------- */
-    /*                                   테블릿                                    */
-    /* -------------------------------------------------------------------------- */
-    img {
-      min-height: 100vh;
-    }
   }
 `;
 

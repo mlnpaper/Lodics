@@ -33,7 +33,7 @@ export default function GoalsVisions() {
       <Container>
         <PageTitle title='목표와 비전' />
         <ImgContainer>
-          <img src='/' alt='목표와 비전' />
+          <img src='img/business/biz01-img(4).png' alt='목표와 비전' />
         </ImgContainer>
         <InnerContainer>
           <PageSemiTitle title='GEOINT 소개' />
@@ -63,7 +63,7 @@ export default function GoalsVisions() {
           <PageSemiTitle title='GEOINT 프로세스' />
           <ThirdTitle>GEOINT 자료처리 과정</ThirdTitle>
           <ImgContainer>
-            <img src='/' alt='GEOINT 자료처리 과정' />
+            <img src='img/business/biz01_03.png' alt='GEOINT 자료처리 과정' />
           </ImgContainer>
         </GeointProcessContainer>
       </Container>
