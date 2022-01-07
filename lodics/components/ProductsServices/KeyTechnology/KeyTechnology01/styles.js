@@ -53,12 +53,14 @@ export const MultipleContents = styled.div`
     flex-direction: row;
     font-size: 16px;
     ul {
+      font-size: 2rem;
       list-style: none;
       padding: 0px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       li {
+        font-size: 1.6rem;
         background-color: #f6f6f6;
         border: 1px solid #dddddd;
         border-radius: 2px;
@@ -73,6 +75,7 @@ export const MultipleContents = styled.div`
         }
 
         td {
+          font-size: 1.6rem;
           background-color: ${palette.themeWhite};
           border: 1px solid #dddddd;
           padding: 5px 0px;

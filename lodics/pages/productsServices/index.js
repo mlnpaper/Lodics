@@ -48,7 +48,6 @@ export default function productsServices() {
   )
 
   useEffect(() => {
-    console.log(subSelectedComponent)
     if (subSelectedComponent === 'eGovernment')
       setSelectedComponent(<EGovernment />)
     else if (subSelectedComponent === 'keyTechnology01')

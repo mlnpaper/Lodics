@@ -6,6 +6,7 @@ export const Div = styled.div`
   font-weight: 400;
   white-space: pre-wrap;
   b {
+    font-size: 30px;
     color: ${palette.themePrimary};
   }
 `
@@ -43,17 +44,18 @@ export const RecruitFieldTable = styled.table`
   thead {
     background-color: ${palette.themePrimary};
     color: ${palette.themeWhite};
-    font-size: 16px;
-    font-weight: bold;
+
     th {
       border: 1px solid #ddd;
       height: 50px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      vertical-align: middle;
     }
   }
 
   tbody {
     font-weight: bold;
-    font-size: 16px;
 
     tr:nth-child(even) {
       background-color: ${palette.themeWhite};
@@ -62,13 +64,17 @@ export const RecruitFieldTable = styled.table`
       background-color: #f4f8ff;
     }
     td {
+      font-size: 1.6rem;
       border: 1px solid #ddd;
       text-align: center;
+      vertical-align: middle;
     }
 
     td + td {
+      font-size: 1.6rem;
       font-weight: normal;
       div {
+        font-size: 1.6rem;
         font-weight: bold;
       }
     }
@@ -77,6 +83,9 @@ export const RecruitFieldTable = styled.table`
       list-style-type: none;
       margin-left: 0;
       padding: 0;
+      li {
+        font-size: 1.6rem;
+      }
     }
   }
 `
@@ -90,7 +99,6 @@ export const ProcessTable = styled.table`
     border: 1px solid #ddd;
     background-color: #f4f8ff;
     padding: 25px 15px 25px 15px;
-
     div {
       color: ${palette.themePrimary};
       font-size: 40px;
@@ -109,10 +117,10 @@ export const ProcessTable = styled.table`
   td {
     border: 1px solid #ddd;
     font-size: 16px;
-    padding-left: 30px;
-    vertical-align: center;
+    padding-left: 50px;
+    vertical-align: middle;
     ul {
-      list-style-type: square;
+      margin-bottom: 0px;
 
       li::marker {
         color: ${palette.themePrimary};
@@ -120,12 +128,15 @@ export const ProcessTable = styled.table`
 
       li {
         color: ${palette.themeBlack};
+        font-size: 16px;
+        list-style-type: square;
       }
     }
   }
 `
 
 export const WrapCirCle = styled.div`
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

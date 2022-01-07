@@ -16,6 +16,7 @@ export const Table = styled.table`
   border-top: 3px solid ${palette.themePrimary};
   border-bottom: 3px solid ${palette.themePrimary};
   th {
+    vertical-align: middle;
     width: 160px;
     background-color: #efeff1;
     font-size: 18px;
@@ -23,6 +24,7 @@ export const Table = styled.table`
     border-bottom: 1px solid #dfdfdf;
   }
   td {
+    vertical-align: middle;
     border-bottom: 1px solid #dfdfdf;
   }
   li::marker {
