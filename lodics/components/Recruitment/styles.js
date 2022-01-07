@@ -187,6 +187,7 @@ export const Circle = styled.div`
   hr {
     width: 20%;
     border: 2px solid ${palette.themePrimary};
+    background-color: ${palette.themePrimary};
   }
 
   div + hr + div {

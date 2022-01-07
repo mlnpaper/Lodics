@@ -14,13 +14,11 @@ export { default as KeyTechnology03 } from '@components/ProductsServices/KeyTech
 export { default as KeyTechnology04 } from '@components/ProductsServices/KeyTechnology/KeyTechnology04'
 export { default as KeyTechnology05 } from '@components/ProductsServices/KeyTechnology/KeyTechnology05'
 export { default as KeyTechnology06 } from '@components/ProductsServices/KeyTechnology/KeyTechnology06'
-
-// export { default as CeoGreeting } from '@components/Company/CeoGreeting';
-// export { default as Certification } from '@components/Company/Certification';
-// export { default as CertificationCard } from '@components/Company/Certification/Card';
-// export { default as History } from '@components/Company/History';
-// export { default as Location } from '@components/Company/Location';
-// export { default as HistoryList } from '@components/Company/History/HistoryList';
-// export { default as PageSemiTitle } from '@components/PageSemiTitle';
-// export { default as GoalsVisions } from '@components/Business/GoalsVisions';
-// export { default as KeyBusiness } from '@components/Business/KeyBusiness';
+export { default as CeoGreeting } from '@components/Company/CeoGreeting'
+export { default as Certification } from '@components/Company/Certification'
+export { default as CertificationCard } from '@components/Company/Certification/Card'
+export { default as History } from '@components/Company/History'
+export { default as Location } from '@components/Company/Location'
+export { default as HistoryList } from '@components/Company/History/HistoryList'
+export { default as GoalsVisions } from '@components/Business/GoalsVisions'
+export { default as KeyBusiness } from '@components/Business/KeyBusiness'

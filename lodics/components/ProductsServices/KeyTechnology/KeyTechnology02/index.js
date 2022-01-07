@@ -38,7 +38,7 @@ export default function KeyTechnology02() {
     <>
       <PageTitle title={'스마트 방사능방재 지휘통제 시스템 구축'} />
       <KeyTechnologyComponent
-        imageUrl={'img/srp.png'}
+        imageUrl={'img/productsServices/srp.png'}
         list={keyTechnologyList}
       />
     </>

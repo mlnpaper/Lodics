@@ -35,7 +35,7 @@ export default function KeyTechnology03() {
     <>
       <PageTitle title={'실감형 3D 도시모델 저작 및 제공 기술 개발'} />
       <KeyTechnologyComponent
-        imageUrl={'img/qubism.png'}
+        imageUrl={'img/productsServices/qubism.png'}
         list={keyTechnologyList}
       />
     </>
