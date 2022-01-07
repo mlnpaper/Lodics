@@ -7,7 +7,7 @@ export default function KeyBusiness() {
     <React.Fragment>
       <PageTitle title='주요사업분야' />
       <ImgContainer>
-        <img src='img/business/biz02-img.png' alt='주요사업분야' />
+        <img src='img/business/biz02_01.png' alt='주요사업분야' />
       </ImgContainer>
     </React.Fragment>
   );

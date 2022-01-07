@@ -146,7 +146,7 @@ export const ImgCardContainer = styled.div`
     content: '';
     position: absolute;
     display: block;
-    top: 49%;
+    top: 42%;
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
@@ -164,7 +164,7 @@ export const ImgCardContainer = styled.div`
     padding: 0 5rem;
 
     &:after {
-      top: 48%;
+      top: 45%;
       border-top: 50px solid #dddddd;
       border-bottom: 50px solid none;
       border-right: 50px solid transparent;
@@ -193,7 +193,6 @@ export const ImgCardInnerContainer = styled.div`
   img {
     border-radius: 10px;
     border: 1px solid ${palette.themeDashedBorder};
-    min-height: 160px;
     width: 100%;
   }
 
@@ -211,10 +210,6 @@ export const ImgCardInnerContainer = styled.div`
     padding: 2rem 2rem 0 2rem;
     border-radius: 10px;
     margin-bottom: 20rem;
-
-    img {
-      min-height: 500px;
-    }
 
     span {
       font-size: 2.5rem;

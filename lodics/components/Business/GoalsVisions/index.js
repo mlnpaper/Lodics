@@ -33,7 +33,7 @@ export default function GoalsVisions() {
       <Container>
         <PageTitle title='목표와 비전' />
         <ImgContainer>
-          <img src='img/business/biz01-img(4).png' alt='목표와 비전' />
+          <img src='img/business/biz01_01.png' alt='목표와 비전' />
         </ImgContainer>
         <InnerContainer>
           <PageSemiTitle title='GEOINT 소개' />
@@ -53,10 +53,10 @@ export default function GoalsVisions() {
             '지형 자체가 가지고 있는 특성을 분석한 ‘지형정보’를 여러 장의 투명도를 겹치듯이 융합해 지형과 상황에 대한 종합적인 분석과 판단이 가능하도록 정보를 제공'
           )}
           <ImgCardContainer>
-            {createImgCardElement('/', '영상')}
-            {createImgCardElement('/', '영상정보')}
-            {createImgCardElement('/', '지형공간정보')}
-            {createImgCardElement('/', 'GEOINT')}
+            {createImgCardElement('img/business/biz01_02_01.png', '영상')}
+            {createImgCardElement('img/business/biz01_02_02.png', '영상정보')}
+            {createImgCardElement('img/business/biz01_02_03.png', '지형공간정보')}
+            {createImgCardElement('img/business/biz01_02_04.png', 'GEOINT')}
           </ImgCardContainer>
         </InnerContainer>
         <GeointProcessContainer>
