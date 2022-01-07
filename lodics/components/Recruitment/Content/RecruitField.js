@@ -1,5 +1,7 @@
 import React from 'react'
-import { Line, SubTitle, RecruitFieldTable } from '../styles'
+import { PageSemiTitle } from 'components'
+import { Line, RecruitFieldTable } from '../styles'
+import { palette } from '@styles/color'
 
 const fieldHeaderList = ['모집분야', '담당업무', '자격요건', '모집인원']
 
@@ -120,12 +122,11 @@ export default function RecruitField() {
   return (
     <>
       <Line />
-      <SubTitle>
-        <div>
-          <div />
-        </div>
-        <span>모집분야 및 자격요건</span>
-      </SubTitle>
+      <PageSemiTitle
+        title="모집분야 및 자격요건"
+        color={palette.themeBlack}
+        fontWeight={400}
+      />
       <RecruitFieldTable>
         <thead>
           <tr>{fieldTitleContent(fieldHeaderList)}</tr>

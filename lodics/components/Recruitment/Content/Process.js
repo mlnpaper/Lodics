@@ -1,5 +1,7 @@
 import React from 'react'
-import { Line, SubTitle, ProcessTable, Circle, WrapCirCle } from '../styles'
+import { PageSemiTitle } from 'components'
+import { palette } from '@styles/color'
+import { Line, ProcessTable, Circle, WrapCirCle } from '../styles'
 import { BsPencilFill, BsPeopleFill, BsArrowRight } from 'react-icons/bs'
 import { AiOutlineFileSearch } from 'react-icons/ai'
 import { FaHandsHelping } from 'react-icons/fa'
@@ -98,12 +100,11 @@ export default function Process() {
   return (
     <>
       <Line />
-      <SubTitle>
-        <div>
-          <div />
-        </div>
-        <span style={{ fontSize: 30, fontWeight: '500' }}>채용절차</span>
-      </SubTitle>
+      <PageSemiTitle
+        title="모집분야 및 자격요건"
+        color={palette.themeBlack}
+        fontWeight={400}
+      />
       <WrapCirCle>{processContent(processList)}</WrapCirCle>
 
       <ProcessTable>
