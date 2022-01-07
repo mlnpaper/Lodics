@@ -164,8 +164,8 @@ export const WrapCirCle = styled.div`
 `
 
 export const Circle = styled.div`
-  background-image: url(${props =>
-    props.$theme === 'image' ? props.$image : null});
+  background: center / cover
+    url(${props => (props.$theme === 'image' ? props.$image : null)});
   width: ${props => props.$size};
   height: ${props => props.$size};
   border: 3px solid ${palette.themePrimary};

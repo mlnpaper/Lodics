@@ -10,22 +10,22 @@ const processList = [
   {
     title: '지원서 접수',
     icon: <BsPencilFill />,
-    url: 'img/basic_bg.jpg',
+    url: 'img/recruitment/process01.png',
   },
   {
     title: '서류전형',
     icon: <AiOutlineFileSearch />,
-    url: 'img/basic_bg.jpg',
+    url: 'img/recruitment/process02.png',
   },
   {
     title: '면접전형',
     icon: <BsPeopleFill />,
-    url: 'img/basic_bg.jpg',
+    url: 'img/recruitment/process03.png',
   },
   {
     title: '최종합격 통보',
     icon: <FaHandsHelping />,
-    url: 'img/basic_bg.jpg',
+    url: 'img/recruitment/process04.png',
   },
 ]
 
@@ -63,10 +63,10 @@ const processDetailList = [
 
 export default function Process() {
   const processContent = processList => {
-    return processList.map(({ title, icon }) => (
+    return processList.map(({ title, icon, url }) => (
       <>
         <div>
-          <Circle $theme={'image'} $image={'img/basic_bg.jpg'} $size={'150px'}>
+          <Circle $theme={'image'} $image={url} $size={'150px'}>
             {icon}
           </Circle>
           <span>{title}</span>
