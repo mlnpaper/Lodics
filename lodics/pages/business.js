@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AppLayout, GoalsVisions, KeyBusiness, SubMenu } from 'components';
 import { GlobalStateContext } from 'context';
 import { PageContainer } from '@pages/company';
+import Head from 'next/head';
 
 const subSelectList = [
   [
@@ -27,9 +28,14 @@ export default function business() {
   }, []);
 
   return (
-    <AppLayout theme='black' page='Business'>
-      <SubMenu title='Business' subSelectList={subSelectList} />
-      <PageContainer>{selectedComponent}</PageContainer>
-    </AppLayout>
+    <React.Fragment>
+      <Head>
+        <title>LoDiCS | Business</title>
+      </Head>
+      <AppLayout theme='black' page='Business'>
+        <SubMenu title='Business' subSelectList={subSelectList} />
+        <PageContainer>{selectedComponent}</PageContainer>
+      </AppLayout>
+    </React.Fragment>
   );
 }

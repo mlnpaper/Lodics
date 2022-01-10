@@ -3,6 +3,7 @@ import { AppLayout, CeoGreeting, Certification, History, Location, SubMenu } fro
 import { GlobalStateContext } from 'context';
 import { palette } from '@styles/color';
 import styled from 'styled-components';
+import Head from 'next/head';
 
 export const PageContainer = styled.section`
   /* -------------------------------------------------------------------------- */
@@ -48,9 +49,14 @@ export default function company() {
   }, []);
 
   return (
-    <AppLayout theme='black' page='Company'>
-      <SubMenu title='Company' subSelectList={subSelectList} />
-      <PageContainer>{selectedComponent}</PageContainer>
-    </AppLayout>
+    <React.Fragment>
+      <Head>
+        <title>LoDiCS | Company</title>
+      </Head>
+      <AppLayout theme='black' page='Company'>
+        <SubMenu title='Company' subSelectList={subSelectList} />
+        <PageContainer>{selectedComponent}</PageContainer>
+      </AppLayout>
+    </React.Fragment>
   );
 }

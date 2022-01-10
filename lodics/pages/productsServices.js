@@ -12,6 +12,7 @@ import {
   KeyTechnology06,
 } from 'components';
 import { PageContainer } from '@pages/company';
+import Head from 'next/head';
 
 const subSelectList = [
   [
@@ -62,9 +63,14 @@ export default function productsServices() {
   }, []);
 
   return (
-    <AppLayout theme='black' page='Products & Services'>
-      <SubMenu title={'Products & Services'} subSelectList={subSelectList} />
-      <PageContainer> {selectedComponent} </PageContainer>
-    </AppLayout>
+    <React.Fragment>
+      <Head>
+        <title>LoDiCS | Products & Services</title>
+      </Head>
+      <AppLayout theme='black' page='Products & Services'>
+        <SubMenu title={'Products & Services'} subSelectList={subSelectList} />
+        <PageContainer> {selectedComponent} </PageContainer>
+      </AppLayout>
+    </React.Fragment>
   );
 }
