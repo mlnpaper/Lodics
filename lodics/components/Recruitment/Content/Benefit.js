@@ -1,5 +1,7 @@
 import React from 'react';
-import { Line, SubTitle, Circle, WrapCirCle } from '../styles';
+import { PageSemiTitle } from 'components';
+import { palette } from '@styles/color';
+import { Line, Circle, WrapCirCle } from '../styles';
 
 const benefitList = [
   {
@@ -40,12 +42,7 @@ export default function Benefit() {
   return (
     <>
       <Line />
-      <SubTitle>
-        <div>
-          <div />
-        </div>
-        <span>복리후생</span>
-      </SubTitle>
+      <PageSemiTitle title='복리후생' color={palette.themeBlack} fontWeight={400} />
       <WrapCirCle>{benefitContent(benefitList)}</WrapCirCle>
     </>
   );

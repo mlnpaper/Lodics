@@ -3,8 +3,15 @@ import { palette } from '@styles/color';
 
 export const WrapContents = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    flex-direction: row;
+  }
 `;
 
 export const SingleContents = styled.div`
@@ -13,7 +20,7 @@ export const SingleContents = styled.div`
   text-align: center;
   padding: 10px 5px 0px 5px;
   span {
-    font-size: 20px;
+    font-size: 1.8rem;
     font-weight: 500;
     white-space: pre-wrap;
     color: ${palette.themePrimary};
@@ -26,12 +33,24 @@ export const SingleContents = styled.div`
       border: 1px solid #dddddd;
       border-radius: 2px;
       padding: 40px 0px;
-      width: 250px;
       margin: 10px 10px 10px 10px;
       color: #464646;
       font-size: 16px;
       font-weight: 500;
       white-space: pre-wrap;
+    }
+  }
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    span {
+      font-size: 2rem;
+    }
+    ul {
+      li {
+        width: 250px;
+      }
     }
   }
 `;
@@ -41,9 +60,9 @@ export const MultipleContents = styled.div`
   border-radius: 10px;
   text-align: center;
   padding: 10px 5px 0px 5px;
-  margin: 0px 10px;
+  margin: 10px 0px;
   span {
-    font-size: 20px;
+    font-size: 1.8rem;
     font-weight: 500;
     white-space: pre-wrap;
     color: ${palette.themePrimary};
@@ -51,9 +70,9 @@ export const MultipleContents = styled.div`
   div {
     display: flex;
     flex-direction: row;
-    font-size: 16px;
+    font-size: 1.4rem;
     ul {
-      font-size: 2rem;
+      font-size: 1.8rem;
       list-style: none;
       padding: 0px;
       display: flex;
@@ -75,7 +94,7 @@ export const MultipleContents = styled.div`
         }
 
         td {
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           background-color: ${palette.themeWhite};
           border: 1px solid #dddddd;
           padding: 5px 0px;
@@ -85,87 +104,25 @@ export const MultipleContents = styled.div`
       }
     }
   }
-`;
-
-export const Contents = styled.div`
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 0px 10px 0px;
-
-  span {
-    font-size: 20px;
-    font-weight: 500;
-    white-space: pre-wrap;
-    color: ${palette.themePrimary};
-  }
-
-  div {
-    background-color: #f6f6f6;
-    border: 1px solid #dddddd;
-    border-radius: 2px;
-    padding: 40px 70px 40px 70px;
-    margin: 10px 10px 10px 10px;
-    color: #464646;
-    font-size: 18px;
-    font-weight: 500;
-    white-space: pre-wrap;
-  }
-`;
-
-export const Contents_ = styled.div`
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 0px 10px 0px;
-
-  span {
-    font-size: 20px;
-    font-weight: 500;
-    white-space: pre-wrap;
-    color: ${palette.themePrimary};
-  }
-
-  div {
-    display: flex;
-    flex-direction: row;
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    margin: 0px 10px;
+    span {
+      font-size: 2rem;
+    }
     div {
-      display: flex;
-      flex-direction: column;
-      div {
-        width: 15em;
-        background-color: #f6f6f6;
-        border: 1px solid #dddddd;
-        border-radius: 2px;
-        /* padding: 40px 70px 40px 70px;
-        margin: 10px 10px 10px 10px; */
-        color: #464646;
-        font-size: 18px;
-        font-weight: 500;
-        white-space: pre-wrap;
-        div {
-          display: flex;
-          flex-direction: row;
-          padding: 0px 0px 0px 0px;
-          div {
-            background-color: ${palette.themeWhite};
-            /* margin: 0px auto; */
-            padding: 0px 0px 0px 0px;
+      font-size: 1.6rem;
+      ul {
+        font-size: 2rem;
+        li {
+          font-size: 1.6rem;
+          td {
+            font-size: 1.6rem;
           }
         }
       }
     }
   }
-
-  /* div + div {
-    background-color: #f6f6f6;
-    border: 1px solid #dddddd;
-    border-radius: 2px;
-    padding: 40px 70px 40px 70px;
-    margin: 10px 10px 10px 10px;
-    color: #464646;
-    font-size: 18px;
-    font-weight: 500;
-    white-space: pre-wrap;
-  } */
 `;

@@ -2,31 +2,22 @@ import styled from 'styled-components';
 import { palette } from '@styles/color';
 
 export const Div = styled.div`
-  font-size: 30px;
+  font-size: 2.5rem;
   font-weight: 400;
   white-space: pre-wrap;
   b {
-    font-size: 30px;
+    font-size: 2.5rem;
     color: ${palette.themePrimary};
   }
-`;
 
-export const SubTitle = styled.div`
-  margin-bottom: 30px;
-  div {
-    width: 20px;
-    height: 7px;
-    background-color: #e8e8e8;
-    div {
-      width: 13px;
-      height: 7px;
-      background-color: ${palette.themePrimary};
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    font-size: 3rem;
+    b {
+      font-size: 3rem;
     }
-  }
-
-  span {
-    font-size: 30px;
-    font-weight: 500;
   }
 `;
 
@@ -48,7 +39,7 @@ export const RecruitFieldTable = styled.table`
     th {
       border: 1px solid #ddd;
       height: 50px;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       font-weight: bold;
       vertical-align: middle;
     }
@@ -64,17 +55,17 @@ export const RecruitFieldTable = styled.table`
       background-color: #f4f8ff;
     }
     td {
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       border: 1px solid #ddd;
       text-align: center;
       vertical-align: middle;
     }
 
     td + td {
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       font-weight: normal;
       div {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: bold;
       }
     }
@@ -84,7 +75,33 @@ export const RecruitFieldTable = styled.table`
       margin-left: 0;
       padding: 0;
       li {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  @media all and (min-width: 768px) {
+    thead {
+      th {
+        font-size: 1.4rem;
+      }
+    }
+
+    tbody {
+      td {
         font-size: 1.6rem;
+      }
+
+      td + td {
+        font-size: 1.6rem;
+        div {
+          font-size: 1.6rem;
+        }
+      }
+
+      ul {
+        li {
+          font-size: 1.6rem;
+        }
       }
     }
   }
@@ -101,14 +118,14 @@ export const ProcessTable = styled.table`
     padding: 25px 15px 25px 15px;
     div {
       color: ${palette.themePrimary};
-      font-size: 40px;
+      font-size: 3rem;
       font-style: italic;
       font-weight: 500;
     }
 
     div + div {
       color: ${palette.themeBlack};
-      font-size: 18px;
+      font-size: 1.5rem;
       font-style: normal;
       font-weight: bold;
     }
@@ -116,7 +133,7 @@ export const ProcessTable = styled.table`
 
   td {
     border: 1px solid #ddd;
-    font-size: 16px;
+    font-size: 1.3rem;
     padding-left: 50px;
     vertical-align: middle;
     ul {
@@ -128,8 +145,26 @@ export const ProcessTable = styled.table`
 
       li {
         color: ${palette.themeBlack};
-        font-size: 16px;
+        font-size: 1.3rem;
         list-style-type: square;
+      }
+    }
+  }
+  @media all and (min-width: 768px) {
+    th {
+      div {
+        font-size: 4rem;
+      }
+      div + div {
+        font-size: 1.8rem;
+      }
+    }
+    td {
+      font-size: 1.6rem;
+      ul {
+        li {
+          font-size: 1.6rem;
+        }
       }
     }
   }
@@ -157,16 +192,22 @@ export const WrapCirCle = styled.div`
   }
 
   svg {
-    width: 75px;
-    height: 75px;
+    width: 30px;
+    height: 30px;
     color: #a4a4a4;
+  }
+  @media all and (min-width: 768px) {
+    svg {
+      width: 75px;
+      height: 75px;
+    }
   }
 `;
 
 export const Circle = styled.div`
   background: center / cover url(${props => (props.$theme === 'image' ? props.$image : null)});
-  width: ${props => props.$size};
-  height: ${props => props.$size};
+  width: ${props => (props.$size === '150px' ? '75px' : '150px')};
+  height: ${props => (props.$size === '150px' ? '75px' : '150px')};
   border: 3px solid ${palette.themePrimary};
   border-color: ${props => (props.$theme === 'image' ? 'transparent' : palette.themePrimary)};
   border-radius: 150px;
@@ -176,7 +217,7 @@ export const Circle = styled.div`
   align-items: center;
 
   div {
-    font-size: 30px;
+    font-size: 2rem;
     color: ${props => (props.$theme === 'image' ? palette.themeWhite : palette.themePrimary)};
     font-weight: 700;
   }
@@ -188,7 +229,7 @@ export const Circle = styled.div`
   }
 
   div + hr + div {
-    font-size: 14px;
+    font-size: 1.2rem;
     color: ${props => (props.$theme === 'image' ? palette.themeWhite : palette.themePrimary)};
 
     white-space: pre-wrap;
@@ -196,8 +237,26 @@ export const Circle = styled.div`
   }
 
   svg {
-    width: 75px;
-    height: 75px;
+    width: 37.5 px;
+    height: 37.5px;
     color: ${palette.themeWhite};
+  }
+
+  @media all and (min-width: 768px) {
+    width: ${props => props.$size};
+    height: ${props => props.$size};
+
+    div {
+      font-size: 3rem;
+    }
+
+    div + hr + div {
+      font-size: 1.4rem;
+    }
+
+    svg {
+      width: 75px;
+      height: 75px;
+    }
   }
 `;

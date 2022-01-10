@@ -1,5 +1,7 @@
 import React from 'react';
-import { Line, SubTitle, Circle, WrapCirCle } from '../styles';
+import { PageSemiTitle } from 'components';
+import { palette } from '@styles/color';
+import { Line, Circle, WrapCirCle } from '../styles';
 
 const policyList = [
   {
@@ -37,12 +39,7 @@ export default function Policy() {
   return (
     <>
       <Line />
-      <SubTitle>
-        <div>
-          <div />
-        </div>
-        <span>인사제도</span>
-      </SubTitle>
+      <PageSemiTitle title='인사제도' color={palette.themeBlack} fontWeight={400} />
       <WrapCirCle>{policyContent(policyList)}</WrapCirCle>
     </>
   );
