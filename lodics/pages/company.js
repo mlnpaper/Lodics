@@ -1,7 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppLayout, CeoGreeting, Certification, History, Location, SubMenu } from 'components';
 import { GlobalStateContext } from 'context';
-import { PageContainer } from './styles';
+import { palette } from '@styles/color';
+import styled from 'styled-components';
+
+export const PageContainer = styled.section`
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
+  width: calc(100% - 5rem);
+  margin: 8rem auto;
+  color: ${palette.themeBlack};
+
+  @media all and (min-width: 1200px) {
+    /* -------------------------------------------------------------------------- */
+    /*                              데스크탑 일반                                  */
+    /* -------------------------------------------------------------------------- */
+    width: 1200px;
+  }
+`;
 
 const subSelectList = [
   [

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppLayout, GoalsVisions, KeyBusiness, SubMenu } from 'components';
 import { GlobalStateContext } from 'context';
-import { PageContainer } from '@pages/company/styles';
+import { PageContainer } from '@pages/company';
 
 const subSelectList = [
   [

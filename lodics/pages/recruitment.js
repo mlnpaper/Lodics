@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppLayout, SubMenu, Recruitment } from 'components';
-import { PageContainer } from '@pages/company/styles';
+import { PageContainer } from '@pages/company';
 
 export default function recruitment() {
   return (

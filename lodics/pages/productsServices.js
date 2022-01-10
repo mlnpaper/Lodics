@@ -11,7 +11,7 @@ import {
   KeyTechnology05,
   KeyTechnology06,
 } from 'components';
-import { PageContainer } from '@pages/company/styles';
+import { PageContainer } from '@pages/company';
 
 const subSelectList = [
   [

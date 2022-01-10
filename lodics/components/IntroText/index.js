@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { TextContainer } from './styles';
+import { Container } from './styles';
 
 const getFirstIntro = () => (
   <React.Fragment>
@@ -34,5 +34,5 @@ export default function IntroText() {
     return () => clearInterval(timeId);
   }, [introText]);
 
-  return <TextContainer>{introText === 1 ? getFirstIntro() : getSecondIntro()}</TextContainer>;
+  return <Container>{introText === 1 ? getFirstIntro() : getSecondIntro()}</Container>;
 }
