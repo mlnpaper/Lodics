@@ -41,7 +41,6 @@ export const TextContainer = styled.div`
   color: ${palette.themeWhite};
   display: flex;
   flex-flow: column;
-  backdrop-filter: grayscale(50%);
   margin: 10rem auto;
   min-height: 18rem;
   position: relative;
