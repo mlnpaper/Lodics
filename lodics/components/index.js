@@ -23,3 +23,4 @@ export { default as HistoryList } from '@components/Company/History/HistoryList'
 export { default as GoalsVisions } from '@components/Business/GoalsVisions';
 export { default as KeyBusiness } from '@components/Business/KeyBusiness';
 export { default as IntroText } from '@components/IntroText';
+export { default as ScrollToTop } from '@components/ScrollToTop';

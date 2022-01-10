@@ -8,7 +8,7 @@ const mainSelect = [
   { value: 'company', text: 'Company' },
   { value: 'business', text: 'Business' },
   { value: 'productsServices', text: 'Products & Services' },
-  { value: 'recruitment', text: 'Recruitment' },
+  { value: 'recruitment', text: 'Recruit' },
 ];
 
 export default function SubMenu({ title, subSelectList = [] }) {

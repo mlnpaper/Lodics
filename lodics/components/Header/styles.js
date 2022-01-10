@@ -126,7 +126,7 @@ export const MenuIcon = styled(MdMenu)`
 export const CloseMenuIcon = styled(IoIosArrowForward)`
   width: 2rem;
   height: 2rem;
-  z-index: 10;
+  z-index: 25;
   position: fixed;
   top: 1.5rem;
   right: ${props => (props.$openToggleNav ? '1rem' : '-100%')};
@@ -144,7 +144,7 @@ export const ToggleNavContainer = styled.ul`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  z-index: 5;
+  z-index: 25;
   transition: all 0.3s;
   background: ${palette.themeSelector};
   height: 100vh;

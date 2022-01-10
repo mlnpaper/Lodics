@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Header } from 'components';
+import { Footer, Header, ScrollToTop } from 'components';
 import { Container } from './styles';
 
 export default function AppLayout({ children, theme, page }) {
@@ -8,6 +8,7 @@ export default function AppLayout({ children, theme, page }) {
       <Header theme={theme} page={page} />
       {children}
       <Footer />
+      {page !== 'Home' && <ScrollToTop />}
     </Container>
   );
 }
