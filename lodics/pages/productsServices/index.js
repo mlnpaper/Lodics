@@ -62,7 +62,7 @@ export default function productsServices() {
   }, []);
 
   return (
-    <AppLayout theme='black'>
+    <AppLayout theme='black' page='Products & Services'>
       <SubMenu title={'Products & Services'} subSelectList={subSelectList} />
       <PageContainer> {selectedComponent} </PageContainer>
     </AppLayout>

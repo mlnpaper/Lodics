@@ -2,10 +2,10 @@ import React from 'react';
 import { Footer, Header } from 'components';
 import { Container } from './styles';
 
-export default function AppLayout({ children, theme }) {
+export default function AppLayout({ children, theme, page }) {
   return (
     <Container $theme={theme}>
-      <Header theme={theme} />
+      <Header theme={theme} page={page} />
       {children}
       <Footer />
     </Container>

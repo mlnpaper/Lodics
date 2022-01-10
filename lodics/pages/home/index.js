@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <Container>
-      <AppLayout theme='white'>
+      <AppLayout theme='white' page='Home'>
         <Background />
         <IntroText />
         <CardContainer>

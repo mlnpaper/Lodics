@@ -4,7 +4,7 @@ import { PageContainer } from '@pages/company/styles';
 
 export default function recruitment() {
   return (
-    <AppLayout theme='black'>
+    <AppLayout theme='black' page='Recruit'>
       <SubMenu title='Recruit' />
       <PageContainer>
         <Recruitment />

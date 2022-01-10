@@ -27,7 +27,7 @@ export default function business() {
   }, []);
 
   return (
-    <AppLayout theme='black'>
+    <AppLayout theme='black' page='Business'>
       <SubMenu title='Business' subSelectList={subSelectList} />
       <PageContainer>{selectedComponent}</PageContainer>
     </AppLayout>
