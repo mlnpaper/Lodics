@@ -66,16 +66,18 @@ export default function SubMenu({ title, subSelectList = [] }) {
   };
 
   useEffect(() => {
-    if (
-      currentSelect === 'developmentPerformance' ||
-      currentSelect === 'srp' ||
-      currentSelect === 'wiss' ||
-      currentSelect === 'qubism' ||
-      currentSelect === 'pev' ||
-      currentSelect === 'geoint'
-    )
-      setNewSubSelectList(subSelectList);
-    else setNewSubSelectList([subSelectList[0]]);
+    if (!!subSelectList.length) {
+      if (
+        currentSelect === 'developmentPerformance' ||
+        currentSelect === 'srp' ||
+        currentSelect === 'wiss' ||
+        currentSelect === 'qubism' ||
+        currentSelect === 'pev' ||
+        currentSelect === 'geoint'
+      )
+        setNewSubSelectList(subSelectList);
+      else setNewSubSelectList([subSelectList[0]]);
+    }
   }, [currentSelect]);
 
   // option이 열려 있을 때 다른 페이지로 이동 시 닫기
