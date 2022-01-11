@@ -9,7 +9,7 @@ export const Container = styled.div`
   color: ${palette.themeWhite};
   display: flex;
   flex-flow: column;
-  margin: 10rem auto;
+  margin: 5rem auto;
   min-height: 18rem;
   position: relative;
 

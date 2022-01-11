@@ -66,11 +66,17 @@ export default function SubMenu({ title, subSelectList = [] }) {
   };
 
   useEffect(() => {
-    if (currentSelect === 'keyTechnology') {
-      setNewSubSelectList(subSelectList);
-    }
-    if (currentSelect === 'eGovernment') {
-      setNewSubSelectList([subSelectList[0]]);
+    if (!!subSelectList.length) {
+      if (
+        currentSelect === 'developmentPerformance' ||
+        currentSelect === 'srp' ||
+        currentSelect === 'wiss' ||
+        currentSelect === 'qubism' ||
+        currentSelect === 'pev' ||
+        currentSelect === 'geoint'
+      )
+        setNewSubSelectList(subSelectList);
+      else setNewSubSelectList([subSelectList[0]]);
     }
   }, [currentSelect]);
 
