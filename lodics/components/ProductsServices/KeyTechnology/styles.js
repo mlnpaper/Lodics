@@ -79,7 +79,7 @@ export const MultipleContents = styled.div`
       flex-direction: column;
       justify-content: space-between;
       li {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         background-color: #f6f6f6;
         border: 1px solid #dddddd;
         border-radius: 2px;
@@ -94,16 +94,27 @@ export const MultipleContents = styled.div`
         }
 
         td {
-          font-size: 1.4rem;
+          font-size: 1.1rem;
           background-color: ${palette.themeWhite};
           border: 1px solid #dddddd;
           padding: 5px 0px;
-          width: 120px;
+          width: 100px;
           /* width: 400px; */
         }
       }
     }
   }
+
+  @media all and (max-width: 320px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   소형 휴대기기                                    */
+    /* -------------------------------------------------------------------------- */
+
+    div {
+      flex-direction: column;
+    }
+  }
+
   @media all and (min-width: 768px) {
     /* -------------------------------------------------------------------------- */
     /*                                   테블릿                                    */
