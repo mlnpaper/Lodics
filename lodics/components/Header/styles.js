@@ -36,57 +36,21 @@ export const InnerContainer = styled.div`
       width: 17rem;
     }
 
-    ul {
-      display: flex;
-      flex-flow: row nowrap;
-      margin: 0;
-
-      li {
-        margin-left: 5rem;
-        position: relative;
-
-        &:nth-child(-n + 3) {
-          &:after {
-            display: block;
-            content: '';
-            width: 1px;
-            height: 24px;
-            background-color: ${palette.themeGray};
-            float: right;
-            position: absolute;
-            top: 0.5rem;
-            right: -2.5rem;
-          }
-        }
-
-        a {
-          display: flex;
-          flex-flow: column nowrap;
-          align-items: center;
-
-          span {
-            font-size: 1.5rem;
-            font-weight: 600;
-            transition: color 0.3s;
-            color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
-
-            &:hover {
-              color: ${palette.themeHover};
-            }
-          }
-
-          span + span {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: ${palette.themeGray};
-            margin-top: 0.5rem;
-
-            &:hover {
-              color: ${palette.themeGray};
-            }
-          }
-        }
+    .MuiTabs-flexContainer {
+      button {
+        color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
+        font-size: 1.3rem;
+        font-weight: 500;
+        font-family: 'Noto Sans KR';
       }
+
+      .Mui-selected {
+        color: ${palette.themePrimary};
+      }
+    }
+
+    .css-1aquho2-MuiTabs-indicator {
+      background-color: ${palette.themePrimary};
     }
   }
 
@@ -100,18 +64,34 @@ export const InnerContainer = styled.div`
       width: auto;
     }
 
-    ul {
-      li {
-        a {
-          span {
-            font-size: 1.7rem;
-          }
-
-          span + span {
-            font-size: 1.3rem;
-          }
-        }
+    .MuiTabs-flexContainer {
+      button {
+        font-size: 1.5rem;
       }
+    }
+  }
+`;
+
+export const TabContainer = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+
+  .css-18467a {
+    width: 15rem;
+
+    label {
+      color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
+      font-size: 1.2rem;
+    }
+
+    .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input,
+    svg {
+      color: ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeBlack)};
+    }
+
+    .MuiOutlinedInput-notchedOutline,
+    fieldset {
+      border: 1px solid ${props => (props.$theme === 'white' ? palette.themeWhite : palette.themeGray)};
     }
   }
 `;

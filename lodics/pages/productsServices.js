@@ -42,7 +42,7 @@ const subSelectList = [
 ];
 
 export default function productsServices() {
-  const { subSelectedComponent, setSubSelectedComponent } = useContext(GlobalStateContext);
+  const { subSelectedComponent, setSubSelectedComponent, setSelectedMenu } = useContext(GlobalStateContext);
   const [selectedComponent, setSelectedComponent] = useState(<KeyTechnology01 />);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ export default function productsServices() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setSelectedMenu('productsServices');
 
     //페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
     return setSubSelectedComponent('keyTechnology01');
@@ -68,7 +69,7 @@ export default function productsServices() {
         <title>LoDiCS | Products & Services</title>
       </Head>
       <AppLayout theme='black' page='Products & Services'>
-        <SubMenu title={'Products & Services'} subSelectList={subSelectList} />
+        <SubMenu title={'Products & Services'} value='productsServices' subSelectList={subSelectList} />
         <PageContainer> {selectedComponent} </PageContainer>
       </AppLayout>
     </React.Fragment>

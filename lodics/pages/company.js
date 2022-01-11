@@ -31,7 +31,7 @@ const subSelectList = [
 ];
 
 export default function company() {
-  const { subSelectedComponent, setSubSelectedComponent } = useContext(GlobalStateContext);
+  const { subSelectedComponent, setSubSelectedComponent, setSelectedMenu } = useContext(GlobalStateContext);
   const [selectedComponent, setSelectedComponent] = useState(<CeoGreeting />);
 
   useEffect(() => {
@@ -43,6 +43,7 @@ export default function company() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setSelectedMenu('company');
 
     // 페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
     return setSubSelectedComponent('ceoGreeting');
@@ -54,7 +55,7 @@ export default function company() {
         <title>LoDiCS | Company</title>
       </Head>
       <AppLayout theme='black' page='Company'>
-        <SubMenu title='Company' subSelectList={subSelectList} />
+        <SubMenu title='Company' value='company' subSelectList={subSelectList} />
         <PageContainer>{selectedComponent}</PageContainer>
       </AppLayout>
     </React.Fragment>

@@ -1,17 +1,15 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { CloseMenuIcon, Container, InnerContainer, MenuIcon, ToggleNavContainer } from './styles';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { CloseMenuIcon, Container, InnerContainer, MenuIcon, ToggleNavContainer, TabContainer } from './styles';
 import Link from 'next/link';
-
-const createNavElement = (url, en, ko = '') => (
-  <li>
-    <Link href={url}>
-      <a>
-        <span>{en}</span>
-        <span>{ko}</span>
-      </a>
-    </Link>
-  </li>
-);
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+import Router from 'next/router';
+import GlobalStateContext from '@context/globalStateContext';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const createMobileNavElement = (url, en, onClickNav) => (
   <li onClick={onClickNav}>
@@ -26,6 +24,7 @@ const createMobileNavElement = (url, en, onClickNav) => (
 export default function Header({ theme, page }) {
   const [showToggleNav, setShowToggleNav] = useState(false);
   const [openToggleNav, setOpenToggleNav] = useState(false);
+  const { selectedMenu, setSelectedMenu, language, setLanguage } = useContext(GlobalStateContext);
 
   const onResize = () => {
     if (window.innerWidth < 768) {
@@ -64,6 +63,18 @@ export default function Header({ theme, page }) {
     window.addEventListener('resize', onResize);
   }, []);
 
+  const onChangeMenu = useCallback((e, newValue) => {
+    setSelectedMenu(newValue);
+  }, []);
+
+  const onClickMenu = useCallback(e => {
+    Router.push(`/${e.target.id}`);
+  }, []);
+
+  const onChangeLanguage = useCallback((e, newValue) => {
+    setLanguage(newValue.props.value);
+  }, []);
+
   return (
     <Container>
       <InnerContainer $theme={theme}>
@@ -86,12 +97,36 @@ export default function Header({ theme, page }) {
               <CloseMenuIcon onClick={onClose} $openToggleNav={openToggleNav} />
             </React.Fragment>
           ) : (
-            <ul>
-              {createNavElement('/company', 'Company', '회사소개')}
-              {createNavElement('/business', 'Business', '비즈니스')}
-              {createNavElement('/productsServices', 'Products & Services', '제품 & 서비스')}
-              {createNavElement('/recruitment', 'Recruit', '채용정보')}
-            </ul>
+            <TabContainer $theme={theme}>
+              <Box sx={{ width: '100%' }}>
+                <Tabs value={selectedMenu} aria-label='wrapped label tabs example' onChange={onChangeMenu}>
+                  <Tab value='company' id='company' label='Company' wrapped onClick={onClickMenu} />
+                  <Tab value='business' id='business' label='Business' onClick={onClickMenu} />
+                  <Tab
+                    value='productsServices'
+                    id='productsServices'
+                    label='Products & Services'
+                    onClick={onClickMenu}
+                  />
+                  <Tab value='recruitment' id='recruitment' label='Recruit' onClick={onClickMenu} />
+                </Tabs>
+              </Box>
+              <Box sx={{ width: '30%' }}>
+                <FormControl fullWidth>
+                  <InputLabel id='demo-simple-select-label'>Language</InputLabel>
+                  <Select
+                    labelId='demo-simple-select-label'
+                    id='demo-simple-select'
+                    value={language}
+                    label='Language'
+                    onChange={onChangeLanguage}
+                  >
+                    <MenuItem value='korea'>Korea | 한국어</MenuItem>
+                    <MenuItem value='global'>Global | English</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </TabContainer>
           )}
         </nav>
       </InnerContainer>

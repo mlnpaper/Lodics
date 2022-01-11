@@ -4,6 +4,8 @@ import { GlobalStateContext } from 'context';
 export default function GlobalState({ children }) {
   const [subSelectedComponent, setSubSelectedComponent] = useState('');
   const [selectedSubMenu, setSelectedSubMenu] = useState('');
+  const [selectedMenu, setSelectedMenu] = useState('');
+  const [language, setLanguage] = useState('korea');
 
   return (
     <GlobalStateContext.Provider
@@ -12,6 +14,10 @@ export default function GlobalState({ children }) {
         setSubSelectedComponent,
         selectedSubMenu,
         setSelectedSubMenu,
+        selectedMenu,
+        setSelectedMenu,
+        language,
+        setLanguage,
       }}
     >
       {children}

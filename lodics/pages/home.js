@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppLayout, Card, IntroText } from 'components';
 import styled from 'styled-components';
+import GlobalStateContext from '@context/globalStateContext';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -60,8 +61,11 @@ export const CardContainer = styled.div`
 `;
 
 export default function Home() {
+  const { setSelectedMenu } = useContext(GlobalStateContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    setSelectedMenu('');
   }, []);
 
   return (
