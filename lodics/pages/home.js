@@ -48,7 +48,7 @@ export const CardContainer = styled.div`
     /*                                   테블릿                                    */
     /* -------------------------------------------------------------------------- */
     flex-flow: row nowrap;
-    margin: 0 auto 10rem;
+    margin: 0 auto 5rem;
   }
 
   @media all and (min-width: 1200px) {
