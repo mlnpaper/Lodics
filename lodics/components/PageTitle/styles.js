@@ -19,7 +19,7 @@ export const Container = styled.div`
       width: 70px;
       height: 2px;
       margin: 5px;
-      background-color: #0d47a1;
+      background-color: ${palette.themePrimary};
     }
   }
 
