@@ -122,7 +122,9 @@ export default function Header({ theme, page }) {
                     onChange={onChangeLanguage}
                   >
                     <MenuItem value='korea'>Korea | 한국어</MenuItem>
-                    <MenuItem value='global'>Global | English</MenuItem>
+                    <MenuItem value='global' disabled>
+                      Global | English
+                    </MenuItem>
                   </Select>
                 </FormControl>
               </Box>

@@ -24,12 +24,10 @@ export const CardContainer = styled.div`
   /* -------------------------------------------------------------------------- */
   /*                               모바일  & default                             */
   /* -------------------------------------------------------------------------- */
-  border: 1px solid ${palette.themeDashedBorder};
   display: flex;
   flex-flow: column;
   width: calc(100% / 2 - 2.5rem + 0.625rem);
   margin: 2.5rem 2.5rem 0 0;
-  background: #f4f8ff;
 
   &:nth-child(2n) {
     margin-right: 0;
@@ -42,11 +40,10 @@ export const CardContainer = styled.div`
     justify-content: center;
     text-align: center;
     margin: 0;
-    padding: 0.8rem;
+    padding: 1rem 0.8rem 2rem;
     font-size: 1.2rem;
     font-family: 'Nanum Gothic';
-    background: ${palette.themeWhite};
-    border-top: 1px dashed ${palette.themeDashedBorder};
+    font-weight: 600;
   }
 
   @media all and (min-width: 768px) {
@@ -72,6 +69,8 @@ export const CardContainer = styled.div`
 
 export const ImgContainer = styled.div`
   padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid ${palette.themeDashedBorder};
 
   img {
     display: inline-block;

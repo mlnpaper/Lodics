@@ -1,89 +1,80 @@
 import styled from 'styled-components';
 import { palette } from '@styles/color';
 
-// HistoryList.js
-export const HistoryListContainer = styled.div`
-  /* -------------------------------------------------------------------------- */
-  /*                               모바일  & default                             */
-  /* -------------------------------------------------------------------------- */
-  border-top: 1px dashed ${palette.themeDashedBorder};
-  display: flex;
-  flex-flow: row nowrap;
-  padding: 1rem 0;
+export const TimelineContainer = styled.div`
+  .MuiTimelineDot-root {
+    width: 18px;
+    height: 18px;
+    background: ${palette.themePrimary};
+    position: relative;
 
-  @media all and (min-width: 768px) {
-    /* -------------------------------------------------------------------------- */
-    /*                                   테블릿                                    */
-    /* -------------------------------------------------------------------------- */
-    padding: 2rem 0;
+    &:after {
+      content: '';
+      display: block;
+      width: 30px;
+      position: absolute;
+      top: -57%;
+      left: -60%;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(13, 71, 161, 0.3);
+    }
   }
-`;
 
-export const HistoryListYearContainer = styled.div`
-  /* -------------------------------------------------------------------------- */
-  /*                               모바일  & default                             */
-  /* -------------------------------------------------------------------------- */
-  font-size: 2.5rem;
-  font-weight: 600;
-  padding: 2rem 0;
-
-  @media all and (min-width: 768px) {
-    /* -------------------------------------------------------------------------- */
-    /*                                   테블릿                                    */
-    /* -------------------------------------------------------------------------- */
+  .css-18y2uza-MuiTypography-root-MuiTimelineContent-root {
     font-size: 3rem;
-    padding: 2rem 2rem 2rem 8rem;
-  }
-`;
-
-export const HistoryListContentContainer = styled.div`
-  /* -------------------------------------------------------------------------- */
-  /*                               모바일  & default                             */
-  /* -------------------------------------------------------------------------- */
-  padding: 2rem;
-
-  @media all and (min-width: 768px) {
-    /* -------------------------------------------------------------------------- */
-    /*                                   테블릿                                    */
-    /* -------------------------------------------------------------------------- */
-    padding: 2rem 1rem;
-  }
-`;
-
-export const ContentContainer = styled.div`
-  /* -------------------------------------------------------------------------- */
-  /*                               모바일  & default                             */
-  /* -------------------------------------------------------------------------- */
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: top;
-
-  span {
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-family: 'Noto Sans KR';
     color: ${palette.themePrimary};
-    margin-right: 0.5rem;
-    padding: 0.5rem 1rem 1rem;
+    font-weight: 600;
   }
+`;
 
-  p {
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0.5rem 1rem 1rem;
-  }
+export const Ul = styled.ul`
+  /* -------------------------------------------------------------------------- */
+  /*                               모바일  & default                             */
+  /* -------------------------------------------------------------------------- */
+  margin: ${props => (props.$isLastIndex ? '4rem 0 0' : '4rem 0 6rem')};
 
-  @media all and (min-width: 768px) {
-    /* -------------------------------------------------------------------------- */
-    /*                                   테블릿                                    */
-    /* -------------------------------------------------------------------------- */
-    align-items: center;
+  li {
+    display: flex;
+    flex-flow: row;
+    align-items: top;
+    margin: ${props => (props.$parentIndex ? '0 0.5rem 2.5rem 0' : '0 0 2.5rem 0.5rem')};
+    justify-content: ${props => (props.$parentIndex ? 'flex-end' : 'flex-start')};
 
     span {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      color: ${palette.themeGray};
+      font-weight: 600;
+      margin: ${props => (props.$parentIndex ? '0 0 0 2rem' : '0 2rem 0 0')};
+      line-height: 2rem;
     }
 
     p {
-      font-size: 1.7rem;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin: 0;
+      font-weight: 300;
+      color: ${palette.themeBlack};
+      word-break: break-all;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    /* -------------------------------------------------------------------------- */
+    /*                                   테블릿                                    */
+    /* -------------------------------------------------------------------------- */
+    li {
+      span {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        word-break: keep-all;
+      }
     }
   }
 `;
