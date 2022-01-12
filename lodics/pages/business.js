@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppLayout, GoalsVisions, KeyBusiness, SubMenu } from 'components';
+import { AppLayout, GoalsVisions, KeyBusiness } from 'components';
 import { GlobalStateContext } from 'context';
 import { PageContainer } from '@pages/company';
 import Head from 'next/head';
@@ -21,7 +21,6 @@ export default function business() {
   }, [subSelectedComponent]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     setSelectedMenu('business');
 
     // 페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
@@ -33,8 +32,7 @@ export default function business() {
       <Head>
         <title>LoDiCS | Business</title>
       </Head>
-      <AppLayout theme='black' page='Business'>
-        <SubMenu title='Business' value='business' subSelectList={subSelectList} />
+      <AppLayout theme='black' page='Business' value='business' subSelectList={subSelectList}>
         <PageContainer>{selectedComponent}</PageContainer>
       </AppLayout>
     </React.Fragment>

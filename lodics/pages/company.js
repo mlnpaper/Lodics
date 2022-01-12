@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppLayout, CeoGreeting, Certification, History, Location, SubMenu } from 'components';
+import { AppLayout, CeoGreeting, Certification, History, Location } from 'components';
 import { GlobalStateContext } from 'context';
 import { palette } from '@styles/color';
 import styled from 'styled-components';
@@ -42,7 +42,6 @@ export default function company() {
   }, [subSelectedComponent]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     setSelectedMenu('company');
 
     // 페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
@@ -54,8 +53,7 @@ export default function company() {
       <Head>
         <title>LoDiCS | Company</title>
       </Head>
-      <AppLayout theme='black' page='Company'>
-        <SubMenu title='Company' value='company' subSelectList={subSelectList} />
+      <AppLayout theme='black' page='Company' value='company' subSelectList={subSelectList}>
         <PageContainer>{selectedComponent}</PageContainer>
       </AppLayout>
     </React.Fragment>

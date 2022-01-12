@@ -64,7 +64,6 @@ export default function Home() {
   const { setSelectedMenu } = useContext(GlobalStateContext);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     setSelectedMenu('');
   }, []);
 

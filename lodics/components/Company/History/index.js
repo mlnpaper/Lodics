@@ -19,7 +19,12 @@ export default function History() {
       <TimelineContainer>
         <Timeline position='alternate'>
           {historyList.map((history, i) => (
-            <HistoryList historyList={history} parentIndex={i} isLastIndex={historyList.length - 1 === i} />
+            <HistoryList
+              key={history[0].years}
+              historyList={history}
+              parentIndex={i}
+              isLastIndex={historyList.length - 1 === i}
+            />
           ))}
         </Timeline>
       </TimelineContainer>

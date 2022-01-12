@@ -25,7 +25,7 @@ export default function HistoryList({ historyList, parentIndex, isLastIndex }) {
           {historyList.map((history, i) => {
             if (i > 0) {
               return (
-                <li>
+                <li key={history.key}>
                   {parentIndex % 2 ? (
                     <>
                       <p>{history.content}</p>

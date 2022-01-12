@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import GlobalStateContext from '@context/globalStateContext';
-import { AppLayout, SubMenu, EGovernment, KeyTechnology, DevelopmentPerformance } from 'components';
+import { AppLayout, EGovernment, KeyTechnology, DevelopmentPerformance } from 'components';
 import { PageContainer } from '@pages/company';
 import Head from 'next/head';
 
@@ -42,7 +42,6 @@ export default function productsServices() {
   }, [subSelectedComponent]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     setSelectedMenu('productsServices');
 
     //페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
@@ -54,8 +53,7 @@ export default function productsServices() {
       <Head>
         <title>LoDiCS | Products & Services</title>
       </Head>
-      <AppLayout theme='black' page='Products & Services'>
-        <SubMenu title={'Products & Services'} value='productsServices' subSelectList={subSelectList} />
+      <AppLayout theme='black' page='Products & Services' value='productsServices' subSelectList={subSelectList}>
         <PageContainer> {selectedComponent} </PageContainer>
       </AppLayout>
     </React.Fragment>
