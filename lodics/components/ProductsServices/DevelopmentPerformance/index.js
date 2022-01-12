@@ -5,15 +5,17 @@ import GlobalStateContext from '@context/globalStateContext';
 import { srpList, qubismList, pevList, wissList, geointList } from '@data/DevelopmentPerformance';
 
 export const KeyTechnologyTable = list => {
-  return list.map(({ title, contents }) => (
-    <tr>
-      <th>{title}</th>
-      <td>
-        {contents.map(contents => (
-          <li>{contents}</li>
-        ))}
-      </td>
-    </tr>
+  return list.map(({ key, title, contents }) => (
+    <tbody key={key}>
+      <tr>
+        <th>{title}</th>
+        <td>
+          {contents.map((contents, index) => (
+            <li key={index}>{contents}</li>
+          ))}
+        </td>
+      </tr>
+    </tbody>
   ));
 };
 
@@ -22,7 +24,6 @@ export default function DevelopmentPerformance() {
   const [selectedState, setSelectedState] = useState(srpList);
 
   useEffect(() => {
-    console.log(subSelectedComponent);
     if (subSelectedComponent === 'developmentPerformance') {
       setSelectedState(srpList);
       setSubSelectedComponent('srp');

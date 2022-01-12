@@ -23,40 +23,46 @@ export default function KeyTechnology() {
               <li>
                 입체시 Viewer
                 <table>
-                  <tr>
-                    <td>여색입체</td>
-                    <td>편광입체</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>여색입체</td>
+                      <td>편광입체</td>
+                    </tr>
+                  </tbody>
                 </table>
               </li>
               <li>Stereo 영상 생성</li>
               <li>
                 군사 규격 자료
                 <table>
-                  <tr>
-                    <td colSpan={2}>CIB</td>
-                  </tr>
-                  <tr>
-                    <td>DTED</td>
-                    <td>GARS</td>
-                  </tr>
-                  <tr>
-                    <td>DPPDB</td>
-                    <td>CADRG</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td colSpan={2}>CIB</td>
+                    </tr>
+                    <tr>
+                      <td>DTED</td>
+                      <td>GARS</td>
+                    </tr>
+                    <tr>
+                      <td>DPPDB</td>
+                      <td>CADRG</td>
+                    </tr>
+                  </tbody>
                 </table>
               </li>
               <li>
                 NITF
                 <table>
-                  <tr>
-                    <td>NITF 2.0</td>
-                    <td>NITF 2.1</td>
-                  </tr>
-                  <tr>
-                    <td>TRE 처리</td>
-                    <td>압축영상 처리</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>NITF 2.0</td>
+                      <td>NITF 2.1</td>
+                    </tr>
+                    <tr>
+                      <td>TRE 처리</td>
+                      <td>압축영상 처리</td>
+                    </tr>
+                  </tbody>
                 </table>
               </li>
               <li>센서 모델링</li>
@@ -65,41 +71,47 @@ export default function KeyTechnology() {
               <li>
                 RPC/RSM Generator
                 <table>
-                  <tr>
-                    <td>{'RSM\nExploiter'}</td>
-                    <td>{'RSM\nGenerator'}</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>{'RSM\nExploiter'}</td>
+                      <td>{'RSM\nGenerator'}</td>
+                    </tr>
+                  </tbody>
                 </table>
               </li>
               <li>
                 기하/방사 보정
                 <table>
-                  <tr>
-                    <td style={{ width: 250 }}>단영상 모델링</td>
-                  </tr>
-                  <tr>
-                    <td>Block Modeling</td>
-                  </tr>
-                  <tr>
-                    <td>정확도 자료 생성</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td style={{ width: 250 }}>단영상 모델링</td>
+                    </tr>
+                    <tr>
+                      <td>Block Modeling</td>
+                    </tr>
+                    <tr>
+                      <td>정확도 자료 생성</td>
+                    </tr>
+                  </tbody>
                 </table>
               </li>
               <li>
                 CSM
                 <table>
-                  <tr>
-                    <td>Pushbroom</td>
-                    <td>Whiskbroom</td>
-                  </tr>
-                  <tr>
-                    <td>Frame</td>
-                    <td>SAR</td>
-                  </tr>
-                  <tr>
-                    <td>DLT</td>
-                    <td>RPC/RSM</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>Pushbroom</td>
+                      <td>Whiskbroom</td>
+                    </tr>
+                    <tr>
+                      <td>Frame</td>
+                      <td>SAR</td>
+                    </tr>
+                    <tr>
+                      <td>DLT</td>
+                      <td>RPC/RSM</td>
+                    </tr>
+                  </tbody>
                 </table>
               </li>
               <li>특징점 추출 및 매칭</li>

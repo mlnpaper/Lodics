@@ -7,6 +7,7 @@ export { default as Select } from '@components/SubMenu/Select';
 export { default as PageTitle } from '@components/PageTitle';
 export { default as PageSemiTitle } from '@components/PageSemiTitle';
 export { default as Recruitment } from '@components/Recruitment';
+export { default as RecruitmentCard } from '@components/Recruitment/Content/RecruitmentCard';
 export { default as EGovernment } from '@components/ProductsServices/EGovernment';
 export { default as KeyTechnology } from '@components/ProductsServices/KeyTechnology';
 export { default as DevelopmentPerformance } from '@components/ProductsServices/DevelopmentPerformance';
