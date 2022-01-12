@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { Container, MenuContainer, MenuInnerContainer, HomeIcon } from './styles';
+import { Container, MenuContainer, MenuInnerContainer } from './styles';
 import Router from 'next/router';
 import { GlobalStateContext } from 'context';
 import { Select } from 'components';
@@ -93,9 +93,7 @@ export default function SubMenu({ title, subSelectList = [] }) {
       <h2>{title}</h2>
       <MenuContainer>
         <MenuInnerContainer>
-          <i onClick={onClicktoGoHome}>
-            <HomeIcon />
-          </i>
+          <button onClick={onClicktoGoHome}>Home</button>
           <Select
             defaultValue={title}
             selectList={mainSelect}

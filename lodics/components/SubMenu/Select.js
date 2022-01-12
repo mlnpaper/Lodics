@@ -7,7 +7,7 @@ export default function Select({ defaultValue, selectList, onClickSelect, select
   const { selectedSubMenu } = useContext(GlobalStateContext);
   const [viewport, setViewport] = useState('');
 
-  const desktopWidth = selectNumber === 2 ? 500 : 300;
+  const desktopWidth = selectNumber === 2 ? 450 : 250;
   const tabletWidth = selectNumber === 2 ? 250 : 200;
 
   const onResize = () => {

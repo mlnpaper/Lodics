@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { palette } from '@styles/color';
-import { MdHome } from 'react-icons/md';
 import { IoIosArrowDown } from 'react-icons/io';
 
 // index.js
-export const HomeIcon = styled(MdHome)``;
 export const Container = styled.div`
   /* -------------------------------------------------------------------------- */
   /*                               모바일  & default                             */
@@ -55,20 +53,17 @@ export const MenuInnerContainer = styled.div`
   align-items: center;
   color: ${palette.themeWhite};
 
-  i {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &:first-child > button {
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    border-right: 1px solid ${palette.themeWhite};
-    color: ${palette.themeWhite};
-
-    svg {
-      width: 23px;
-      height: 23px;
-    }
+    width: 80px;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 0 2rem;
   }
 
   @media all and (min-width: 768px) {
@@ -77,8 +72,9 @@ export const MenuInnerContainer = styled.div`
     /* -------------------------------------------------------------------------- */
     width: calc(100% - 5rem);
 
-    i {
-      border-left: 1px solid ${palette.themeWhite};
+    &:first-child > button {
+      width: 100px;
+      font-size: 1.4rem;
     }
   }
 
@@ -87,6 +83,10 @@ export const MenuInnerContainer = styled.div`
     /*                              데스크탑 일반                                  */
     /* -------------------------------------------------------------------------- */
     width: 1200px;
+
+    &:first-child > button {
+      width: 150px;
+    }
   }
 `;
 
@@ -97,10 +97,9 @@ export const SelectContainer = styled.div`
   /* -------------------------------------------------------------------------- */
   position: relative;
     height: 100%;
-    border-right: 1px solid ${palette.themeWhite};
-    background: transparent;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 5px 0 5px rgba(0,0,0,0.2);
     cursor: pointer;
-    width: ${props => props.$width}px;
     width: 110px;
 
     button {
@@ -115,15 +114,19 @@ export const SelectContainer = styled.div`
       flex-flow: row nowrap;
       justify-content: space-between;
       padding: 0 2rem;
+      height: 100%;
+  
 
       span {
         display: inline-block;
         font-size: 1.2rem;
         width: inherit;
+        height: 100%;
         text-align: left;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        line-height: 5rem;
       }
     }
 
@@ -132,7 +135,7 @@ export const SelectContainer = styled.div`
       top: ${props => (props.$open ? '100%' : '90%')};
       opacity: ${props => (props.$open ? 1 : 0)};
       left: 0;
-      width: 100%;
+      width: 93%;
       background: ${palette.themeSelector};
       transition: 0.2s;
       z-index: 5;
