@@ -85,11 +85,7 @@ export default function Location() {
       </MapContainer>
       <PageSemiTitle title={currentLanguage.summarySemiTitle} />
       <TextContainer>
-        <span>
-          지하철 2호선 뚝섬역 4번 출구, 신한은행 골목으로 들어와, 메가커피 골목으로 500m 직진.
-          <br />
-          1층 '바다화원' 건물
-        </span>
+        <span>{currentLanguage.summaryContent}</span>
       </TextContainer>
       <PageSemiTitle title={currentLanguage.adrressSemiTitle} />
       <TextContainer>

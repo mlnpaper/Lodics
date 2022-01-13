@@ -25,6 +25,7 @@ export const TextContainer = styled.div`
   padding-bottom: 5rem;
   border-bottom: 1px dashed ${palette.themeDashedBorder};
   line-height: 2.5rem;
+  white-space: pre-line;
 
   span {
     font-size: 1.3rem;

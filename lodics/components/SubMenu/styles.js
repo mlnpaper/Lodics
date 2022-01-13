@@ -148,7 +148,8 @@ export const SelectContainer = styled.div`
       background-color : ${palette.themeSelector};
       transition: 0.2s;
       z-index: 10;
-
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+      
       li {
         border-bottom: 1px solid ${palette.themeDarkSelector};
         padding: 1.5rem 2rem;

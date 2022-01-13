@@ -41,6 +41,7 @@ export const Container = styled.i`
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
   span {
     font-size: 1rem;
