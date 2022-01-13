@@ -11,6 +11,7 @@ export const Container = styled.div`
   p {
     font-size: 1.3rem;
     margin: 0;
+    white-space: pre-line;
   }
 
   &:last-child {
