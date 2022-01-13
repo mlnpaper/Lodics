@@ -4,6 +4,7 @@ import { ArrowIcon, IconContainer, SelectContainer } from './styles';
 
 export default function Select({ defaultValue, selectList, onClickSelect, selectNumber, onClickOption }) {
   const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
   const { selectedSubMenu } = useContext(GlobalStateContext);
   const [viewport, setViewport] = useState('');
 
@@ -27,6 +28,19 @@ export default function Select({ defaultValue, selectList, onClickSelect, select
 
     window.addEventListener('resize', onResize);
   }, []);
+
+  // select 언어 language에 따른 실시간 변화 적용
+  useEffect(() => {
+    selectList.forEach((list, i) => {
+      list.text === selectedOption && setSelectedOptionIndex(i);
+    });
+  }, [selectedOption]);
+  // select 언어 language에 따른 실시간 변화 적용
+  useEffect(() => {
+    const changeLanguageOption = selectList.filter((list, i) => i === selectedOptionIndex);
+    if (changeLanguageOption[0].text === 'Company') setSelectedOption(defaultValue);
+    else setSelectedOption(changeLanguageOption[0].text);
+  }, [defaultValue]);
 
   return (
     <SelectContainer
