@@ -1,131 +1,136 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { PageTitle } from 'components';
 import { WrapContents, SingleContents, MultipleContents } from './styles';
+import GlobalStateContext from '@context/globalStateContext';
+import { KeyTechnologyKorean, KeyTechnologyEnglish } from '@data/language/keyTechnology';
 
 export default function KeyTechnology() {
+  const { language } = useContext(GlobalStateContext);
+
+  const currentLanguage = language === 'korea' ? KeyTechnologyKorean : KeyTechnologyEnglish;
   return (
     <>
-      <PageTitle title={'핵심기술'} />
+      <PageTitle title={currentLanguage.pagetitle} />
       <WrapContents>
         <SingleContents>
-          <span>{'GEOINT\n자료 통합처리 기술'}</span>
+          <span>{currentLanguage.firstList[0]}</span>
           <ul>
-            <li>{'다중센서\n융합처리'}</li>
-            <li>{'GEOINT\n정보추출'}</li>
-            <li>{'분산형\nGEOINT DB\n통합처리'}</li>
-            <li>{'정보융합\n분산 정보처리'}</li>
+            <li>{currentLanguage.firstList[1]}</li>
+            <li>{currentLanguage.firstList[2]}</li>
+            <li>{currentLanguage.firstList[3]}</li>
+            <li>{currentLanguage.firstList[4]}</li>
           </ul>
         </SingleContents>
         <MultipleContents>
-          <span>{'다중영상기반 정밀 위치결정자료 제작 기술'}</span>
+          <span>{currentLanguage.secondList[0]}</span>
           <div>
             <ul>
               <li>
-                입체시 Viewer
+                {currentLanguage.secondList[1]}
                 <table>
                   <tbody>
                     <tr>
-                      <td>여색입체</td>
-                      <td>편광입체</td>
+                      <td>{currentLanguage.secondList[2]}</td>
+                      <td>{currentLanguage.secondList[3]}</td>
                     </tr>
                   </tbody>
                 </table>
               </li>
-              <li>Stereo 영상 생성</li>
+              <li>{currentLanguage.secondList[4]}</li>
               <li>
-                군사 규격 자료
+                {currentLanguage.secondList[5]}
                 <table>
                   <tbody>
                     <tr>
-                      <td colSpan={2}>CIB</td>
+                      <td colSpan={2}>{currentLanguage.secondList[6]}</td>
                     </tr>
                     <tr>
-                      <td>DTED</td>
-                      <td>GARS</td>
+                      <td>{currentLanguage.secondList[7]}</td>
+                      <td>{currentLanguage.secondList[8]}</td>
                     </tr>
                     <tr>
-                      <td>DPPDB</td>
-                      <td>CADRG</td>
+                      <td>{currentLanguage.secondList[9]}</td>
+                      <td>{currentLanguage.secondList[10]}</td>
                     </tr>
                   </tbody>
                 </table>
               </li>
               <li>
-                NITF
+                {currentLanguage.secondList[11]}
                 <table>
                   <tbody>
                     <tr>
-                      <td>NITF 2.0</td>
-                      <td>NITF 2.1</td>
+                      <td>{currentLanguage.secondList[12]}</td>
+                      <td>{currentLanguage.secondList[13]}</td>
                     </tr>
                     <tr>
-                      <td>TRE 처리</td>
-                      <td>압축영상 처리</td>
+                      <td>{currentLanguage.secondList[14]}</td>
+                      <td>{currentLanguage.secondList[15]}</td>
                     </tr>
                   </tbody>
                 </table>
               </li>
-              <li>센서 모델링</li>
+              <li>{currentLanguage.secondList[16]}</li>
             </ul>
             <ul>
               <li>
-                RPC/RSM Generator
+                {currentLanguage.secondList[17]}
                 <table>
                   <tbody>
                     <tr>
-                      <td>{'RSM\nExploiter'}</td>
-                      <td>{'RSM\nGenerator'}</td>
+                      <td>{currentLanguage.secondList[18]}</td>
+                      <td>{currentLanguage.secondList[19]}</td>
                     </tr>
                   </tbody>
                 </table>
               </li>
               <li>
-                기하/방사 보정
+                {currentLanguage.secondList[20]}
                 <table>
                   <tbody>
                     <tr>
-                      <td style={{ width: 250 }}>단영상 모델링</td>
+                      <td style={{ width: 250 }}>{currentLanguage.secondList[21]}</td>
                     </tr>
                     <tr>
-                      <td>Block Modeling</td>
+                      <td>{currentLanguage.secondList[22]}</td>
                     </tr>
                     <tr>
-                      <td>정확도 자료 생성</td>
+                      <td>{currentLanguage.secondList[23]}</td>
                     </tr>
                   </tbody>
                 </table>
               </li>
               <li>
-                CSM
+                {currentLanguage.secondList[24]}
                 <table>
                   <tbody>
                     <tr>
-                      <td>Pushbroom</td>
-                      <td>Whiskbroom</td>
+                      <td>{currentLanguage.secondList[25]}</td>
+                      <td>{currentLanguage.secondList[26]}</td>
                     </tr>
                     <tr>
-                      <td>Frame</td>
-                      <td>SAR</td>
+                      <td>{currentLanguage.secondList[27]}</td>
+                      <td>{currentLanguage.secondList[28]}</td>
                     </tr>
                     <tr>
-                      <td>DLT</td>
-                      <td>RPC/RSM</td>
+                      <td>{currentLanguage.secondList[29]}</td>
+                      <td>{currentLanguage.secondList[30]}</td>
                     </tr>
                   </tbody>
                 </table>
               </li>
-              <li>특징점 추출 및 매칭</li>
+              <li>{currentLanguage.secondList[31]}</li>
             </ul>
           </div>
         </MultipleContents>
         <SingleContents>
-          <span>{'위치기반\n통합 모니터링 기술'}</span>
+          <span>{currentLanguage.thirdList[0]}</span>
           <ul>
-            <li>가시영역 처리</li>
-            <li>이동체 위치추적</li>
-            <li>GIS 자료 중첩도시</li>
-            <li>3D 지형처리</li>
-            <li>PostgreSQL/PostGIS</li>
+            <li>{currentLanguage.thirdList[1]}</li>
+            <li>{currentLanguage.thirdList[2]}</li>
+            <li>{currentLanguage.thirdList[3]}</li>
+            <li>{currentLanguage.thirdList[4]}</li>
+            <li>{currentLanguage.thirdList[5]}</li>
           </ul>
         </SingleContents>
       </WrapContents>

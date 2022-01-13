@@ -2,7 +2,18 @@ import React, { useContext, useEffect, useState } from 'react';
 import { PageTitle } from 'components';
 import { Contents, Table } from './styles';
 import GlobalStateContext from '@context/globalStateContext';
-import { srpList, qubismList, pevList, wissList, geointList } from '@data/DevelopmentPerformance';
+import {
+  srpListKorean,
+  qubismListKorean,
+  pevListKorean,
+  wissListKorean,
+  geointListKorean,
+  srpListEnglish,
+  qubismListEnglish,
+  pevListEnglish,
+  wissListEnglish,
+  geointListEnglish,
+} from '@data/language/developmentPerformance';
 
 export const KeyTechnologyTable = list => {
   return list.map(({ key, title, contents }) => (
@@ -20,19 +31,32 @@ export const KeyTechnologyTable = list => {
 };
 
 export default function DevelopmentPerformance() {
-  const { subSelectedComponent, setSubSelectedComponent } = useContext(GlobalStateContext);
-  const [selectedState, setSelectedState] = useState(srpList);
+  const { subSelectedComponent, setSubSelectedComponent, language } = useContext(GlobalStateContext);
+  const [selectedState, setSelectedState] = useState(srpListKorean);
 
   useEffect(() => {
-    if (subSelectedComponent === 'developmentPerformance') {
-      setSelectedState(srpList);
-      setSubSelectedComponent('srp');
-    } else if (subSelectedComponent === 'srp') setSelectedState(srpList);
-    else if (subSelectedComponent === 'qubism') setSelectedState(qubismList);
-    else if (subSelectedComponent === 'wiss') setSelectedState(wissList);
-    else if (subSelectedComponent === 'pev') setSelectedState(pevList);
-    else if (subSelectedComponent === 'geoint') setSelectedState(geointList);
-  }, [subSelectedComponent]);
+    if (language === 'korea') {
+      setSelectedState(srpListKorean);
+      if (subSelectedComponent === 'developmentPerformance') {
+        setSelectedState(srpListKorean);
+        setSubSelectedComponent('srp');
+      } else if (subSelectedComponent === 'srp') setSelectedState(srpListKorean);
+      else if (subSelectedComponent === 'qubism') setSelectedState(qubismListKorean);
+      else if (subSelectedComponent === 'wiss') setSelectedState(wissListKorean);
+      else if (subSelectedComponent === 'pev') setSelectedState(pevListKorean);
+      else if (subSelectedComponent === 'geoint') setSelectedState(geointListKorean);
+    } else {
+      setSelectedState(srpListEnglish);
+      if (subSelectedComponent === 'developmentPerformance') {
+        setSelectedState(srpListEnglish);
+        setSubSelectedComponent('srp');
+      } else if (subSelectedComponent === 'srp') setSelectedState(srpListEnglish);
+      else if (subSelectedComponent === 'qubism') setSelectedState(qubismListEnglish);
+      else if (subSelectedComponent === 'wiss') setSelectedState(wissListEnglish);
+      else if (subSelectedComponent === 'pev') setSelectedState(pevListEnglish);
+      else if (subSelectedComponent === 'geoint') setSelectedState(geointListEnglish);
+    }
+  }, [subSelectedComponent, language]);
 
   return (
     <>
