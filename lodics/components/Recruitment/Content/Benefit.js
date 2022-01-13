@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageSemiTitle } from 'components';
+import { PageSemiTitle, RecruitmentCard } from 'components';
 import { palette } from '@styles/color';
 import { Line, Circle, WrapCirCle } from '../styles';
 
@@ -94,16 +94,14 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 const benefitList = [
   {
+    key: 0,
     title: '복지제도',
     content: '4대보험 가입\n청년내일채움공제 가입\n경조금 및 경조 휴가 부여',
     url: 'img/recruitment/benefit01.png',
   },
+  { key: 1, title: '인재육성', content: '수시교육\n도서 구입비 지원', url: 'img/recruitment/benefit02.png' },
   {
-    title: '인재육성',
-    content: '수시교육\n도서 구입비 지원',
-    url: 'img/recruitment/benefit02.png',
-  },
-  {
+    key: 2,
     title: '여가활동',
     content: '주 40시간제 실시\n상시 휴가제 운영\n사원들의 여가활동 보장',
     url: 'img/recruitment/benefit03.png',
@@ -113,61 +111,30 @@ const benefitList = [
 export default function Benefit() {
   const benefitContent = benefitList => {
     return (
-      <>
-        {benefitList.map(({ title, content, url }) => (
-          <>
-            <Circle $theme={'image'} $image={url} $size={'300px'}>
-              <div>{title}</div>
-              <hr />
-              <div>{content}</div>
-            </Circle>
-            {title !== '여가활동' ? <div>●●●</div> : null}
-          </>
+      <WrapCirCle>
+        {benefitList.map(({ key, title, content, url }) => (
+          <RecruitmentCard key={key} title={title} content={content} url={url} />
         ))}
-      </>
+      </WrapCirCle>
     );
+  };
+
+  const Card = (key, title, content, url) => {
+    <>
+      <Circle $theme={'image'} $image={url} $size={'300px'}>
+        <div>{title}</div>
+        <hr />
+        <div>{content}</div>
+      </Circle>
+      {title !== '여가활동' ? <div>●●●</div> : null}
+    </>;
   };
 
   return (
     <>
       <Line />
       <PageSemiTitle title='복리후생' color={palette.themeBlack} fontWeight={400} />
-      <Box sx={{ marginTop: 5, display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
-        {images.map(image => (
-          <ImageButton
-            focusRipple
-            key={image.title}
-            style={{
-              width: image.width,
-              height: 300,
-              margin: 2,
-            }}
-          >
-            <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
-            <ImageBackdrop className='MuiImageBackdrop-root' />
-            <Image style={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography
-                component='span'
-                variant='subtitle1'
-                color='inherit'
-                sx={{
-                  fontSize: 30,
-                  fontWeight: 'bold',
-                  position: 'relative',
-                  p: 4,
-                  pt: 2,
-                  pb: theme => `calc(${theme.spacing(1)} + 6px)`,
-                }}
-              >
-                {image.title}
-                <ImageMarked className='MuiImageMarked-root' />
-              </Typography>
-              <div style={{ marginTop: 25, whiteSpace: 'pre-wrap', fontSize: 15 }}>{image.contents}</div>
-            </Image>
-          </ImageButton>
-        ))}
-      </Box>
-      {/* <WrapCirCle>{benefitContent(benefitList)}</WrapCirCle> */}
+      {benefitContent(benefitList)}
     </>
   );
 }

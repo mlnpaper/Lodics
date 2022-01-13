@@ -66,26 +66,26 @@ const fieldBodyList = [
 export default function RecruitField() {
   //모집분야 table header
   const fieldTitleContent = fieldHeaderList => {
-    return fieldHeaderList.map(title => <th>{title}</th>);
+    return fieldHeaderList.map((title, index) => <th key={index}>{title}</th>);
   };
 
   //모집분야 table body
   const fieldContent = fieldBodyList => {
-    return fieldBodyList.map(({ title, task, content, preferential, person }) => (
-      <tr>
+    return fieldBodyList.map(({ title, task, content, preferential, person }, index) => (
+      <tr key={index}>
         <td>{title}</td>
         {task === undefined ? (
           <>
             <td colSpan={3} style={{ textAlign: 'left', paddingLeft: 20 }}>
               <ul>
-                {content.map(content => (
-                  <li>{content}</li>
+                {content.map((content, index) => (
+                  <li key={index}>{content}</li>
                 ))}
               </ul>
               <div>[우대사항]</div>
               <ul>
-                {preferential.map(preferential => (
-                  <li>{preferential}</li>
+                {preferential.map((preferential, index) => (
+                  <li key={index}>{preferential}</li>
                 ))}
               </ul>
             </td>
@@ -95,16 +95,16 @@ export default function RecruitField() {
             <td>{task}</td>
             <td style={{ textAlign: 'left', paddingLeft: 20 }}>
               <ul>
-                {content.map(content => (
-                  <li>{content}</li>
+                {content.map((content, index) => (
+                  <li key={index}>{content}</li>
                 ))}
               </ul>
               {preferential !== undefined ? (
                 <>
                   <div>[우대사항]</div>
                   <ul>
-                    {preferential.map(preferential => (
-                      <li>{preferential}</li>
+                    {preferential.map((preferential, index) => (
+                      <li key={index}>{preferential}</li>
                     ))}
                   </ul>{' '}
                 </>

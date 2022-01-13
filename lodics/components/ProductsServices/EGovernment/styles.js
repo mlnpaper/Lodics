@@ -17,7 +17,8 @@ export const Contents = styled.ul`
         padding-bottom: 5px;
         color: ${palette.themePrimary};
         font-family: 'Malgun Gothic';
-        li {
+        div {
+          font-size: 14px;
           list-style: none;
           color: ${palette.themeBlack};
           font-family: 'Malgun Gothic';
