@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { AppLayout, Card, IntroText } from 'components';
 import styled from 'styled-components';
 import GlobalStateContext from '@context/globalStateContext';
+import { homeEnglish, homeKorean } from '@data/language/home';
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -61,7 +62,9 @@ export const CardContainer = styled.div`
 `;
 
 export default function Home() {
-  const { setSelectedMenu } = useContext(GlobalStateContext);
+  const { setSelectedMenu, language } = useContext(GlobalStateContext);
+
+  const currentLanguage = language === 'korea' ? homeKorean : homeEnglish;
 
   useEffect(() => {
     setSelectedMenu('');
@@ -73,9 +76,24 @@ export default function Home() {
         <Background />
         <IntroText />
         <CardContainer>
-          <Card menu='Business' description='LoDiCS의 사업분야를 소개합니다' link='business' />
-          <Card menu='Producs & Services' description='LoDiCS의 보유기술을 소개합니다' link='productsServices' />
-          <Card menu='Recruitment' description='LoDiCS의 채용정보를 알려드립니다' link='recruitment' />
+          <Card
+            menu='Business'
+            description={currentLanguage.cardBusinessDescription}
+            more={currentLanguage.more}
+            link='business'
+          />
+          <Card
+            menu='Producs & Services'
+            description={currentLanguage.cardPsDescription}
+            more={currentLanguage.more}
+            link='productsServices'
+          />
+          <Card
+            menu='Recruitment'
+            description={currentLanguage.cardRecruitmentDescription}
+            more={currentLanguage.more}
+            link='recruitment'
+          />
         </CardContainer>
       </AppLayout>
     </Container>

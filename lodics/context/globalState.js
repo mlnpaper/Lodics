@@ -5,7 +5,7 @@ export default function GlobalState({ children }) {
   const [subSelectedComponent, setSubSelectedComponent] = useState('');
   const [selectedSubMenu, setSelectedSubMenu] = useState('');
   const [selectedMenu, setSelectedMenu] = useState('');
-  const [language, setLanguage] = useState('korea');
+  const [language, setLanguage] = useState('');
 
   return (
     <GlobalStateContext.Provider

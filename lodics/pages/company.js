@@ -4,6 +4,7 @@ import { GlobalStateContext } from 'context';
 import { palette } from '@styles/color';
 import styled from 'styled-components';
 import Head from 'next/head';
+import { companySubSelectListEnglish, companySubSelectListKorean } from '@data/language/company';
 
 export const PageContainer = styled.section`
   /* -------------------------------------------------------------------------- */
@@ -21,18 +22,11 @@ export const PageContainer = styled.section`
   }
 `;
 
-const subSelectList = [
-  [
-    { value: 'ceoGreeting', text: 'CEO 인사말' },
-    { value: 'history', text: '연혁' },
-    { value: 'certification', text: '인증현황' },
-    { value: 'location', text: '회사위치' },
-  ],
-];
-
 export default function company() {
-  const { subSelectedComponent, setSubSelectedComponent, setSelectedMenu } = useContext(GlobalStateContext);
+  const { subSelectedComponent, setSubSelectedComponent, setSelectedMenu, language } = useContext(GlobalStateContext);
   const [selectedComponent, setSelectedComponent] = useState(<CeoGreeting />);
+
+  const subSelectList = language === 'korea' ? companySubSelectListKorean : companySubSelectListEnglish;
 
   useEffect(() => {
     if (subSelectedComponent === 'ceoGreeting') setSelectedComponent(<CeoGreeting />);

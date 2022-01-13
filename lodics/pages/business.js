@@ -3,17 +3,13 @@ import { AppLayout, GoalsVisions, KeyBusiness } from 'components';
 import { GlobalStateContext } from 'context';
 import { PageContainer } from '@pages/company';
 import Head from 'next/head';
-
-const subSelectList = [
-  [
-    { value: 'goalsVisions', text: '목표와 비전' },
-    { value: 'keyBusiness', text: '주요사업분야' },
-  ],
-];
+import { businessSubSelectListEnglish, businessSubSelectListKorean } from '@data/language/business';
 
 export default function business() {
-  const { subSelectedComponent, setSubSelectedComponent, setSelectedMenu } = useContext(GlobalStateContext);
+  const { subSelectedComponent, setSubSelectedComponent, setSelectedMenu, language } = useContext(GlobalStateContext);
   const [selectedComponent, setSelectedComponent] = useState(<GoalsVisions />);
+
+  const subSelectList = language === 'korea' ? businessSubSelectListKorean : businessSubSelectListEnglish;
 
   useEffect(() => {
     if (subSelectedComponent === 'goalsVisions') setSelectedComponent(<GoalsVisions />);

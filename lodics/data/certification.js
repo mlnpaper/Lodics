@@ -1,4 +1,4 @@
-export const certificationDetails = [
+export const certificationDetailsKorean = [
   { key: 5, img: 'img/certification/JT.jpg', title: '정보통신공사업등록증' },
   {
     key: 4,
@@ -15,7 +15,24 @@ export const certificationDetails = [
   { key: 0, img: 'img/certification/BenC.jpg', title: '벤처기업확인서' },
 ];
 
-export const certificationPatent = [
+export const certificationDetailsEnglish = [
+  { key: 5, img: 'img/certification/JT.jpg', title: 'ICT Business Certificate' },
+  {
+    key: 4,
+    img: 'img/certification/170912_HY_GunSer.jpg',
+    title: 'Int’l Contractor Certificate',
+  },
+  {
+    key: 3,
+    img: 'img/certification/SW.jpg',
+    title: 'Software Reg. Certificate',
+  },
+  { key: 2, img: 'img/certification/YG.jpg', title: 'R & D Service Business' },
+  { key: 1, img: 'img/certification/JSO.jpg', title: 'Small Business Certificate' },
+  { key: 0, img: 'img/certification/BenC.jpg', title: 'Venture Business Certificate' },
+];
+
+export const certificationPatentKorean = [
   {
     key: 2,
     img: 'img/certification/TH03.jpg',
@@ -36,7 +53,28 @@ export const certificationPatent = [
   },
 ];
 
-export const programRegistration = [
+export const certificationPatentEnglish = [
+  {
+    key: 2,
+    img: 'img/certification/TH03.jpg',
+    title: `3차원 객체 표면 복원을 위한 
+  데이터 관리 장치 및 그 방법`,
+  },
+  {
+    key: 1,
+    img: 'img/certification/TH01.jpg',
+    title: `Device and method for determining
+    a position of a specific point in an image`,
+  },
+  {
+    key: 0,
+    img: 'img/certification/TH02.jpg',
+    title: `Device and method for converting
+    image data in a rendering system`,
+  },
+];
+
+export const programRegistrationKorean = [
   {
     key: 10,
     img: 'img/certification//CH3CH.jpg',
@@ -102,5 +140,67 @@ export const programRegistration = [
     img: 'img/certification//101227_PD.jpg',
     title: `LLR 
   (Lodics Lidar Reporter)`,
+  },
+];
+
+export const programRegistrationEnglish = [
+  {
+    key: 10,
+    img: 'img/certification//CH3CH.jpg',
+    title: `Next Generation 3D Object Data
+    Inspection Software`,
+  },
+  {
+    key: 9,
+    img: 'img/certification//160610_DaJung.jpg',
+    title: `Multi-Sensor Modeling Program
+    for Camera Collection Images`,
+  },
+  {
+    key: 8,
+    img: 'img/certification//160610_3c_GUN.jpg',
+    title: `Auto Inspection of 3D Bldg.
+    Object Data`,
+  },
+  {
+    key: 7,
+    img: 'img/certification//160520_3DS.jpg',
+    title: `Lightening of 3D Bldg.
+    Data Texture`,
+  },
+  {
+    key: 6,
+    img: 'img/certification//150527_RDM_HLM_UC.jpg',
+    title: `Operation of RDM-Based HLM`,
+  },
+  {
+    key: 5,
+    img: 'img/certification//150527_RDM_HLM_GG.jpg',
+    title: `Est. & OBS. of RDM-Based HLM`,
+  },
+  {
+    key: 4,
+    img: 'img/certification//150515_3c_GONG.jpg',
+    title: `3D Spatial Info Data Inspection`,
+  },
+  {
+    key: 3,
+    img: 'img/certification//140530_3D_point.jpg',
+    title: `3D Point Cloud Visualization`,
+  },
+  {
+    key: 2,
+    img: 'img/certification//140530_3D_R.jpg',
+    title: `3D Reconstruction & Image Treatment`,
+  },
+  {
+    key: 1,
+    img: 'img/certification//130524_RDM_HLM_GC.jpg',
+    title: `Operation of RDM-Based HLM`,
+  },
+  {
+    key: 0,
+    img: 'img/certification//101227_PD.jpg',
+    title: `LLR (Lodics Lidar Reporter)`,
   },
 ];

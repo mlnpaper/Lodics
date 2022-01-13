@@ -45,7 +45,7 @@ export default function productsServices() {
     setSelectedMenu('productsServices');
 
     //페이지에서 나갔을 때 subSelectedComponent 초기값으로 초기화
-    return setSubSelectedComponent('keyTechnology01');
+    return setSubSelectedComponent('keyTechnology');
   }, []);
 
   return (

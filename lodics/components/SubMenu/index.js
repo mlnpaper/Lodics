@@ -14,7 +14,8 @@ const mainSelect = [
 export default function SubMenu({ title, subSelectList = [] }) {
   const [newSubSelectList, setNewSubSelectList] = useState(subSelectList);
   const [currentSelect, setCurrentSelect] = useState('');
-  const { setSubSelectedComponent, selectedSubMenu, setSelectedSubMenu } = useContext(GlobalStateContext);
+  const { setSubSelectedComponent, selectedSubMenu, setSelectedSubMenu, language, selectedMenu } =
+    useContext(GlobalStateContext);
   const [isOpen, setIsOpen] = useState(false);
 
   const onClicktoGoHome = useCallback(() => {
@@ -87,6 +88,11 @@ export default function SubMenu({ title, subSelectList = [] }) {
       setIsOpen(false);
     };
   }, []);
+
+  useEffect(() => {
+    if (selectedMenu === 'productsServices' && !currentSelect) setNewSubSelectList([subSelectList[0]]);
+    else setNewSubSelectList(subSelectList);
+  }, [language]);
 
   return (
     <Container>
