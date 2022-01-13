@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Container, BusinessIcon, PSIcon, RecruitmentIcon } from './styles';
 import Router from 'next/router';
 
-export default function Card({ menu, description, link }) {
+export default function Card({ menu, description, link, more }) {
   const onClick = useCallback(() => {
     Router.push(`/${link}`);
   }, []);
@@ -12,7 +12,7 @@ export default function Card({ menu, description, link }) {
       <i>{link === 'business' ? <BusinessIcon /> : link === 'productsServices' ? <PSIcon /> : <RecruitmentIcon />}</i>
       <span>{menu}</span>
       <span>{description}</span>
-      <button type='button'>바로가기</button>
+      <button type='button'>{more}</button>
     </Container>
   );
 }

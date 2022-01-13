@@ -1,18 +1,24 @@
-import React from 'react';
+import GlobalStateContext from '@context/globalStateContext';
+import { footerEnglish, footerKorean } from '@data/language/footer';
+import React, { useContext } from 'react';
 import { Container } from './styles';
 
 export default function Footer() {
+  const { language } = useContext(GlobalStateContext);
+
+  const currentLanguage = language === 'korea' ? footerKorean : footerEnglish;
+
   return (
     <Container>
       <ul>
         <li>
-          <span>(주)로딕스</span>
+          <span>{currentLanguage.company}</span>
         </li>
         <li>
-          <span>대표이사 : 이승우</span>
+          <span>{currentLanguage.ceo}</span>
         </li>
         <li>
-          <span>서울특별시 성동구 상원4길 6-1 태양빌딩 3층 (성수동1가 14-32)</span>
+          <span>{currentLanguage.address}</span>
         </li>
       </ul>
       <ul>
@@ -24,7 +30,7 @@ export default function Footer() {
         </li>
         <li>
           <span>FAX : </span>
-          <span> 070.7966.1165</span>
+          <span> {currentLanguage.fax}</span>
         </li>
         <li>
           <span>Email : </span>

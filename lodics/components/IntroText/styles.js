@@ -75,14 +75,13 @@ export const Container = styled.div`
     width: calc(100% - 2rem);
 
     .first_line {
-      white-space: nowrap;
       font-size: 3.2rem;
     }
 
     .second_line {
-      white-space: nowrap;
       font-size: 2rem;
       margin-top: 1rem;
+      white-space: pre-line;
     }
   }
 
