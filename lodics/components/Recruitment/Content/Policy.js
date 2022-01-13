@@ -1,7 +1,8 @@
 import React from 'react';
 import { PageSemiTitle, RecruitmentCard } from 'components';
 import { palette } from '@styles/color';
-import { Line, Circle, WrapCirCle } from '../styles';
+import { Line, WrapCirCle } from '../styles';
+import { policyKorean, policyEnglish } from '@data/language/policy';
 
 const policyList = [
   { key: 0, title: '성과평가', content: '공정하고 객관적인 성과 평가를 통해\n 성과에 따른 공정한 보상을 제공합니다' },
@@ -13,7 +14,8 @@ const policyList = [
   },
 ];
 
-export default function Policy() {
+export default function Policy({ language }) {
+  const currentLanguage = language === 'korea' ? policyKorean : policyEnglish;
   const policyContent = policyList => {
     return (
       <>
@@ -27,8 +29,8 @@ export default function Policy() {
   return (
     <>
       <Line />
-      <PageSemiTitle title='인사제도' color={palette.themeBlack} fontWeight={400} />
-      <WrapCirCle>{policyContent(policyList)}</WrapCirCle>
+      <PageSemiTitle title={currentLanguage.pageTitle} color={palette.themeBlack} fontWeight={400} />
+      <WrapCirCle>{policyContent(currentLanguage.policyList)}</WrapCirCle>
     </>
   );
 }

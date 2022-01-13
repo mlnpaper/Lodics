@@ -220,6 +220,7 @@ export const Circle = styled.div`
     font-size: 2rem;
     color: ${props => (props.$theme === 'image' ? palette.themeWhite : palette.themePrimary)};
     font-weight: 700;
+    text-align: center;
   }
 
   hr {

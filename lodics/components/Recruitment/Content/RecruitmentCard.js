@@ -1,9 +1,16 @@
 import React from 'react';
 import { Circle } from '../styles';
 import { BsArrowRight } from 'react-icons/bs';
-
+import { policyKorean, policyEnglish } from '@data/language/policy';
+import { benefitKorean, benefitEnglish } from '@data/language/benefit';
 export default function RecruitmentCard({ title, content, url, icon }) {
-  const policyTitle = ['성과평가', '보상제도', '교육제도'];
+  const policyTitleList = [...policyKorean.title, ...policyEnglish.title];
+  const LastList = [
+    policyKorean.policyList[2].title,
+    policyEnglish.policyList[2].title,
+    benefitKorean.benefitList[2].title,
+    benefitEnglish.benefitList[2].title,
+  ];
   return (
     <>
       {icon !== undefined ? (
@@ -19,14 +26,14 @@ export default function RecruitmentCard({ title, content, url, icon }) {
         </>
       ) : (
         <>
-          <Circle $theme={policyTitle.includes(title) ? null : 'image'} $image={url} $size={'300px'}>
+          <Circle $theme={policyTitleList.includes(title) ? null : 'image'} $image={url} $size={'300px'}>
             <>
               <div>{title}</div>
               <hr />
               <div>{content}</div>
             </>
           </Circle>
-          {title !== '여가활동' && title !== '교육제도' ? <div>●●●</div> : null}
+          {LastList.includes(title) ? null : <div>●●●</div>}
         </>
       )}
     </>
