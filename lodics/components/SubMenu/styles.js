@@ -38,7 +38,7 @@ export const Container = styled.div`
 export const MenuContainer = styled.div`
   height: 5rem;
   width: 100%;
-  background: ${palette.themePrimary};
+  background: ${palette.themeSubMenu};
 `;
 
 export const MenuInnerContainer = styled.div`
@@ -136,7 +136,7 @@ export const SelectContainer = styled.div`
       opacity: ${props => (props.$open ? 1 : 0)};
       left: 0;
       width: 93%;
-      background: ${palette.themeSelector};
+      background-color : ${palette.themeSelector};
       transition: 0.2s;
       z-index: 5;
 
