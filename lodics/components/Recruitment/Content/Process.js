@@ -20,8 +20,8 @@ export default function Process({ language }) {
         </th>
         <td>
           <ul>
-            {content.map(content => (
-              <li>{content}</li>
+            {content.map((content, index) => (
+              <li key={index}>{content}</li>
             ))}
           </ul>
         </td>
