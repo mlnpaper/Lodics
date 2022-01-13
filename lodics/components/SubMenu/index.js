@@ -47,8 +47,10 @@ export default function SubMenu({ title, subSelectList = [] }) {
   );
 
   const onClickOption = (e, setSelectedOption) => {
-    if (!isOpen || +e.target.parentElement.previousSibling.id !== selectedSubMenu) return null;
-    else {
+    if (!isOpen || +e.target.parentElement.previousSibling.id !== selectedSubMenu) {
+      setIsOpen(false);
+      setSelectedSubMenu('');
+    } else {
       const value = e.target.id;
       const text = e.target.innerText;
 
@@ -98,6 +100,11 @@ export default function SubMenu({ title, subSelectList = [] }) {
     if (selectedMenu === 'productsServices') setNewSubSelectList([subSelectList[0]]);
   }, [selectedMenu]);
 
+  const onClickPortal = () => {
+    setSelectedSubMenu('');
+    setIsOpen(false);
+  };
+
   return (
     <Container>
       <h2>{title}</h2>
@@ -124,6 +131,7 @@ export default function SubMenu({ title, subSelectList = [] }) {
             ))}
         </MenuInnerContainer>
       </MenuContainer>
+      {isOpen && <div className='portal' onClick={onClickPortal}></div>}
     </Container>
   );
 }

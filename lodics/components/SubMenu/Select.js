@@ -31,7 +31,7 @@ export default function Select({ defaultValue, selectList, onClickSelect, select
 
   // select 언어 language에 따른 실시간 변화 적용
   useEffect(() => {
-    selectList.forEach((list, i) => {
+    selectList?.forEach((list, i) => {
       list.text === selectedOption && setSelectedOptionIndex(i);
     });
   }, [selectedOption]);
@@ -54,7 +54,7 @@ export default function Select({ defaultValue, selectList, onClickSelect, select
         </IconContainer>
       </button>
       <ul>
-        {selectList.map(({ value, text }) => (
+        {selectList?.map(({ value, text }) => (
           <li id={value} onClick={e => onClickOption(e, setSelectedOption)} key={value}>
             {text}
           </li>

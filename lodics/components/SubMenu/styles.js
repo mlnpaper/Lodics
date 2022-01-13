@@ -11,6 +11,14 @@ export const Container = styled.div`
   background: center / cover no-repeat url('img/basic_bg.jpg');
   width: 100%;
 
+  .portal {
+    width: 100vw;
+    top: 109px;
+    height: 100vh;
+    position: absolute;
+    z-index: 5;
+  }
+
   h2 {
     color: ${palette.themeWhite};
     font-size: 3rem;
@@ -58,7 +66,7 @@ export const MenuInnerContainer = styled.div`
     background: transparent;
     border: none;
     border-radius: 0 50px 50px 0;
-    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     width: 80px;
     font-size: 1.2rem;
@@ -98,9 +106,10 @@ export const SelectContainer = styled.div`
   position: relative;
     height: 100%;
     border-radius: 0 50px 50px 0;
-    box-shadow: 5px 0 5px rgba(0,0,0,0.2);
+    box-shadow: 5px 0 5px rgba(0,0,0,0.3);
     cursor: pointer;
     width: 110px;
+    z-index: 10;
 
     button {
       display: flex;
@@ -132,13 +141,13 @@ export const SelectContainer = styled.div`
 
     ul {
       position: absolute;
-      top: ${props => (props.$open ? '100%' : '90%')};
+      top: ${props => (props.$open ? '100%' : '95%')};
       opacity: ${props => (props.$open ? 1 : 0)};
       left: 0;
       width: 93%;
       background-color : ${palette.themeSelector};
       transition: 0.2s;
-      z-index: 5;
+      z-index: 10;
 
       li {
         border-bottom: 1px solid ${palette.themeDarkSelector};
