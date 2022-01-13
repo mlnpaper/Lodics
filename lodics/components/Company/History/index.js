@@ -1,12 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { PageTitle, HistoryList } from 'components';
-import { historyList } from '@data/history';
 import Timeline from '@mui/lab/Timeline';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { TimelineContainer } from './styles';
+import GlobalStateContext from '@context/globalStateContext';
+import { historyKorean, historyEnglish } from '@data/language/history';
 
 export default function History() {
+  const { language } = useContext(GlobalStateContext);
+
+  const currentLanguage = language === 'korea' ? historyKorean : historyEnglish;
+
   useEffect(() => {
     AOS.init({
       duration: 500,
@@ -15,15 +20,15 @@ export default function History() {
 
   return (
     <React.Fragment>
-      <PageTitle title='연혁' />
+      <PageTitle title={currentLanguage.pageTitle} />
       <TimelineContainer>
         <Timeline position='alternate'>
-          {historyList.map((history, i) => (
+          {currentLanguage.historyList.map((history, i) => (
             <HistoryList
               key={history[0].years}
               historyList={history}
               parentIndex={i}
-              isLastIndex={historyList.length - 1 === i}
+              isLastIndex={currentLanguage.historyList.length - 1 === i}
             />
           ))}
         </Timeline>

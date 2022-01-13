@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BusTextContainer, MapContainer, SubwayTextContainer, TextContainer, SubwayIcon, BusIcon } from './styles';
 import { PageSemiTitle, PageTitle } from 'components';
+import GlobalStateContext from '@context/globalStateContext';
+import { locationEnglish, locationKorean } from '@data/language/location';
 
 const createSubwayTextElement = (subwayName, subwayNumber, subwayColor, exit, distance) => (
-  <div>
+  <div key={subwayName}>
     <span>
       {subwayName} <SubwayIcon $color={subwayColor}>{subwayNumber}</SubwayIcon>
     </span>
@@ -12,14 +14,14 @@ const createSubwayTextElement = (subwayName, subwayNumber, subwayColor, exit, di
   </div>
 );
 
-const createBusTextElement = (exit, busStation, distance) => (
-  <div>
+const createBusTextElement = (exit, busStop, distance, midnight) => (
+  <div key={busStop}>
     <span>{exit}</span>
     <span>
-      {`(${busStation})`} | {distance}m
+      {`(${busStop})`} | {distance}m
     </span>
     <span>
-      <BusIcon $color='#6372D7'>간선</BusIcon>N62(심야)
+      <BusIcon $color='#6372D7'>간선</BusIcon>N62({midnight})
     </span>
     <span>
       <BusIcon $color='#53A135'>지선</BusIcon>2016 | 2224 | 2413
@@ -66,18 +68,22 @@ const executeScript = () => {
 };
 
 export default function Location() {
+  const { language } = useContext(GlobalStateContext);
+
+  const currentLanguage = language === 'korea' ? locationKorean : locationEnglish;
+
   useEffect(() => {
     InstallScript();
   }, []);
 
   return (
     <React.Fragment>
-      <PageTitle title='회사위치' />
+      <PageTitle title={currentLanguage.pageTitle} />
       <MapContainer>
         {/* [카카오맵 - 지도퍼가기] 1. 지도 노드  */}
         <div id='daumRoughmapContainer1641175660053' className='root_daum_roughmap root_daum_roughmap_landing'></div>
       </MapContainer>
-      <PageSemiTitle title='요약' />
+      <PageSemiTitle title={currentLanguage.summarySemiTitle} />
       <TextContainer>
         <span>
           지하철 2호선 뚝섬역 4번 출구, 신한은행 골목으로 들어와, 메가커피 골목으로 500m 직진.
@@ -85,9 +91,9 @@ export default function Location() {
           1층 '바다화원' 건물
         </span>
       </TextContainer>
-      <PageSemiTitle title='주소' />
+      <PageSemiTitle title={currentLanguage.adrressSemiTitle} />
       <TextContainer>
-        <span>서울특별시 성동구 상원4길 6-1 태양빌딩 3층 (성수동1가 14-32)</span>
+        <span>{currentLanguage.adrressContent}</span>
         <div>
           <span>
             <em>TEL</em> 02-403-1160
@@ -97,17 +103,17 @@ export default function Location() {
           </span>
         </div>
       </TextContainer>
-      <PageSemiTitle title='지하철역' />
+      <PageSemiTitle title={currentLanguage.subwaySemiTitle} />
       <SubwayTextContainer>
-        {createSubwayTextElement('뚝섬역', '2', '#37B32D', '4번 출구', '도보 2분')}
-        {createSubwayTextElement('성수역', '2', '#37B32D', '1번 출구', '도보 10분')}
-        {createSubwayTextElement('서울숲역', '분당', '#E9AF17', '1번 출구', '도보 13분')}
+        {currentLanguage.subwayContent.map(subway =>
+          createSubwayTextElement(subway.subwayStation, subway.line, subway.lineColor, subway.exit, subway.onFoot)
+        )}
       </SubwayTextContainer>
-      <PageSemiTitle title='버스정류장' />
+      <PageSemiTitle title={currentLanguage.busSemiTitle} />
       <BusTextContainer>
-        {createBusTextElement('뚝섬역4번출구', '04239', '30')}
-        {createBusTextElement('뚝섬역3번5번출구', '04238', '70')}
-        {createBusTextElement('뚝섬역2번출구', '04237', '198')}
+        {currentLanguage.busContent.map(bus =>
+          createBusTextElement(bus.busStop, bus.busNumber, bus.distance, bus.midnight)
+        )}
       </BusTextContainer>
     </React.Fragment>
   );
