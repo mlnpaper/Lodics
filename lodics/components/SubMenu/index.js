@@ -119,16 +119,19 @@ export default function SubMenu({ title, subSelectList = [] }) {
             onClickOption={onClickOption}
           />
           {!!newSubSelectList.length &&
-            newSubSelectList.map((subSelect, i) => (
-              <Select
-                defaultValue={subSelect?.[0]['text']}
-                selectList={subSelect}
-                onClickSelect={onClickSelect}
-                selectNumber={i + 1}
-                onClickOption={onClickOption}
-                key={i}
-              />
-            ))}
+            !!newSubSelectList[0] &&
+            newSubSelectList.map((subSelect, i) => {
+              return (
+                <Select
+                  defaultValue={subSelect?.[0]['text']}
+                  selectList={subSelect}
+                  onClickSelect={onClickSelect}
+                  selectNumber={i + 1}
+                  onClickOption={onClickOption}
+                  key={i}
+                />
+              );
+            })}
         </MenuInnerContainer>
       </MenuContainer>
       {isOpen && <div className='portal' onClick={onClickPortal}></div>}
