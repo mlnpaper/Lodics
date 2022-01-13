@@ -131,6 +131,7 @@ export const MultipleContents = styled.div`
           font-size: 1.6rem;
           td {
             font-size: 1.6rem;
+            width: 400px;
           }
         }
       }

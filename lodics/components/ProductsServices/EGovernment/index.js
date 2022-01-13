@@ -36,17 +36,15 @@ export default function EGovernment() {
   const fillContents = eGovernmentList => {
     return eGovernmentList.map(({ key, title, contents, subContents }) => (
       <Contents key={key}>
-        <li>
-          {title}
-          <ul>
-            {contents.map((contents, index) => (
-              <li key={index}>
-                {contents}
-                {subContents !== undefined ? <div>{subContents[index]}</div> : null}
-              </li>
-            ))}
-          </ul>
-        </li>
+        <span>{title}</span>
+        <ul>
+          {contents.map((contents, index) => (
+            <li key={index}>
+              {contents}
+              {subContents !== undefined ? <div>{subContents[index]}</div> : null}
+            </li>
+          ))}
+        </ul>
       </Contents>
     ));
   };
