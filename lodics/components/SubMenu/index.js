@@ -90,7 +90,7 @@ export default function SubMenu({ title, subSelectList = [] }) {
   }, []);
 
   useEffect(() => {
-    if (selectedMenu === 'productsServices') setNewSubSelectList([subSelectList[0]]);
+    if (selectedMenu === 'productsServices' && !currentSelect) setNewSubSelectList([subSelectList[0]]);
     else setNewSubSelectList(subSelectList);
   }, [language]);
 
