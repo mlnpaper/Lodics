@@ -9,17 +9,20 @@ import GlobalStateContext from '@context/globalStateContext';
 import { recruitmentKorean, recruitmentEnglish } from '@data/language/recruitment';
 
 export default function Recruitment() {
+  //useContext를 통해 전역적으로 관리하고 있는 value를 가져와서 사용
   const { language } = useContext(GlobalStateContext);
+
+  //현재 언어 Check
   const currentLanguage = language === 'korea' ? recruitmentKorean : recruitmentEnglish;
 
   return (
     <>
       <PageTitle title={currentLanguage.pageTitle}></PageTitle>
       <Div>{currentLanguage.headLine()}</Div>
-      <RecruitField language={language} />
-      <Process language={language} />
-      <Policy language={language} />
-      <Benefit language={language} />
+      <RecruitField language={language} /> {/* 모집분야 및 자격요건 component 호출 props -> language : string*/}
+      <Process language={language} /> {/* 채용절차 component 호출 props -> language : string*/}
+      <Policy language={language} /> {/* 인사제도 component 호출 props -> language : string*/}
+      <Benefit language={language} /> {/* 복리후생 component 호출 props -> language : string*/}
     </>
   );
 }

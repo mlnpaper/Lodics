@@ -5,9 +5,13 @@ import GlobalStateContext from '@context/globalStateContext';
 import { KeyTechnologyKorean, KeyTechnologyEnglish } from '@data/language/keyTechnology';
 
 export default function KeyTechnology() {
+  //useContext를 통해 전역적으로 관리하고 있는 value를 가져와서 사용
   const { language } = useContext(GlobalStateContext);
 
+  //현재 언어 Check
   const currentLanguage = language === 'korea' ? KeyTechnologyKorean : KeyTechnologyEnglish;
+
+  // table 구성을 고려하여 hard cording 진행
   return (
     <>
       <PageTitle title={currentLanguage.pagetitle} />

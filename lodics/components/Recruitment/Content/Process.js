@@ -5,12 +5,14 @@ import { Line, ProcessTable, WrapCirCle } from '../styles';
 import { processKorean } from '@data/language/process';
 
 export default function Process({ language }) {
+  //채용절차 Icon
   const processContent = processList => {
     return processList.map(({ key, title, icon, url }) => (
       <RecruitmentCard key={key} title={title} icon={icon} url={url} />
     ));
   };
 
+  //채용절차 Table
   const processDetailContent = processDetailList => {
     return processDetailList.map(({ num, title, content }, index) => (
       <tr key={index}>
