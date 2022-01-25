@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Container } from './styles';
 
 export default function PageSemiTitle({ title, color, fontWeight = 400 }) {

@@ -25,8 +25,8 @@ export const locationEnglish = {
   adrressSemiTitle: 'Address',
   subwaySemiTitle: 'Subway Station',
   busSemiTitle: 'Bus Stop',
-  summaryContent: `지하철 2호선 뚝섬역 4번 출구, 신한은행 골목으로 들어와, 메가커피 골목으로 500m 직진.
-  1층 '바다화원' 건물`,
+  summaryContent: `지하철 2호선 뚝섬역 4번 출구, 신한은행 골목으로 들어와, 메가커피 골목으로 500m 직진.___eng
+  1층 '바다화원' 건물___eng`,
   adrressContent: `(04790) 3F Taeyang Bldg, 6-1 Sangwon 4-gil, Seongdong-gu, Seoul, KOREA`,
   subwayContent: [
     { subwayStation: 'Ttukseom Station', line: '2', lineColor: '#37B32D', exit: 'Exit 4', onFoot: '2 minutes on foot' },

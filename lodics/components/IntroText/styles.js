@@ -1,5 +1,6 @@
-import { palette } from '@styles/color';
 import styled from 'styled-components';
+
+import { palette } from '@styles/color';
 
 export const Container = styled.div`
   /* -------------------------------------------------------------------------- */

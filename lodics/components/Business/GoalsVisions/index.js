@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
-import { CertificationCard, PageSemiTitle, PageTitle } from 'components';
 
+import GlobalStateContext from '@context/globalStateContext';
+import { GoalsVisionsEnglish, GoalsVisionsKorean } from '@data/language/goalsVisions';
+
+import { CertificationCard, PageSemiTitle, PageTitle } from 'components';
 import {
   Container,
   InnerContainer,
@@ -12,8 +15,6 @@ import {
   ImgCardInnerContainer,
   ImgCardContainer,
 } from './styles';
-import GlobalStateContext from '@context/globalStateContext';
-import { GoalsVisionsEnglish, GoalsVisionsKorean } from '@data/language/goalsVisions';
 
 const createContentElement = (content, description) => (
   <ContentContainer key={content}>

@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { Container } from './styles';
-import { CertificationCard, PageSemiTitle, PageTitle } from 'components';
-import { palette } from '@styles/color';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { certificationKorean, certificationEnglish } from '@data/language/certification';
+
+import { CertificationCard, PageSemiTitle, PageTitle } from 'components';
+import { palette } from '@styles/color';
+import { Container } from './styles';
 
 export default function Certification() {
   const { language } = useContext(GlobalStateContext);

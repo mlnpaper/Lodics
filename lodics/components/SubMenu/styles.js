@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { palette } from '@styles/color';
 import { IoIosArrowDown } from 'react-icons/io';
+
+import { palette } from '@styles/color';
 
 // index.js
 export const Container = styled.div`

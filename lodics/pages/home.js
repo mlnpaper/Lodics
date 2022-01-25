@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { AppLayout, Card, IntroText } from 'components';
 import styled from 'styled-components';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { homeEnglish, homeKorean } from '@data/language/home';
+
+import { AppLayout, Card, IntroText } from 'components';
 
 export const Container = styled.div`
   min-height: 100vh;

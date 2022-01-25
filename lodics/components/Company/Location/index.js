@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { BusTextContainer, MapContainer, SubwayTextContainer, TextContainer, SubwayIcon, BusIcon } from './styles';
-import { PageSemiTitle, PageTitle } from 'components';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { locationEnglish, locationKorean } from '@data/language/location';
+
+import { PageSemiTitle, PageTitle } from 'components';
+import { BusTextContainer, MapContainer, SubwayTextContainer, TextContainer, SubwayIcon, BusIcon } from './styles';
 
 const createSubwayTextElement = (subwayName, subwayNumber, subwayColor, exit, distance) => (
   <div key={subwayName}>
@@ -72,6 +74,7 @@ export default function Location() {
 
   const currentLanguage = language === 'korea' ? locationKorean : locationEnglish;
 
+  // 카카오맵 호출
   useEffect(() => {
     InstallScript();
   }, []);

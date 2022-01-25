@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { palette } from '@styles/color';
 import { IoEarthSharp } from 'react-icons/io5';
 import { FaSatellite, FaHandsHelping } from 'react-icons/fa';
+
+import { palette } from '@styles/color';
 
 export const BusinessIcon = styled(IoEarthSharp)``;
 export const PSIcon = styled(FaSatellite)``;

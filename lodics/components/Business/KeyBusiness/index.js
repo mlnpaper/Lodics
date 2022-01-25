@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
-import { PageTitle } from 'components';
-import { ImgContainer } from './styles';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { keyBusinessEnglish, keyBusinessKorean } from '@data/language/keybusiness';
+
+import { PageTitle } from 'components';
+import { ImgContainer } from './styles';
 
 export default function KeyBusiness() {
   const { language } = useContext(GlobalStateContext);

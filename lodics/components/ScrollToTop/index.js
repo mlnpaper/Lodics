@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+
 import { ArrowIcon, Container } from './styles';
 
 export default function ScrollToTop() {

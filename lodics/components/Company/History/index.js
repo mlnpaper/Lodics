@@ -1,17 +1,20 @@
 import React, { useContext, useEffect } from 'react';
-import { PageTitle, HistoryList } from 'components';
 import Timeline from '@mui/lab/Timeline';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { TimelineContainer } from './styles';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { historyKorean, historyEnglish } from '@data/language/history';
+
+import { PageTitle, HistoryList } from 'components';
+import { TimelineContainer } from './styles';
 
 export default function History() {
   const { language } = useContext(GlobalStateContext);
 
   const currentLanguage = language === 'korea' ? historyKorean : historyEnglish;
 
+  // AOS 애니메이션 설정
   useEffect(() => {
     AOS.init({
       duration: 500,

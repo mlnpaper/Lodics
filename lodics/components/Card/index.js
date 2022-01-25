@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
-import { Container, BusinessIcon, PSIcon, RecruitmentIcon } from './styles';
 import Router from 'next/router';
+
+import { Container, BusinessIcon, PSIcon, RecruitmentIcon } from './styles';
 
 export default function Card({ menu, description, link, more }) {
   const onClick = useCallback(() => {

@@ -1,8 +1,10 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { Container, MenuContainer, MenuInnerContainer } from './styles';
 import Router from 'next/router';
+
 import { GlobalStateContext } from 'context';
+
 import { Select } from 'components';
+import { Container, MenuContainer, MenuInnerContainer } from './styles';
 
 const mainSelect = [
   { value: 'company', text: 'Company' },
@@ -22,9 +24,11 @@ export default function SubMenu({ title, subSelectList = [] }) {
     Router.push('/');
   }, []);
 
+  // select 열기/닫기 기능
   const onClickSelect = useCallback(
     e => {
       let targetId;
+      // select 자식 노드 전체 선택
       if (e.target.localName === 'button') {
         targetId = Number(e.target.id);
       } else if (e.target.localName === 'span' || e.target.localName === 'i') {
@@ -46,6 +50,7 @@ export default function SubMenu({ title, subSelectList = [] }) {
     [selectedSubMenu]
   );
 
+  // option 선택 시 해당 값에 따라 다른 기능 동작 (하기 설명)
   const onClickOption = (e, setSelectedOption) => {
     if (!isOpen || +e.target.parentElement.previousSibling.id !== selectedSubMenu) {
       setIsOpen(false);
@@ -55,11 +60,13 @@ export default function SubMenu({ title, subSelectList = [] }) {
       const text = e.target.innerText;
 
       setCurrentSelect(value);
+      // page를 포함하는 select option 선택 시 해당 페이지로 이동
       if (value === 'company' || value === 'business' || value === 'productsServices' || value === 'recruitment') {
         Router.push(`/${value}`);
         setSelectedSubMenu('');
         setIsOpen(false);
       } else {
+        // page가 아닌 component option 선택 시 해당 컴포넌트 상태값 변경
         setSubSelectedComponent(value);
         setSelectedOption(text);
         setSelectedSubMenu('');
@@ -76,11 +83,13 @@ export default function SubMenu({ title, subSelectList = [] }) {
     };
   }, []);
 
+  // 언어 상태 변경에 따라 Products & Services 페이지에서 select 2~3개에 따라 화면 표출 변경 기능 적용
   useEffect(() => {
     if (selectedMenu === 'productsServices' && !currentSelect) setNewSubSelectList([subSelectList[0]]);
     else setNewSubSelectList(subSelectList);
   }, [language]);
 
+  // Products & Services 페이지에서 select 2~3개에 따라 화면 표출 변경 기능 적용
   useEffect(() => {
     if (!!subSelectList.length) {
       if (
@@ -96,10 +105,12 @@ export default function SubMenu({ title, subSelectList = [] }) {
     }
   }, [currentSelect]);
 
+  // 초기 렌더링 시 Products & Services 페이지에서 select 2~3개에 따라 화면 표출 변경 기능 적용
   useEffect(() => {
     if (selectedMenu === 'productsServices') setNewSubSelectList([subSelectList[0]]);
   }, [selectedMenu]);
 
+  // select portal 적용
   const onClickPortal = () => {
     setSelectedSubMenu('');
     setIsOpen(false);

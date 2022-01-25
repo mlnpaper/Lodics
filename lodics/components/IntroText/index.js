@@ -1,6 +1,8 @@
+import React, { useContext, useEffect, useState } from 'react';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { introTextEnglish, introTextKorean } from '@data/language/introText';
-import React, { useContext, useEffect, useState } from 'react';
+
 import { Container } from './styles';
 
 const getFirstIntro = currentLanguage => (
@@ -23,6 +25,7 @@ export default function IntroText() {
 
   const currentLanguage = language === 'korea' ? introTextKorean : introTextEnglish;
 
+  // 10초마다 IntroText 바뀜 / firstInrto → secondIntro
   useEffect(() => {
     const timeId = setInterval(() => {
       if (introText === 1) {

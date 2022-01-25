@@ -1,6 +1,8 @@
+import React, { useContext } from 'react';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { footerEnglish, footerKorean } from '@data/language/footer';
-import React, { useContext } from 'react';
+
 import { Container } from './styles';
 
 export default function Footer() {

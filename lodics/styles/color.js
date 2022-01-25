@@ -1,3 +1,4 @@
+// 공통 palette 생성
 export const palette = {
   themePrimary: '#0d47a1',
   themeGray: '#aaaaaa',

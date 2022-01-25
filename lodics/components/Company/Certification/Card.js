@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { CardContainer, ImgContainer } from './styles';
 
 export default function Card({ img, title }) {

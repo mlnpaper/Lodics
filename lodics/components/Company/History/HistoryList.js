@@ -1,10 +1,11 @@
 import React from 'react';
-import { Ul } from './styles';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+
+import { Ul } from './styles';
 
 export default function HistoryList({ historyList, parentIndex, isLastIndex }) {
   const year = historyList[0]['years'];

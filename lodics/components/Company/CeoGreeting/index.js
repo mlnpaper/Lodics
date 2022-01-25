@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { PageTitle } from 'components';
-import { HeadLineContainer, ContentContainer, SignContainer } from './styles';
+
 import GlobalStateContext from '@context/globalStateContext';
 import { ceoGreetingKorean, ceoGreetingEnglish } from '@data/language/ceoGreeting';
+
+import { PageTitle } from 'components';
+import { HeadLineContainer, ContentContainer, SignContainer } from './styles';
 
 export default function CeoGreeting() {
   const [isMobile, setIsMobile] = useState(false);
@@ -10,6 +12,7 @@ export default function CeoGreeting() {
 
   const currentLanguage = language === 'korea' ? ceoGreetingKorean : ceoGreetingEnglish;
 
+  // viewport 사이즈에 따라 mobile 환경 확인
   const onResize = () => {
     if (window.innerWidth < 768) {
       setIsMobile(true);

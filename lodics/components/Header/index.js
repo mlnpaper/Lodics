@@ -1,15 +1,17 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { CloseMenuIcon, Container, InnerContainer, MenuIcon, ToggleNavContainer, TabContainer } from './styles';
 import Link from 'next/link';
+import Router from 'next/router';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import Router from 'next/router';
-import GlobalStateContext from '@context/globalStateContext';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+
+import GlobalStateContext from '@context/globalStateContext';
+
+import { CloseMenuIcon, Container, InnerContainer, MenuIcon, ToggleNavContainer, TabContainer } from './styles';
 
 const createMobileNavElement = (url, en, onClickNav) => (
   <li onClick={onClickNav}>
@@ -26,6 +28,7 @@ export default function Header({ theme, page }) {
   const [openToggleNav, setOpenToggleNav] = useState(false);
   const { selectedMenu, setSelectedMenu, language, setLanguage } = useContext(GlobalStateContext);
 
+  // viewport 값에 따라 모바일 용 toggleNav 표출 유/무
   const onResize = () => {
     if (window.innerWidth < 768) {
       setShowToggleNav(true);
@@ -35,14 +38,17 @@ export default function Header({ theme, page }) {
     }
   };
 
+  // 모바일 toggleNav 열기/닫기 toggle 기능
   const onClick = useCallback(() => {
     setOpenToggleNav(!openToggleNav);
   }, [openToggleNav]);
 
+  // 모바일 toggleNav 닫기 기능
   const onClose = useCallback(() => {
     setOpenToggleNav(false);
   }, []);
 
+  // 모바일 toggleNav 열기/닫기 기능
   const onClickNav = useCallback(
     e => {
       if (e.target.innerText === page) {

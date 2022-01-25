@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { palette } from '@styles/color';
 import { MdMenu } from 'react-icons/md';
 import { IoIosArrowForward } from 'react-icons/io';
+
+import { palette } from '@styles/color';
 
 export const Container = styled.header`
   width: 100%;

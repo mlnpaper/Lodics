@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Head from 'next/head';
+
+import { businessSubSelectListEnglish, businessSubSelectListKorean } from '@data/language/business';
+
 import { AppLayout, GoalsVisions, KeyBusiness } from 'components';
 import { GlobalStateContext } from 'context';
 import { PageContainer } from '@pages/company';
-import Head from 'next/head';
-import { businessSubSelectListEnglish, businessSubSelectListKorean } from '@data/language/business';
 
 export default function business() {
   const { subSelectedComponent, setSubSelectedComponent, setSelectedMenu, language } = useContext(GlobalStateContext);

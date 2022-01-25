@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppLayout, CeoGreeting, Certification, History, Location } from 'components';
-import { GlobalStateContext } from 'context';
-import { palette } from '@styles/color';
 import styled from 'styled-components';
 import Head from 'next/head';
+
 import { companySubSelectListEnglish, companySubSelectListKorean } from '@data/language/company';
+
+import { GlobalStateContext } from 'context';
+import { AppLayout, CeoGreeting, Certification, History, Location } from 'components';
+import { palette } from '@styles/color';
 
 export const PageContainer = styled.section`
   /* -------------------------------------------------------------------------- */

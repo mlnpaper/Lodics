@@ -5,6 +5,5 @@ export const Container = styled.div`
   width: 100vw;
   display: flex;
   flex-flow: column;
-
   justify-content: ${props => (props.$theme === 'black' ? 'none' : 'space-between')};
 `;

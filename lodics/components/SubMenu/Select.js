@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
+
 import { GlobalStateContext } from 'context';
+
 import { ArrowIcon, IconContainer, SelectContainer } from './styles';
 
 export default function Select({ defaultValue, selectList, onClickSelect, selectNumber, onClickOption }) {
@@ -35,6 +37,7 @@ export default function Select({ defaultValue, selectList, onClickSelect, select
       list.text === selectedOption && setSelectedOptionIndex(i);
     });
   }, [selectedOption]);
+
   // select 언어 language에 따른 실시간 변화 적용
   useEffect(() => {
     const changeLanguageOption = selectList.filter((list, i) => i === selectedOptionIndex);

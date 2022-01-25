@@ -1,13 +1,17 @@
 import React, { useContext, useEffect } from 'react';
+
+import GlobalStateContext from '@context/globalStateContext';
+
 import { Footer, Header, ScrollToTop, SubMenu } from 'components';
 import { Container } from './styles';
-import GlobalStateContext from '@context/globalStateContext';
 
 export default function AppLayout({ children, theme, page, value = '', subSelectList = [] }) {
   const { language, setLanguage } = useContext(GlobalStateContext);
 
   useEffect(() => {
+    // window scroll 초기화
     window.scrollTo(0, 0);
+    // language 초기화
     const initialLanguage = sessionStorage.getItem('language');
     setLanguage(initialLanguage || 'korea');
   }, []);

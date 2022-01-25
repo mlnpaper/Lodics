@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { GlobalStateContext } from 'context';
 
 export default function GlobalState({ children }) {

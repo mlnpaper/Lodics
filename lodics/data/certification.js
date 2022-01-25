@@ -58,7 +58,7 @@ export const certificationPatentEnglish = [
     key: 2,
     img: 'img/certification/TH03.jpg',
     title: `3차원 객체 표면 복원을 위한 
-  데이터 관리 장치 및 그 방법`,
+  데이터 관리 장치 및 그 방법__eng`,
   },
   {
     key: 1,
